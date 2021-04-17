@@ -1,0 +1,14 @@
+{
+    "name": "adamhebby/glimeshclient",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "psr/log": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlimeshClient\\ProjectBuilder\\": "bin/ProjectBuilder/",
+            "GlimeshClient\\": "src/GlimeshClient/"
+        }
+    }
+}
