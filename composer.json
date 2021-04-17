@@ -1,18 +1,19 @@
 {
     "name": "adamhebby/glimeshclient",
+    "description": "PHP Client for GraphQL API on https://glimesh.tv/api",
     "type": "library",
-    "require": {
-        "guzzlehttp/guzzle": "^7.3",
-        "psr/log": "^1.1"
-    },
+    "license": "GPL-3.0-or-later",
     "scripts": {
         "test": "phpunit"
     },
     "autoload": {
         "psr-4": {
-            "GlimeshClient\\ProjectBuilder\\": "bin/ProjectBuilder/",
             "GlimeshClient\\": "src/GlimeshClient/"
         }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "psr/log": "^1.1"
     },
     "require-dev": {
         "phpunit/php-code-coverage": "^9.2",
