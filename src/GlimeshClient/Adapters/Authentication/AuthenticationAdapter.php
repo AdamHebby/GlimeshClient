@@ -2,6 +2,9 @@
 
 namespace GlimeshClient\Adapters\Authentication;
 
+/**
+ * Type of Authentication to pass to the API
+ */
 interface AuthenticationAdapter
 {
     /**

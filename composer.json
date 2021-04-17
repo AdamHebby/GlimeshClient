@@ -5,10 +5,17 @@
         "guzzlehttp/guzzle": "^7.3",
         "psr/log": "^1.1"
     },
+    "scripts": {
+        "test": "phpunit"
+    },
     "autoload": {
         "psr-4": {
             "GlimeshClient\\ProjectBuilder\\": "bin/ProjectBuilder/",
             "GlimeshClient\\": "src/GlimeshClient/"
         }
+    },
+    "require-dev": {
+        "phpunit/php-code-coverage": "^9.2",
+        "phpunit/phpunit": "^9.5"
     }
 }
