@@ -10,14 +10,14 @@ class User extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $avatar;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $avatarUrl;
 
@@ -31,21 +31,21 @@ class User extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $countFollowers;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $countFollowing;
 
     /**
      * Exactly the same as the username, but with casing the user prefers
      *
-     * @var String
+     * @var string
      */
     protected $displayname;
 
@@ -73,49 +73,49 @@ class User extends AbstractObjectModel
     /**
      * HTML version of the user's profile, should be safe for rendering directly
      *
-     * @var String
+     * @var string
      */
     protected $profileContentHtml;
 
     /**
      * Markdown version of the user's profile
      *
-     * @var String
+     * @var string
      */
     protected $profileContentMd;
 
     /**
      * Qualified URL for the user's Discord server
      *
-     * @var String
+     * @var string
      */
     protected $socialDiscord;
 
     /**
      * Qualified URL for the user's Guilded server
      *
-     * @var String
+     * @var string
      */
     protected $socialGuilded;
 
     /**
      * Qualified URL for the user's Instagram account
      *
-     * @var String
+     * @var string
      */
     protected $socialInstagram;
 
     /**
      * Qualified URL for the user's Twitter account
      *
-     * @var String
+     * @var string
      */
     protected $socialTwitter;
 
     /**
      * Qualified URL for the user's YouTube account
      *
-     * @var String
+     * @var string
      */
     protected $socialYoutube;
 
@@ -129,14 +129,14 @@ class User extends AbstractObjectModel
     /**
      * Lowercase user identifier
      *
-     * @var String
+     * @var string
      */
     protected $username;
 
     /**
      * YouTube Intro URL for the user's profile
      *
-     * @var String
+     * @var string
      */
     protected $youtubeIntroUrl;
 }

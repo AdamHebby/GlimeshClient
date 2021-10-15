@@ -17,7 +17,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $blockLinks;
 
@@ -38,28 +38,28 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $chatRulesHtml;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $chatRulesMd;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $disableHyperlinks;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $hmacKey;
 
@@ -73,7 +73,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $inaccessible;
 
@@ -87,21 +87,21 @@ class Channel extends AbstractObjectModel
     /**
      * The language a user can expect in the stream.
      *
-     * @var String
+     * @var string
      */
     protected $language;
 
     /**
      * If the streamer has flagged this channel as only appropriate for Mature Audiences.
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $matureContent;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $minimumAccountAge;
 
@@ -122,14 +122,14 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $requireConfirmedEmail;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $showRecentChatMessagesOnly;
 
@@ -150,7 +150,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $streamKey;
 
@@ -178,14 +178,14 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $thumbnail;
 
     /**
      * The title of the current stream, live or offline.
      *
-     * @var String
+     * @var string
      */
     protected $title;
 

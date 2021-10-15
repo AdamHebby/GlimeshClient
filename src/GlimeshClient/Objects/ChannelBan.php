@@ -31,7 +31,7 @@ class ChannelBan extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $reason;
 

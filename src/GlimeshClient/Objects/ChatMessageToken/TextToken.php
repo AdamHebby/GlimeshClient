@@ -13,14 +13,14 @@ class TextToken extends AbstractObjectModel implements ChatMessageToken
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $text;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $type;
 }

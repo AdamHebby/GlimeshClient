@@ -13,21 +13,21 @@ class UrlToken extends AbstractObjectModel implements ChatMessageToken
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $text;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $type;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $url;
 }

@@ -10,7 +10,7 @@ class Subcategory extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $backgroundImageUrl;
 
@@ -38,28 +38,28 @@ class Subcategory extends AbstractObjectModel
     /**
      * Name of the subcategory
      *
-     * @var String
+     * @var string
      */
     protected $name;
 
     /**
      * URL friendly name of the subcategory
      *
-     * @var String
+     * @var string
      */
     protected $slug;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $source;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $sourceId;
 
@@ -73,7 +73,7 @@ class Subcategory extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $userCreated;
 }

@@ -10,7 +10,7 @@ class Follower extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $hasLiveNotifications;
 

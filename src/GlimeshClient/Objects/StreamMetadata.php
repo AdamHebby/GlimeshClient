@@ -10,7 +10,7 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $audioCodec;
 
@@ -24,14 +24,14 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $ingestServer;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $ingestViewers;
 
@@ -45,35 +45,35 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $lostPackets;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $nackPackets;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $recvPackets;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $sourceBitrate;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $sourcePing;
 
@@ -87,7 +87,7 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $streamTimeSeconds;
 
@@ -101,35 +101,35 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $vendorName;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $vendorVersion;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $videoCodec;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $videoHeight;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $videoWidth;
 }

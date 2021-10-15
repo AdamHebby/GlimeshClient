@@ -10,7 +10,7 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Ban a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var channelmoderationlog
      */
     protected $banUser;
 
@@ -24,7 +24,7 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Deletes a specific chat message from channel.
      *
-     * @var ChannelModerationLog
+     * @var channelmoderationlog
      */
     protected $deleteMessage;
 
@@ -38,21 +38,21 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Update a stream's metadata
      *
-     * @var StreamMetadata
+     * @var streammetadata
      */
     protected $logStreamMetadata;
 
     /**
      * Long timeout (15 minutes) a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var channelmoderationlog
      */
     protected $longTimeoutUser;
 
     /**
      * Short timeout (5 minutes) a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var channelmoderationlog
      */
     protected $shortTimeoutUser;
 
@@ -66,7 +66,7 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Unban a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var channelmoderationlog
      */
     protected $unbanUser;
 

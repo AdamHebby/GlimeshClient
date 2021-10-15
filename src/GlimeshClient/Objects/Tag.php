@@ -17,7 +17,7 @@ class Tag extends AbstractObjectModel
     /**
      * The number of streams started with this tag
      *
-     * @var Int
+     * @var int
      */
     protected $countUsage;
 
@@ -38,14 +38,14 @@ class Tag extends AbstractObjectModel
     /**
      * Name of the tag
      *
-     * @var String
+     * @var string
      */
     protected $name;
 
     /**
      * URL friendly name of the tag
      *
-     * @var String
+     * @var string
      */
     protected $slug;
 

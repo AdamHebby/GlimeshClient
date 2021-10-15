@@ -17,7 +17,7 @@ class UserSocial extends AbstractObjectModel
     /**
      * Platform unique identifier, usually a ID, made into a string
      *
-     * @var String
+     * @var string
      */
     protected $identifier;
 
@@ -31,7 +31,7 @@ class UserSocial extends AbstractObjectModel
     /**
      * Platform that is linked, eg: twitter
      *
-     * @var String
+     * @var string
      */
     protected $platform;
 
@@ -45,7 +45,7 @@ class UserSocial extends AbstractObjectModel
     /**
      * Username for the user on the linked platform
      *
-     * @var String
+     * @var string
      */
     protected $username;
 }

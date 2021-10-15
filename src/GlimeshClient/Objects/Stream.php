@@ -10,14 +10,14 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $avgChatters;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $avgViewers;
 
@@ -38,14 +38,14 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $countChatters;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $countViewers;
 
@@ -80,28 +80,28 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $newSubscribers;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $peakChatters;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $peakViewers;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $resubSubscribers;
 
@@ -122,14 +122,14 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $thumbnail;
 
     /**
      * The title of the stream.
      *
-     * @var String
+     * @var string
      */
     protected $title;
 

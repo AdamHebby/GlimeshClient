@@ -24,7 +24,7 @@ class RootSubscriptionType extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Follower
+     * @var follower
      */
     protected $followers;
 }

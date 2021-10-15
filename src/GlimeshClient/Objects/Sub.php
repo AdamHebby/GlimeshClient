@@ -31,21 +31,21 @@ class Sub extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $isActive;
 
     /**
      * Description not provided
      *
-     * @var Int
+     * @var int
      */
     protected $price;
 
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $productName;
 

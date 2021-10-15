@@ -18,10 +18,10 @@ trait ObjectResolverTrait
         'bans'           => \GlimeshClient\Objects\ChannelBan::class,
         'categories'     => \GlimeshClient\Objects\Category::class,
         'channels'       => \GlimeshClient\Objects\Channel::class,
-        'chatMessages'   => \GlimeshClient\Objects\ChatMessage::class,
+        'chatmessages'   => \GlimeshClient\Objects\ChatMessage::class,
         'followers'      => \GlimeshClient\Objects\Follower::class,
         'following'      => \GlimeshClient\Objects\Follower::class,
-        'moderationLogs' => \GlimeshClient\Objects\ChannelModerationLog::class,
+        'moderationlogs' => \GlimeshClient\Objects\ChannelModerationLog::class,
         'moderators'     => \GlimeshClient\Objects\ChannelModerator::class,
         'streamers'      => \GlimeshClient\Objects\User::class,
         'streams'        => \GlimeshClient\Objects\Stream::class,
@@ -41,9 +41,9 @@ trait ObjectResolverTrait
         'ban'            => \GlimeshClient\Objects\ChannelBan::class,
         'category'       => \GlimeshClient\Objects\Category::class,
         'channel'        => \GlimeshClient\Objects\Channel::class,
-        'chatMessage'    => \GlimeshClient\Objects\ChatMessage::class,
+        'chatmessage'    => \GlimeshClient\Objects\ChatMessage::class,
         'metadata'       => \GlimeshClient\Objects\StreamMetadata::class,
-        'moderationLog'  => \GlimeshClient\Objects\ChannelModerationLog::class,
+        'moderationlog'  => \GlimeshClient\Objects\ChannelModerationLog::class,
         'moderator'      => \GlimeshClient\Objects\ChannelModerator::class,
         'socials'        => \GlimeshClient\Objects\UserSocial::class,
         'socials'        => \GlimeshClient\Objects\UserSocial::class,
@@ -54,6 +54,8 @@ trait ObjectResolverTrait
         'tag'            => \GlimeshClient\Objects\Tag::class,
         'token'          => \GlimeshClient\Objects\ChatMessageToken::class,
         'user'           => \GlimeshClient\Objects\User::class,
+        'status'         => \GlimeshClient\Objects\Enums\ChannelStatus::class,
+        'channelstatus'  => \GlimeshClient\Objects\Enums\ChannelStatus::class,
     ];
 
     /**
@@ -105,7 +107,7 @@ trait ObjectResolverTrait
      */
     public static function isArrayOfObjects(string $key): bool
     {
-        return isset(self::$mappingMulitple[$key]);
+        return isset(self::$mappingMulitple[strtolower($key)]);
     }
 
     /**
@@ -117,12 +119,12 @@ trait ObjectResolverTrait
      */
     public static function resolveObjectKey(string $key): ?string
     {
-        if (isset(self::$mappingMulitple[$key])) {
-            return self::$mappingMulitple[$key];
+        if (self::isArrayOfObjects($key)) {
+            return self::$mappingMulitple[strtolower($key)];
         }
 
-        if (isset(self::$mappingSingle[$key])) {
-            return self::$mappingSingle[$key];
+        if (isset(self::$mappingSingle[strtolower($key)])) {
+            return self::$mappingSingle[strtolower($key)];
         }
 
         return null;

@@ -17,7 +17,7 @@ class Category extends AbstractObjectModel
     /**
      * Name of the category
      *
-     * @var String
+     * @var string
      */
     protected $name;
 
@@ -31,7 +31,7 @@ class Category extends AbstractObjectModel
     /**
      * Slug of the category
      *
-     * @var String
+     * @var string
      */
     protected $slug;
 
@@ -45,7 +45,7 @@ class Category extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $tagName;
 

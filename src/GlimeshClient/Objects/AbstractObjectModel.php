@@ -20,9 +20,13 @@ abstract class AbstractObjectModel
     {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
-                $this->$key = (self::resolveObjectKey($key) === null)
-                    ? $value
-                    : self::getObject($key, $value ?? []);
+                $resolvedKey = self::resolveObjectKey($key);
+
+                if ($resolvedKey !== null) {
+                    $this->$key = self::getObject($key, is_array($value) ? $value : [$value]);
+                } else {
+                    $this->$key = $value;
+                }
 
                 if (is_string($value) && self::isDateField($value)) {
                     $this->$key = new \DateTime($value, new \DateTimeZone('UTC'));

@@ -10,7 +10,7 @@ class ChannelModerationLog extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var string
      */
     protected $action;
 

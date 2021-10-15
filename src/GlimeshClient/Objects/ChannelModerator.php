@@ -10,42 +10,42 @@ class ChannelModerator extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $canBan;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $canDelete;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $canLongTimeout;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $canShortTimeout;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $canUnTimeout;
 
     /**
      * Description not provided
      *
-     * @var Boolean
+     * @var boolean
      */
     protected $canUnban;
 
