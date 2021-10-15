@@ -21,8 +21,8 @@ final class ClientIDAuth implements AuthenticationAdapter
         return 'Client-ID ' . $this->clientId;
     }
 
-    public function authenticate(\GuzzleHttp\Client $client): bool
+    public function authenticate(\GuzzleHttp\Client $client): void
     {
-        return true;
+        return;
     }
 }

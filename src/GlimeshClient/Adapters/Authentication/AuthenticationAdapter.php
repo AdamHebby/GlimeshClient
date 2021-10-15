@@ -19,7 +19,7 @@ interface AuthenticationAdapter
      *
      * @param \GuzzleHttp\Client $client
      *
-     * @return boolean
+     * @return void
      */
-    public function authenticate(\GuzzleHttp\Client $client): bool;
+    public function authenticate(\GuzzleHttp\Client $client): void;
 }
