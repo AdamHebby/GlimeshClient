@@ -13,10 +13,12 @@
     },
     "require": {
         "guzzlehttp/guzzle": "^7.3",
-        "psr/log": "^1.1"
+        "psr/log": "^1.1",
+        "gmostafa/php-graphql-client": "^1.13"
     },
     "require-dev": {
         "phpunit/php-code-coverage": "^9.2",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "monolog/monolog": "^2.3"
     }
 }
