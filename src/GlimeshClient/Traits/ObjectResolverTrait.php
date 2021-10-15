@@ -23,33 +23,37 @@ trait ObjectResolverTrait
         'following'      => \GlimeshClient\Objects\Follower::class,
         'moderationLogs' => \GlimeshClient\Objects\ChannelModerationLog::class,
         'moderators'     => \GlimeshClient\Objects\ChannelModerator::class,
+        'streamers'      => \GlimeshClient\Objects\User::class,
+        'streams'        => \GlimeshClient\Objects\Stream::class,
         'subcategories'  => \GlimeshClient\Objects\Subcategory::class,
         'subscriptions'  => \GlimeshClient\Objects\Sub::class,
         'tags'           => \GlimeshClient\Objects\Tag::class,
+        'tokens'         => \GlimeshClient\Objects\ChatMessageToken::class,
         'users'          => \GlimeshClient\Objects\User::class,
-        // 'tokens'        => \GlimeshClient\Objects\ChatMessageToken::class,
     ];
 
     /**
-     * Single ojects
-     *
-     * @var array
-     */
+-     * Single ojects
+-     *
+-     * @var array
+-     */
     public static $mappingSingle = [
         'ban'            => \GlimeshClient\Objects\ChannelBan::class,
         'category'       => \GlimeshClient\Objects\Category::class,
         'channel'        => \GlimeshClient\Objects\Channel::class,
         'chatMessage'    => \GlimeshClient\Objects\ChatMessage::class,
-        'follower'       => \GlimeshClient\Objects\Follower::class,
         'metadata'       => \GlimeshClient\Objects\StreamMetadata::class,
         'moderationLog'  => \GlimeshClient\Objects\ChannelModerationLog::class,
         'moderator'      => \GlimeshClient\Objects\ChannelModerator::class,
         'socials'        => \GlimeshClient\Objects\UserSocial::class,
+        'socials'        => \GlimeshClient\Objects\UserSocial::class,
+        'stream'         => \GlimeshClient\Objects\Stream::class,
+        'streamer'       => \GlimeshClient\Objects\User::class,
         'subcategory'    => \GlimeshClient\Objects\Subcategory::class,
         'subscription'   => \GlimeshClient\Objects\Sub::class,
         'tag'            => \GlimeshClient\Objects\Tag::class,
+        'token'          => \GlimeshClient\Objects\ChatMessageToken::class,
         'user'           => \GlimeshClient\Objects\User::class,
-        // 'token'         => \GlimeshClient\Objects\ChatMessageToken::class,
     ];
 
     /**
@@ -60,7 +64,7 @@ trait ObjectResolverTrait
      *
      * @return AbstractObjectModel|ArrayObject
      */
-    public static function getObject(string $key, array $data): object
+    public static function getObject(string $key, array $data = []): object
     {
         $class = self::resolveObjectKey($key);
 

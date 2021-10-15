@@ -1,11 +1,11 @@
 <?php
 
-namespace GlimeshClient\Objects;
+namespace GlimeshClient\Objects\Input;
 
 /**
- * A single instance of stream metadata.
+ * Description not provided
  */
-class StreamMetadata extends AbstractObjectModel
+class StreamMetadataInput extends AbstractInputObjectModel
 {
     /**
      * Description not provided
@@ -17,13 +17,6 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var string
-     */
-    protected $id;
-
-    /**
-     * Description not provided
-     *
      * @var String
      */
     protected $ingestServer;
@@ -31,16 +24,9 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var String
+     * @var Int
      */
     protected $ingestViewers;
-
-    /**
-     * Description not provided
-     *
-     * @var DateTime
-     */
-    protected $insertedAt;
 
     /**
      * Description not provided
@@ -80,23 +66,9 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var Stream
-     */
-    protected $stream;
-
-    /**
-     * Description not provided
-     *
      * @var Int
      */
     protected $streamTimeSeconds;
-
-    /**
-     * Description not provided
-     *
-     * @var DateTime
-     */
-    protected $updatedAt;
 
     /**
      * Description not provided

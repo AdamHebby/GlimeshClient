@@ -1,6 +1,6 @@
 <?php
 
-namespace GlimeshClient\Objects\ChatMessageToken;
+namespace GlimeshClient\Objects;
 
 use GlimeshClient\Interfaces\ChatMessageToken;
 use GlimeshClient\Objects\AbstractObjectModel;
@@ -8,25 +8,33 @@ use GlimeshClient\Objects\AbstractObjectModel;
 /**
  * Description not provided
  */
-class UrlToken extends AbstractObjectModel implements ChatMessageToken
+class EmoteToken extends AbstractObjectModel implements ChatMessageToken
 {
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
+     */
+    protected $src;
+
+    /**
+     * Description not provided
+     *
+     * @var String
      */
     protected $text;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $type;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $url;
-
 }

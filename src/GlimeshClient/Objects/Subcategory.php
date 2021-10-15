@@ -10,62 +10,70 @@ class Subcategory extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $backgroundImageUrl;
+
     /**
      * Description not provided
      *
      * @var Category
      */
     protected $category;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var string
      */
     protected $id;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $insertedAt;
+
     /**
      * Name of the subcategory
      *
-     * @var string
+     * @var String
      */
     protected $name;
+
     /**
      * URL friendly name of the subcategory
      *
-     * @var string
+     * @var String
      */
     protected $slug;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $source;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $sourceId;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $updatedAt;
+
     /**
      * Description not provided
      *
-     * @var bool
+     * @var Boolean
      */
     protected $userCreated;
-
 }

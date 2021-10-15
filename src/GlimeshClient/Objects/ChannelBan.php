@@ -13,35 +13,39 @@ class ChannelBan extends AbstractObjectModel
      * @var Channel
      */
     protected $channel;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $expiresAt;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $insertedAt;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $reason;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $updatedAt;
+
     /**
      * Description not provided
      *
      * @var User
      */
     protected $user;
-
 }

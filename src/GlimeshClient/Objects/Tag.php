@@ -13,41 +13,46 @@ class Tag extends AbstractObjectModel
      * @var Category
      */
     protected $category;
+
     /**
      * The number of streams started with this tag
      *
-     * @var int
+     * @var Int
      */
     protected $countUsage;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var string
      */
     protected $id;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $insertedAt;
+
     /**
      * Name of the tag
      *
-     * @var string
+     * @var String
      */
     protected $name;
+
     /**
      * URL friendly name of the tag
      *
-     * @var string
+     * @var String
      */
     protected $slug;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $updatedAt;
-
 }

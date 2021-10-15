@@ -5,7 +5,7 @@ namespace GlimeshClient\Objects;
 /**
  * A subscription is an exchange of money for support.
  */
-class Sub extends \GlimeshClient\Objects\AbstractObjectModel
+class Sub extends AbstractObjectModel
 {
     /**
      * Description not provided
@@ -13,59 +13,67 @@ class Sub extends \GlimeshClient\Objects\AbstractObjectModel
      * @var DateTime
      */
     protected $endedAt;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var string
      */
     protected $id;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $insertedAt;
+
     /**
      * Description not provided
      *
-     * @var bool
+     * @var Boolean
      */
     protected $isActive;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $price;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $productName;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $startedAt;
+
     /**
      * Description not provided
      *
      * @var User
      */
     protected $streamer;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $updatedAt;
+
     /**
      * Description not provided
      *
      * @var User
      */
     protected $user;
-
 }

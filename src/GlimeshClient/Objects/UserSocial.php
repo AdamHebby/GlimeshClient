@@ -10,38 +10,42 @@ class UserSocial extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var int
+     * @var string
      */
     protected $id;
+
     /**
      * Platform unique identifier, usually a ID, made into a string
      *
-     * @var string
+     * @var String
      */
     protected $identifier;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $insertedAt;
+
     /**
      * Platform that is linked, eg: twitter
      *
-     * @var string
+     * @var String
      */
     protected $platform;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $updatedAt;
+
     /**
      * Username for the user on the linked platform
      *
-     * @var string
+     * @var String
      */
     protected $username;
-
 }

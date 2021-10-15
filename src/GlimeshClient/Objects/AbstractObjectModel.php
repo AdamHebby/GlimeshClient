@@ -2,7 +2,6 @@
 
 namespace GlimeshClient\Objects;
 
-use DateTimeZone;
 use GlimeshClient\Traits\ObjectResolverTrait;
 
 /**
@@ -23,10 +22,10 @@ abstract class AbstractObjectModel
             if (property_exists($this, $key)) {
                 $this->$key = (self::resolveObjectKey($key) === null)
                     ? $value
-                    : self::getObject($key, $value);
+                    : self::getObject($key, $value ?? []);
 
                 if (is_string($value) && self::isDateField($value)) {
-                    $this->$key = new \DateTime($value, new DateTimeZone('UTC'));
+                    $this->$key = new \DateTime($value, new \DateTimeZone('UTC'));
                 }
 
                 if (is_numeric($value)) {
@@ -46,5 +45,33 @@ abstract class AbstractObjectModel
     public function __get($name)
     {
         return $this->$name ?? null;
+    }
+
+    /**
+     * Converts the current object and all children to an array, stringifies DateTime objects
+     *
+     * @param bool $trimEmpty Removes any empty properties or objects
+     *
+     * @return array
+     */
+    public function toArray($trimEmpty = true)
+    {
+        $array = [];
+
+        foreach ($this as $key => $value) {
+            if ($value instanceof AbstractObjectModel) {
+                $value = $value->toArray($trimEmpty);
+            }
+
+            if ($value instanceof \DateTimeInterface) {
+                $value = $value->format('Y-m-d\TH:i:s');
+            }
+
+            if (!$trimEmpty || !empty($value)) {
+                $array[$key] = $value;
+            }
+        }
+
+        return $array;
     }
 }

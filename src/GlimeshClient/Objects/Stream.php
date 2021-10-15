@@ -10,116 +10,133 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $avgChatters;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $avgViewers;
+
     /**
      * Description not provided
      *
      * @var Category
      */
     protected $category;
+
     /**
      * Description not provided
      *
      * @var Channel
      */
     protected $channel;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $countChatters;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $countViewers;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $endedAt;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var string
      */
     protected $id;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $insertedAt;
+
     /**
      * Description not provided
      *
-     * @var StreamMetadata
+     * @var ArrayObject<StreamMetadata>
      */
     protected $metadata;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $newSubscribers;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $peakChatters;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $peakViewers;
+
     /**
      * Description not provided
      *
-     * @var int
+     * @var Int
      */
     protected $resubSubscribers;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $startedAt;
+
     /**
      * Description not provided
      *
      * @var Subcategory
      */
     protected $subcategory;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var String
      */
     protected $thumbnail;
+
     /**
      * The title of the stream.
      *
-     * @var string
+     * @var String
      */
     protected $title;
+
     /**
      * Description not provided
      *
      * @var DateTime
      */
     protected $updatedAt;
-
 }
