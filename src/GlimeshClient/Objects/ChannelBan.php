@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A channel timeout or ban
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class ChannelBan extends AbstractObjectModel
 {
@@ -17,14 +22,14 @@ class ChannelBan extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $expiresAt;
 
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -38,7 +43,7 @@ class ChannelBan extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

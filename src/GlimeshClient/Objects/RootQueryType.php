@@ -4,13 +4,18 @@ namespace GlimeshClient\Objects;
 
 /**
  * Description not provided
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class RootQueryType extends AbstractObjectModel
 {
     /**
      * List all categories
      *
-     * @var ArrayObject<Category>
+     * @var \ArrayObject<Category>
      */
     protected $categories;
 
@@ -31,14 +36,14 @@ class RootQueryType extends AbstractObjectModel
     /**
      * List all channels
      *
-     * @var ArrayObject<Channel>
+     * @var \ArrayObject<Channel>
      */
     protected $channels;
 
     /**
      * List all follows or followers
      *
-     * @var ArrayObject<Follower>
+     * @var \ArrayObject<Follower>
      */
     protected $followers;
 
@@ -52,7 +57,7 @@ class RootQueryType extends AbstractObjectModel
     /**
      * List all subscribers or subscribees
      *
-     * @var ArrayObject<Sub>
+     * @var \ArrayObject<Sub>
      */
     protected $subscriptions;
 
@@ -66,7 +71,7 @@ class RootQueryType extends AbstractObjectModel
     /**
      * List all users
      *
-     * @var ArrayObject<User>
+     * @var \ArrayObject<User>
      */
     protected $users;
 }

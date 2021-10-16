@@ -4,13 +4,18 @@ namespace GlimeshClient\Objects;
 
 /**
  * A subscription is an exchange of money for support.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Sub extends AbstractObjectModel
 {
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $endedAt;
 
@@ -24,7 +29,7 @@ class Sub extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -52,7 +57,7 @@ class Sub extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $startedAt;
 
@@ -66,7 +71,7 @@ class Sub extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

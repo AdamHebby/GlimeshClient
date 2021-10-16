@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * Categories are the containers for live streaming content.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Category extends AbstractObjectModel
 {
@@ -21,12 +26,6 @@ class Category extends AbstractObjectModel
      */
     protected $name;
 
-    /**
-     * Description not provided
-     *
-     * @var Category
-     */
-    protected $parent;
 
     /**
      * Slug of the category
@@ -38,21 +37,15 @@ class Category extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var ArrayObject<Subcategory>
+     * @var \ArrayObject<Subcategory>
      */
     protected $subcategories;
 
-    /**
-     * Description not provided
-     *
-     * @var string
-     */
-    protected $tagName;
 
     /**
      * Description not provided
      *
-     * @var ArrayObject<Tag>
+     * @var \ArrayObject<Tag>
      */
     protected $tags;
 }

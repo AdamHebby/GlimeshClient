@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A moderation event that happened
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class ChannelModerationLog extends AbstractObjectModel
 {
@@ -24,21 +29,21 @@ class ChannelModerationLog extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
     /**
      * Description not provided
      *
-     * @var User
+     * @var ChannelModerator
      */
     protected $moderator;
 
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

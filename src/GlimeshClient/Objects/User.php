@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A user of Glimesh, can be a streamer, a viewer or both!
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class User extends AbstractObjectModel
 {
@@ -24,7 +29,7 @@ class User extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $confirmedAt;
 
@@ -52,14 +57,14 @@ class User extends AbstractObjectModel
     /**
      * A list of users who are following you
      *
-     * @var ArrayObject<Follower>
+     * @var \ArrayObject<Follower>
      */
     protected $followers;
 
     /**
      * A list of users who you are following
      *
-     * @var ArrayObject<Follower>
+     * @var \ArrayObject<Follower>
      */
     protected $following;
 
@@ -105,12 +110,6 @@ class User extends AbstractObjectModel
      */
     protected $socialInstagram;
 
-    /**
-     * Qualified URL for the user's Twitter account
-     *
-     * @var string
-     */
-    protected $socialTwitter;
 
     /**
      * Qualified URL for the user's YouTube account
@@ -122,7 +121,7 @@ class User extends AbstractObjectModel
     /**
      * A list of linked social accounts for the user
      *
-     * @var ArrayObject<UserSocial>
+     * @var \ArrayObject<UserSocial>
      */
     protected $socials;
 

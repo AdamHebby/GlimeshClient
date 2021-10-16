@@ -4,13 +4,18 @@ namespace GlimeshClient\Objects;
 
 /**
  * Description not provided
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class RootMutationType extends AbstractObjectModel
 {
     /**
      * Ban a user from a chat channel.
      *
-     * @var channelmoderationlog
+     * @var ChannelModerationLog
      */
     protected $banUser;
 
@@ -24,7 +29,7 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Deletes a specific chat message from channel.
      *
-     * @var channelmoderationlog
+     * @var ChannelModerationLog
      */
     protected $deleteMessage;
 
@@ -38,21 +43,21 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Update a stream's metadata
      *
-     * @var streammetadata
+     * @var StreamMetadata
      */
     protected $logStreamMetadata;
 
     /**
      * Long timeout (15 minutes) a user from a chat channel.
      *
-     * @var channelmoderationlog
+     * @var ChannelModerationLog
      */
     protected $longTimeoutUser;
 
     /**
      * Short timeout (5 minutes) a user from a chat channel.
      *
-     * @var channelmoderationlog
+     * @var ChannelModerationLog
      */
     protected $shortTimeoutUser;
 
@@ -66,7 +71,7 @@ class RootMutationType extends AbstractObjectModel
     /**
      * Unban a user from a chat channel.
      *
-     * @var channelmoderationlog
+     * @var ChannelModerationLog
      */
     protected $unbanUser;
 

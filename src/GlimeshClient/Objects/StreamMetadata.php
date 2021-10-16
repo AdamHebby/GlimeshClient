@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A single instance of stream metadata.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class StreamMetadata extends AbstractObjectModel
 {
@@ -38,7 +43,7 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -94,7 +99,7 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

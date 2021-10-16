@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A stream is a single live stream in, either current or historical.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Stream extends AbstractObjectModel
 {
@@ -52,7 +57,7 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $endedAt;
 
@@ -66,14 +71,14 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
     /**
      * Description not provided
      *
-     * @var ArrayObject<StreamMetadata>
+     * @var \ArrayObject<StreamMetadata>
      */
     protected $metadata;
 
@@ -108,7 +113,7 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $startedAt;
 
@@ -136,7 +141,7 @@ class Stream extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 }

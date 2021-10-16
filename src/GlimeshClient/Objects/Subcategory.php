@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * Subcategories are specific games, topics, or genre's that exist under a Category.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Subcategory extends AbstractObjectModel
 {
@@ -31,7 +36,7 @@ class Subcategory extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -66,7 +71,7 @@ class Subcategory extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

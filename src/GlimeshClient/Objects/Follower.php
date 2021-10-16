@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A follower is a user who subscribes to notifications for a particular user's channel.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Follower extends AbstractObjectModel
 {
@@ -24,7 +29,7 @@ class Follower extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -38,7 +43,7 @@ class Follower extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

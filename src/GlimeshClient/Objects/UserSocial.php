@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A linked social account for a Glimesh user.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class UserSocial extends AbstractObjectModel
 {
@@ -24,7 +29,7 @@ class UserSocial extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -38,7 +43,7 @@ class UserSocial extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * A channel moderator
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class ChannelModerator extends AbstractObjectModel
 {
@@ -59,14 +64,14 @@ class ChannelModerator extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 

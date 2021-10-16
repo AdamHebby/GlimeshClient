@@ -4,6 +4,11 @@ namespace GlimeshClient\Objects;
 
 /**
  * Tags are user created labels that are either global or category specific.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Tag extends AbstractObjectModel
 {
@@ -31,7 +36,7 @@ class Tag extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -52,7 +57,7 @@ class Tag extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
 }

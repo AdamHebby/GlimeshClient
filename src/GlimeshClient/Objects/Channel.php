@@ -4,13 +4,18 @@ namespace GlimeshClient\Objects;
 
 /**
  * A channel is a user's actual container for live streaming.
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 class Channel extends AbstractObjectModel
 {
     /**
      * Description not provided
      *
-     * @var ArrayObject<ChannelBan>
+     * @var \ArrayObject<ChannelBan>
      */
     protected $bans;
 
@@ -31,7 +36,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var ArrayObject<ChatMessage>
+     * @var \ArrayObject<ChatMessage>
      */
     protected $chatMessages;
 
@@ -80,7 +85,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $insertedAt;
 
@@ -108,14 +113,14 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var ArrayObject<ChannelModerationLog>
+     * @var \ArrayObject<ChannelModerationLog>
      */
     protected $moderationLogs;
 
     /**
      * Description not provided
      *
-     * @var ArrayObject<ChannelModerator>
+     * @var \ArrayObject<ChannelModerator>
      */
     protected $moderators;
 
@@ -171,7 +176,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var ArrayObject<Tag>
+     * @var \ArrayObject<Tag>
      */
     protected $tags;
 
@@ -192,14 +197,7 @@ class Channel extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var DateTime
+     * @var \DateTime
      */
     protected $updatedAt;
-
-    /**
-     * Description not provided
-     *
-     * @var User
-     */
-    protected $user;
 }

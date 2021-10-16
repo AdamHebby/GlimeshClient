@@ -51,6 +51,26 @@ abstract class AbstractObjectModel
         return $this->$name ?? null;
     }
 
+    public static function getAllKeys(array $exclude = []): array
+    {
+        $selfVars   = array_keys(get_class_vars(self::class));
+        $staticVars = array_keys(get_class_vars(static::class));
+
+        return array_diff($staticVars, $selfVars, $exclude);
+    }
+
+    public static function getAllNonObjectKeys(array $exclude = []): array
+    {
+        $selfVars   = array_keys(get_class_vars(self::class));
+        $staticVars = array_keys(get_class_vars(static::class));
+        $objects    = array_merge(
+            array_keys(self::$mappingMulitple),
+            array_keys(self::$mappingSingle),
+        );
+
+        return array_diff($staticVars, $selfVars, $objects, $exclude);
+    }
+
     /**
      * Converts the current object and all children to an array, stringifies DateTime objects
      *
