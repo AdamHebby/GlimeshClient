@@ -1,0 +1,13 @@
+<?php
+
+namespace GlimeshClient\Objects;
+%BUILDER_USE%
+/**
+ * %BUILDER_DESCRIPTION%
+ *
+%BUILDER_STANDARD_DOCBLOCK%
+ */
+class %BUILDER_NAME% extends AbstractObjectModel%BUILDER_INTERFACES%
+{
+%BUILDER_FIELDS%
+}

@@ -6,9 +6,18 @@
     "scripts": {
         "test": "phpunit"
     },
+    "authors": [
+        {
+            "role": "Owner & Author",
+            "name": "Adam Hebden",
+            "email": "adam@adamhebden.com",
+            "homepage": "https://github.com/AdamHebby"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "GlimeshClient\\": "src/GlimeshClient/"
+            "GlimeshClient\\": "src/GlimeshClient/",
+            "GlimeshClient\\Builder\\": "bin/Builder/"
         }
     },
     "require": {
@@ -19,6 +28,7 @@
     "require-dev": {
         "phpunit/php-code-coverage": "^9.2",
         "phpunit/phpunit": "^9.5",
-        "monolog/monolog": "^2.3"
+        "monolog/monolog": "^2.3",
+        "symfony/dotenv": "^5.3"
     }
 }

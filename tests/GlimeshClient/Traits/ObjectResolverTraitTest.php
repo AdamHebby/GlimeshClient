@@ -5,12 +5,12 @@ namespace GlimeshClient\Tests\Traits;
 use ArrayObject;
 use GlimeshClient\Objects\Follower;
 use GlimeshClient\Objects\User;
-use GlimeshClient\Traits\ObjectResolverTrait as TraitsObjectResolverTrait;
+use GlimeshClient\Traits\ObjectResolverTrait;
 use PHPUnit\Framework\TestCase;
 
-class ObjectResolverTrait extends TestCase
+class ObjectResolverTraitTest extends TestCase
 {
-    use TraitsObjectResolverTrait;
+    use ObjectResolverTrait;
 
     public function testObjectInstantiation()
     {

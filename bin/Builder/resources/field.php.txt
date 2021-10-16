@@ -1,0 +1,6 @@
+    /**
+     * %BUILDER_FIELD_DESCRIPTION%
+     *
+     * @var %BUILDER_FIELD_TYPE%
+     */
+    protected $%BUILDER_FIELD_NAME%;

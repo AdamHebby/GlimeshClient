@@ -3,6 +3,7 @@
   <coverage processUncoveredFiles="true">
     <include>
       <directory suffix=".php">src/GlimeshClient/</directory>
+      <directory suffix=".php">bin/Builder/</directory>
     </include>
     <report>
       <html outputDirectory="tests/reports/" lowUpperBound="50" highLowerBound="90"/>

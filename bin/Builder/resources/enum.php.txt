@@ -1,0 +1,16 @@
+<?php
+
+namespace GlimeshClient\Objects\Enums;
+
+/**
+ * %BUILDER_DESCRIPTION%
+ *
+%BUILDER_STANDARD_DOCBLOCK%
+ */
+class %BUILDER_NAME% extends AbstractEnumObject
+{
+    public const POSSIBLE_VALUES = [
+%BUILDER_POSSIBLE_VALUES%
+    ];
+%BUILDER_FIELDS%
+}
