@@ -4,10 +4,29 @@ namespace GlimeshClient\Builder;
 
 use GlimeshClient\Traits\ObjectResolverTrait;
 
-
+/**
+ * Project builder class for building all Objects, interfaces, enums etc from
+ * the Glimesh API
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
+ */
 class Builder
 {
+    /**
+     * Schema Array, as loaded from api.json in construct
+     *
+     * @var array
+     */
     public $schema = [];
+
+    /**
+     * Paths config, where to place each object type
+     *
+     * @var array
+     */
     public static $paths = [
         'INTERFACE'     => 'src/GlimeshClient/Interfaces',
         'OBJECT'        => 'src/GlimeshClient/Objects',
@@ -15,6 +34,11 @@ class Builder
         'ENUM'          => 'src/GlimeshClient/Objects/Enums',
     ];
 
+    /**
+     * Standard DocBlock to place on every new class or interface
+     *
+     * @var array
+     */
     public static $standardDocBlock = [
         ' * @author Adam Hebden <adam@adamhebden.com>',
         ' * @copyright 2021 Adam Hebden',
@@ -22,16 +46,33 @@ class Builder
         ' * @package GlimeshClient',
     ];
 
+    /**
+     * Links for Documentation
+     *
+     * @todo Implement
+     *
+     * @var array
+     */
     public static $links = [
 
     ];
 
+    /**
+     * Hardcoded replacements, for things we don't want to implement
+     *
+     * @var array
+     */
     public static $replaceObjects = [
         'NaiveDateTime' => '\DateTime',
         'DateTime' => '\DateTime',
         'ID' => 'string',
     ];
 
+    /**
+     * Constructor, loads the API JSON from path
+     *
+     * @param string $apiJsonFilePath
+     */
     public function __construct(string $apiJsonFilePath)
     {
         $this->schema = json_decode(
@@ -40,7 +81,16 @@ class Builder
         )['data']['__schema']['types'];
     }
 
-    public static function resolveField(array $field): ?string
+    /**
+     * Resolves a field into a Type, valid or not
+     *
+     * @throws \Exception When we cannot resolve the object
+     *
+     * @param array $field
+     *
+     * @return string
+     */
+    public static function resolveField(array $field): string
     {
         $fieldName = $field['name'];
         $typeName = isset($field['type']['name']) ? $field['type']['name'] : '';
@@ -87,6 +137,15 @@ class Builder
         return $resolvedType;
     }
 
+    /**
+     * Builds a single Field DocBlock, after resolving the field
+     *
+     * Returns null if the field is Deprecated
+     *
+     * @param array $field
+     *
+     * @return string|null
+     */
     public static function buildField(array $field): ?string
     {
         if (($field['isDeprecated'] ?? false) === true) {
@@ -110,6 +169,13 @@ class Builder
         );
     }
 
+    /**
+     * Builds a single Object class string, including all fields
+     *
+     * @param array $type
+     *
+     * @return string
+     */
     public static function buildObject(array $type): string
     {
         $fields = $type['fields'];
@@ -148,6 +214,13 @@ class Builder
         );
     }
 
+    /**
+     * Builds a single Input Object class string, including all fields
+     *
+     * @param array $type
+     *
+     * @return string
+     */
     public static function buildInputObject(array $type): string
     {
         $fields = $type['inputFields'];
@@ -175,6 +248,13 @@ class Builder
         );
     }
 
+    /**
+     * Builds a single Interface string
+     *
+     * @param array $type
+     *
+     * @return string
+     */
     public static function buildInterface(array $type): string
     {
         $code = file_get_contents(__DIR__ . '/resources/interface.php.txt');
@@ -194,6 +274,13 @@ class Builder
         );
     }
 
+    /**
+     * Builds a single ENUM object string, including any static fields
+     *
+     * @param array $type
+     *
+     * @return string
+     */
     public static function buildENUM(array $type): string
     {
         $possibleValues = array_map(function ($enum) {
@@ -228,6 +315,11 @@ class Builder
         );
     }
 
+    /**
+     * Builds the entire project, putting classes in their correct places
+     *
+     * @return void
+     */
     public function build()
     {
         $accepts = array_keys(self::$paths);
