@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1634506496">
+  <project timestamp="1634506496">
+    <file name="/mnt/f/git-projects/GlimeshClient/bin/Builder/Builder.php">
+      <class name="GlimeshClient\Builder\Builder" namespace="global">
+        <metrics complexity="38" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="106" coveredstatements="105" elements="116" coveredelements="114"/>
+      </class>
+      <line num="65" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="67" type="stmt" count="6"/>
+      <line num="68" type="stmt" count="6"/>
+      <line num="69" type="stmt" count="6"/>
+      <line num="70" type="stmt" count="6"/>
+      <line num="71" type="stmt" count="6"/>
+      <line num="82" type="method" name="resolveField" visibility="public" complexity="15" crap="15" count="6"/>
+      <line num="84" type="stmt" count="6"/>
+      <line num="85" type="stmt" count="6"/>
+      <line num="87" type="stmt" count="6"/>
+      <line num="89" type="stmt" count="6"/>
+      <line num="90" type="stmt" count="3"/>
+      <line num="93" type="stmt" count="6"/>
+      <line num="94" type="stmt" count="2"/>
+      <line num="97" type="stmt" count="6"/>
+      <line num="98" type="stmt" count="6"/>
+      <line num="99" type="stmt" count="6"/>
+      <line num="103" type="stmt" count="6"/>
+      <line num="104" type="stmt" count="2"/>
+      <line num="107" type="stmt" count="6"/>
+      <line num="108" type="stmt" count="2"/>
+      <line num="111" type="stmt" count="6"/>
+      <line num="112" type="stmt" count="1"/>
+      <line num="113" type="stmt" count="1"/>
+      <line num="117" type="stmt" count="6"/>
+      <line num="118" type="stmt" count="3"/>
+      <line num="121" type="stmt" count="6"/>
+      <line num="122" type="stmt" count="0"/>
+      <line num="125" type="stmt" count="6"/>
+      <line num="137" type="method" name="buildField" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="139" type="stmt" count="5"/>
+      <line num="140" type="stmt" count="2"/>
+      <line num="143" type="stmt" count="5"/>
+      <line num="144" type="stmt" count="5"/>
+      <line num="146" type="stmt" count="5"/>
+      <line num="147" type="stmt" count="5"/>
+      <line num="148" type="stmt" count="5"/>
+      <line num="153" type="method" name="replaceValues" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="155" type="stmt" count="6"/>
+      <line num="157" type="stmt" count="6"/>
+      <line num="167" type="method" name="buildFields" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="169" type="stmt" count="4"/>
+      <line num="170" type="stmt" count="4"/>
+      <line num="171" type="stmt" count="4"/>
+      <line num="173" type="stmt" count="4"/>
+      <line num="183" type="method" name="buildObject" visibility="public" complexity="3" crap="3" count="3"/>
+      <line num="185" type="stmt" count="3"/>
+      <line num="187" type="stmt" count="3"/>
+      <line num="188" type="stmt" count="3"/>
+      <line num="189" type="stmt" count="3"/>
+      <line num="190" type="stmt" count="3"/>
+      <line num="191" type="stmt" count="3"/>
+      <line num="194" type="stmt" count="3"/>
+      <line num="195" type="stmt" count="3"/>
+      <line num="197" type="stmt" count="3"/>
+      <line num="198" type="stmt" count="3"/>
+      <line num="199" type="stmt" count="3"/>
+      <line num="200" type="stmt" count="3"/>
+      <line num="201" type="stmt" count="3"/>
+      <line num="202" type="stmt" count="3"/>
+      <line num="214" type="method" name="buildInputObject" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="216" type="stmt" count="2"/>
+      <line num="217" type="stmt" count="2"/>
+      <line num="219" type="stmt" count="2"/>
+      <line num="220" type="stmt" count="2"/>
+      <line num="221" type="stmt" count="2"/>
+      <line num="222" type="stmt" count="2"/>
+      <line num="234" type="method" name="buildInterface" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="236" type="stmt" count="2"/>
+      <line num="237" type="stmt" count="2"/>
+      <line num="239" type="stmt" count="2"/>
+      <line num="240" type="stmt" count="2"/>
+      <line num="241" type="stmt" count="2"/>
+      <line num="253" type="method" name="buildENUM" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="255" type="stmt" count="2"/>
+      <line num="256" type="stmt" count="2"/>
+      <line num="257" type="stmt" count="2"/>
+      <line num="259" type="stmt" count="2"/>
+      <line num="260" type="stmt" count="2"/>
+      <line num="261" type="stmt" count="2"/>
+      <line num="263" type="stmt" count="2"/>
+      <line num="264" type="stmt" count="2"/>
+      <line num="266" type="stmt" count="2"/>
+      <line num="267" type="stmt" count="2"/>
+      <line num="268" type="stmt" count="2"/>
+      <line num="269" type="stmt" count="2"/>
+      <line num="270" type="stmt" count="2"/>
+      <line num="280" type="method" name="build" visibility="public" complexity="12" crap="12" count="1"/>
+      <line num="282" type="stmt" count="1"/>
+      <line num="284" type="stmt" count="1"/>
+      <line num="285" type="stmt" count="1"/>
+      <line num="286" type="stmt" count="1"/>
+      <line num="289" type="stmt" count="1"/>
+      <line num="290" type="stmt" count="1"/>
+      <line num="292" type="stmt" count="1"/>
+      <line num="293" type="stmt" count="1"/>
+      <line num="296" type="stmt" count="1"/>
+      <line num="297" type="stmt" count="1"/>
+      <line num="298" type="stmt" count="1"/>
+      <line num="299" type="stmt" count="1"/>
+      <line num="301" type="stmt" count="1"/>
+      <line num="302" type="stmt" count="1"/>
+      <line num="303" type="stmt" count="1"/>
+      <line num="305" type="stmt" count="1"/>
+      <line num="306" type="stmt" count="1"/>
+      <line num="307" type="stmt" count="1"/>
+      <line num="309" type="stmt" count="1"/>
+      <line num="310" type="stmt" count="1"/>
+      <line num="311" type="stmt" count="1"/>
+      <line num="315" type="stmt" count="1"/>
+      <line num="316" type="stmt" count="1"/>
+      <line num="318" type="stmt" count="1"/>
+      <line num="319" type="stmt" count="1"/>
+      <line num="322" type="stmt" count="1"/>
+      <line num="323" type="stmt" count="1"/>
+      <line num="328" type="stmt" count="1"/>
+      <metrics loc="329" ncloc="237" classes="1" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="106" coveredstatements="105" elements="116" coveredelements="114"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Adapters/Authentication/AuthenticationAdapter.php">
+      <metrics loc="25" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Adapters/Authentication/ClientIDAuth.php">
+      <class name="GlimeshClient\Adapters\Authentication\ClientIDAuth" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="15" type="stmt" count="0"/>
+      <line num="17" type="method" name="getAuthentication" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="24" type="method" name="authenticate" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <metrics loc="28" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Adapters/Authentication/OAuthFileAdapter.php">
+      <class name="GlimeshClient\Adapters\Authentication\OAuthFileAdapter" namespace="global">
+        <metrics complexity="11" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="31" coveredelements="0"/>
+      </class>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="30" type="method" name="getAuthentication" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="37" type="method" name="isExpired" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="50" type="method" name="authenticate" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="55" type="stmt" count="0"/>
+      <line num="56" type="stmt" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="61" type="stmt" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="65" type="stmt" count="0"/>
+      <line num="66" type="stmt" count="0"/>
+      <line num="68" type="stmt" count="0"/>
+      <line num="70" type="method" name="saveAuth" visibility="protected" complexity="1" crap="2" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="73" type="stmt" count="0"/>
+      <metrics loc="74" ncloc="71" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="31" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Client.php">
+      <class name="GlimeshClient\Client" namespace="global">
+        <metrics complexity="8" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="0" elements="40" coveredelements="0"/>
+      </class>
+      <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="36" type="method" name="makeRequest" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="55" type="method" name="makeRawRequest" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="59" type="stmt" count="0"/>
+      <line num="61" type="stmt" count="0"/>
+      <line num="63" type="stmt" count="0"/>
+      <line num="68" type="stmt" count="0"/>
+      <line num="77" type="method" name="prettyPrintQuery" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="79" type="stmt" count="0"/>
+      <line num="80" type="stmt" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="86" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <line num="94" type="stmt" count="0"/>
+      <line num="103" type="method" name="getQueryString" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="105" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="108" type="stmt" count="0"/>
+      <metrics loc="110" ncloc="98" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="0" elements="40" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Interfaces/ChatMessageToken.php">
+      <metrics loc="15" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/AbstractObjectModel.php">
+      <class name="GlimeshClient\Objects\AbstractObjectModel" namespace="global">
+        <metrics complexity="17" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="12" elements="35" coveredelements="14"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="8" crap="8" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="49" type="method" name="__get" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="61" type="method" name="getAllKeys" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="63" type="stmt" count="0"/>
+      <line num="64" type="stmt" count="0"/>
+      <line num="66" type="stmt" count="0"/>
+      <line num="76" type="method" name="getAllNonObjectKeys" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="78" type="stmt" count="0"/>
+      <line num="79" type="stmt" count="0"/>
+      <line num="80" type="stmt" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="95" type="method" name="toArray" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="97" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="100" type="stmt" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="104" type="stmt" count="0"/>
+      <line num="105" type="stmt" count="0"/>
+      <line num="108" type="stmt" count="0"/>
+      <line num="109" type="stmt" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <metrics loc="115" ncloc="79" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="12" elements="35" coveredelements="14"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Category.php">
+      <class name="GlimeshClient\Objects\Category" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="51" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Channel.php">
+      <class name="GlimeshClient\Objects\Channel" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="203" ncloc="60" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChannelBan.php">
+      <class name="GlimeshClient\Objects\ChannelBan" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="56" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChannelModerationLog.php">
+      <class name="GlimeshClient\Objects\ChannelModerationLog" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="56" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChannelModerator.php">
+      <class name="GlimeshClient\Objects\ChannelModerator" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="84" ncloc="26" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChatMessage.php">
+      <class name="GlimeshClient\Objects\ChatMessage" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="65" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChatMessageToken/EmoteToken.php">
+      <class name="GlimeshClient\Objects\EmoteToken" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="45" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChatMessageToken/TextToken.php">
+      <class name="GlimeshClient\Objects\TextToken" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="31" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/ChatMessageToken/UrlToken.php">
+      <class name="GlimeshClient\Objects\UrlToken" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="38" ncloc="15" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Enums/AbstractEnumObject.php">
+      <class name="GlimeshClient\Objects\Enums\AbstractEnumObject" namespace="global">
+        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+      </class>
+      <line num="34" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <metrics loc="40" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Enums/ChannelStatus.php">
+      <class name="GlimeshClient\Objects\Enums\ChannelStatus" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="21" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Follower.php">
+      <class name="GlimeshClient\Objects\Follower" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="56" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Input/AbstractInputObjectModel.php">
+      <class name="GlimeshClient\Objects\Input\AbstractInputObjectModel" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="17" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Input/ChatMessageInput.php">
+      <class name="GlimeshClient\Objects\Input\ChatMessageInput" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="21" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Input/StreamMetadataInput.php">
+      <class name="GlimeshClient\Objects\Input\StreamMetadataInput" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="112" ncloc="34" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/RootMutationType.php">
+      <class name="GlimeshClient\Objects\RootMutationType" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="84" ncloc="26" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/RootQueryType.php">
+      <class name="GlimeshClient\Objects\RootQueryType" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="77" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/RootSubscriptionType.php">
+      <class name="GlimeshClient\Objects\RootSubscriptionType" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="35" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Stream.php">
+      <class name="GlimeshClient\Objects\Stream" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="147" ncloc="44" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/StreamMetadata.php">
+      <class name="GlimeshClient\Objects\StreamMetadata" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="140" ncloc="42" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Sub.php">
+      <class name="GlimeshClient\Objects\Sub" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="84" ncloc="26" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Subcategory.php">
+      <class name="GlimeshClient\Objects\Subcategory" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="84" ncloc="26" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/Tag.php">
+      <class name="GlimeshClient\Objects\Tag" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="63" ncloc="20" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/User.php">
+      <class name="GlimeshClient\Objects\User" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="141" ncloc="43" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Objects/UserSocial.php">
+      <class name="GlimeshClient\Objects\UserSocial" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="56" ncloc="18" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/mnt/f/git-projects/GlimeshClient/src/GlimeshClient/Traits/ObjectResolverTrait.php">
+      <class name="GlimeshClient\Traits\ObjectResolverTrait" namespace="global">
+        <metrics complexity="9" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="20" coveredelements="20"/>
+      </class>
+      <line num="77" type="method" name="getObject" visibility="public" complexity="4" crap="4" count="2"/>
+      <line num="79" type="stmt" count="2"/>
+      <line num="81" type="stmt" count="2"/>
+      <line num="82" type="stmt" count="1"/>
+      <line num="84" type="stmt" count="1"/>
+      <line num="85" type="stmt" count="1"/>
+      <line num="87" type="stmt" count="1"/>
+      <line num="88" type="stmt" count="1"/>
+      <line num="91" type="stmt" count="1"/>
+      <line num="93" type="stmt" count="1"/>
+      <line num="104" type="method" name="isDateField" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="106" type="stmt" count="1"/>
+      <line num="116" type="method" name="isArrayOfObjects" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="118" type="stmt" count="8"/>
+      <line num="128" type="method" name="resolveObjectKey" visibility="public" complexity="3" crap="3" count="8"/>
+      <line num="130" type="stmt" count="8"/>
+      <line num="131" type="stmt" count="3"/>
+      <line num="134" type="stmt" count="8"/>
+      <line num="135" type="stmt" count="4"/>
+      <line num="138" type="stmt" count="8"/>
+      <metrics loc="140" ncloc="93" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="20" coveredelements="20"/>
+    </file>
+    <metrics files="33" loc="2643" ncloc="1209" classes="7" methods="33" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="221" coveredstatements="133" elements="254" coveredelements="148"/>
+  </project>
+</coverage>

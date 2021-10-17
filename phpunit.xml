@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" executionOrder="depends,defects" beStrictAboutOutputDuringTests="true" cacheResult="false" verbose="true" colors="true">
-  <coverage processUncoveredFiles="true">
-    <include>
-      <directory suffix=".php">src/GlimeshClient/</directory>
-      <directory suffix=".php">bin/Builder/</directory>
-    </include>
-    <report>
-      <html outputDirectory="tests/reports/" lowUpperBound="50" highLowerBound="90"/>
-    </report>
-  </coverage>
-  <testsuites>
-    <testsuite name="GlimeshClient">
-      <directory suffix="Test.php">tests</directory>
-    </testsuite>
-  </testsuites>
-  <php>
-    <ini name="display_errors" value="true"/>
-  </php>
-  <logging/>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src/GlimeshClient/</directory>
+            <directory suffix=".php">bin/Builder/</directory>
+        </include>
+        <report>
+            <html outputDirectory="tests/reports/" lowUpperBound="50" highLowerBound="90"/>
+        </report>
+    </coverage>
+    <testsuites>
+        <testsuite name="GlimeshClient">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="display_errors" value="true"/>
+    </php>
+    <logging>
+        <log type="coverage-clover" target="clover.xml"/>
+    </logging>
 </phpunit>
