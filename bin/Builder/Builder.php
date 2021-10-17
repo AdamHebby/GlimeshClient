@@ -47,17 +47,6 @@ class Builder
     ];
 
     /**
-     * Links for Documentation
-     *
-     * @todo Implement
-     *
-     * @var array
-     */
-    public static $links = [
-
-    ];
-
-    /**
      * Hardcoded replacements, for things we don't want to implement
      *
      * @var array

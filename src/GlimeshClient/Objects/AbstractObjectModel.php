@@ -51,6 +51,13 @@ abstract class AbstractObjectModel
         return $this->$name ?? null;
     }
 
+    /**
+     * Get All possible properties, can exclude parameters
+     *
+     * @param array $exclude Parameters to exclude
+     *
+     * @return array
+     */
     public static function getAllKeys(array $exclude = []): array
     {
         $selfVars   = array_keys(get_class_vars(self::class));
@@ -59,6 +66,13 @@ abstract class AbstractObjectModel
         return array_diff($staticVars, $selfVars, $exclude);
     }
 
+    /**
+     * Get all Parameters that are not objects themselves, can exclude parameters
+     *
+     * @param array $exclude Parameters to exclude
+     *
+     * @return array
+     */
     public static function getAllNonObjectKeys(array $exclude = []): array
     {
         $selfVars   = array_keys(get_class_vars(self::class));
