@@ -4,6 +4,7 @@ namespace GlimeshClient\Builder;
 
 use GlimeshClient\Traits\ObjectResolverTrait;
 
+
 class Builder
 {
     public $schema = [];
@@ -168,7 +169,7 @@ class Builder
                 $type['description'] ?? 'Description not provided',
                 implode("\n", self::$standardDocBlock),
                 $type['name'],
-                trim(implode("\n", $fieldCode)),
+                rtrim(implode("\n", $fieldCode)),
             ],
             $code
         );

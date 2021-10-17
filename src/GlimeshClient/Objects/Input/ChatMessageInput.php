@@ -12,7 +12,7 @@ namespace GlimeshClient\Objects\Input;
  */
 class ChatMessageInput extends AbstractInputObjectModel
 {
-/**
+    /**
      * Description not provided
      *
      * @var string
