@@ -27,7 +27,7 @@ class Builder
      *
      * @var array
      */
-    public static $paths = [
+    public $paths = [
         'INTERFACE'     => 'src/GlimeshClient/Interfaces',
         'OBJECT'        => 'src/GlimeshClient/Objects',
         'INPUT_OBJECT'  => 'src/GlimeshClient/Objects/Input',
@@ -279,7 +279,7 @@ class Builder
      */
     public function build()
     {
-        $accepts = array_keys(self::$paths);
+        $accepts = array_keys($this->paths);
 
         foreach ($this->schema as $type) {
             if (!in_array($type['kind'], $accepts) || substr($type['name'], 0, 2) === '__') {
@@ -287,7 +287,7 @@ class Builder
             }
 
             $code = null;
-            $path = self::$paths[$type['kind']] ?? null;
+            $path = $this->paths[$type['kind']] ?? null;
 
             if (!empty($type['interfaces'])) {
                 $path .= '/' . $type['interfaces'][0]['name'];
@@ -314,6 +314,11 @@ class Builder
 
             if ($code !== null && $path !== null) {
                 echo "$path/{$type['name']}.php \n";
+
+                if (!file_exists($path)) {
+                    mkdir($path);
+                }
+
                 file_put_contents(
                     "$path/{$type['name']}.php",
                     $code

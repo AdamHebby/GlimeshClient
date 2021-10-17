@@ -8,6 +8,8 @@ use ReflectionObject;
 
 class BuilderTest extends TestCase
 {
+    public const DIR = '/tmp/BuilderTest';
+
     public function testConstruct()
     {
         $builder = new Builder(__DIR__ . '/../../../etc/api.json');
@@ -15,6 +17,24 @@ class BuilderTest extends TestCase
         $this->assertIsArray($builder->schema);
         $this->assertNotEmpty($builder->schema);
     }
+
+    public function setUp(): void
+    {
+        mkdir(static::DIR);
+    }
+
+    protected function tearDown(): void
+    {
+        // yoink https://stackoverflow.com/questions/7288029/php-delete-directory-that-is-not-empty
+        $it = new \RecursiveDirectoryIterator(static::DIR, \FilesystemIterator::SKIP_DOTS);
+        $it = new \RecursiveIteratorIterator($it, \RecursiveIteratorIterator::CHILD_FIRST);
+        foreach($it as $file) {
+            if ($file->isDir()) rmdir($file->getPathname());
+            else unlink($file->getPathname());
+        }
+        rmdir(static::DIR);
+    }
+
     public function testResolveField()
     {
         $this->assertEquals(
@@ -346,21 +366,158 @@ class BuilderTest extends TestCase
         $builder = new Builder(__DIR__ . '/../../../etc/api.json');
 
         foreach ($builder->schema as $type) {
-            if ($type['name'] === 'Follower') {
-                $object = $builder->buildObject($type);
+            if ($type['name'] === 'EmoteToken') {
+                $object = Builder::buildObject($type);
 
-                $object = str_replace('class Follower', 'class FollowerTest', $object);
+                $object = str_replace('class EmoteToken', 'class EmoteTokenTest', $object);
 
                 $rand = uniqid(__FUNCTION__);
-                file_put_contents("/tmp/$rand.php", $object);
+                file_put_contents(static::DIR . "/$rand.php", $object);
 
-                require_once("/tmp/$rand.php");
+                require_once(static::DIR . "/$rand.php");
 
-                $ref = new \ReflectionClass('\GlimeshClient\Objects\FollowerTest');
+                $ref = new \ReflectionClass('\GlimeshClient\Objects\EmoteTokenTest');
 
-                $this->assertSame('FollowerTest', $ref->getShortName());
-                $this->assertCount(8, $ref->getProperties());
+                $this->assertSame('EmoteTokenTest', $ref->getShortName());
+                $this->assertCount(6, $ref->getProperties());
             }
         }
+    }
+
+    public function testBuiltInputObject()
+    {
+        $builder = new Builder(__DIR__ . '/../../../etc/api.json');
+
+        foreach ($builder->schema as $type) {
+            if ($type['name'] === 'ChatMessageInput') {
+                $object = Builder::buildInputObject($type);
+
+                $object = str_replace('class ChatMessageInput', 'class ChatMessageInputTest', $object);
+
+                $rand = uniqid(__FUNCTION__);
+                file_put_contents(static::DIR . "/$rand.php", $object);
+
+                require_once(static::DIR . "/$rand.php");
+
+                $ref = new \ReflectionClass('\GlimeshClient\Objects\Input\ChatMessageInputTest');
+
+                $this->assertSame('ChatMessageInputTest', $ref->getShortName());
+                $this->assertCount(3, $ref->getProperties());
+            }
+        }
+    }
+    public function testBuiltInterface()
+    {
+        $builder = new Builder(__DIR__ . '/../../../etc/api.json');
+
+        $cmt = [];
+        $et = [];
+        foreach ($builder->schema as $type) {
+            if ($type['name'] === 'ChatMessageToken') {
+                $cmt = $type;
+            }
+            if ($type['name'] === 'EmoteToken') {
+                $et = $type;
+            }
+        }
+
+        $interface = Builder::buildInterface($cmt);
+
+        $interface = str_replace('interface ChatMessageToken', 'interface ChatMessageTokenTest', $interface);
+
+        $randInterface = uniqid(__FUNCTION__);
+        file_put_contents(static::DIR . "/$randInterface.php", $interface);
+
+        require_once(static::DIR . "/$randInterface.php");
+
+
+        $object = Builder::buildObject($et);
+
+        $object = str_replace('class EmoteToken', 'class EmoteTokenTestTwo', $object);
+        $object = str_replace('ChatMessageToken', 'ChatMessageTokenTest', $object);
+
+        $rand = uniqid(__FUNCTION__);
+        file_put_contents(static::DIR . "/$rand.php", $object);
+
+        require_once(static::DIR . "/$rand.php");
+
+        $ref = new \ReflectionClass('\GlimeshClient\Objects\EmoteTokenTestTwo');
+
+        $this->assertSame('EmoteTokenTestTwo', $ref->getShortName());
+        $this->assertCount(6, $ref->getProperties());
+    }
+
+
+    public function testBuiltEnumObject()
+    {
+        $builder = new Builder(__DIR__ . '/../../../etc/api.json');
+
+        foreach ($builder->schema as $type) {
+            if ($type['name'] === 'ChannelStatus') {
+                $object = Builder::buildENUM($type);
+
+                $object = str_replace('class ChannelStatus', 'class ChannelStatusTest', $object);
+
+                $rand = uniqid(__FUNCTION__);
+                file_put_contents(static::DIR . "/$rand.php", $object);
+
+                require_once(static::DIR . "/$rand.php");
+
+                $ref = new \ReflectionClass('\GlimeshClient\Objects\Enums\ChannelStatusTest');
+
+                $this->assertSame('ChannelStatusTest', $ref->getShortName());
+                $this->assertCount(3, $ref->getProperties());
+            }
+        }
+    }
+
+    public function testBuildFull()
+    {
+        $builder = new Builder(__DIR__ . '/../../../etc/api.json');
+
+        $builder->paths = [
+            'INTERFACE'     => '/tmp/BuilderTest',
+            'OBJECT'        => '/tmp/BuilderTest',
+            'INPUT_OBJECT'  => '/tmp/BuilderTest',
+            'ENUM'          => '/tmp/BuilderTest',
+        ];
+
+        $builder->build();
+        $paths = [];
+
+        $it = new \RecursiveDirectoryIterator(static::DIR, \FilesystemIterator::SKIP_DOTS);
+        $it = new \RecursiveIteratorIterator($it, \RecursiveIteratorIterator::CHILD_FIRST);
+        foreach($it as $file) {
+            if (!$file->isDir()) $paths[] = $file->getPathname();
+        }
+
+        sort($paths);
+
+        $this->assertEquals([
+            static::DIR . '/Category.php',
+            static::DIR . '/Channel.php',
+            static::DIR . '/ChannelBan.php',
+            static::DIR . '/ChannelModerationLog.php',
+            static::DIR . '/ChannelModerator.php',
+            static::DIR . '/ChannelStatus.php',
+            static::DIR . '/ChatMessage.php',
+            static::DIR . '/ChatMessageInput.php',
+            static::DIR . '/ChatMessageToken.php',
+            static::DIR . '/ChatMessageToken/EmoteToken.php',
+            static::DIR . '/ChatMessageToken/TextToken.php',
+            static::DIR . '/ChatMessageToken/UrlToken.php',
+            static::DIR . '/Follower.php',
+            static::DIR . '/RootMutationType.php',
+            static::DIR . '/RootQueryType.php',
+            static::DIR . '/RootSubscriptionType.php',
+            static::DIR . '/Stream.php',
+            static::DIR . '/StreamMetadata.php',
+            static::DIR . '/StreamMetadataInput.php',
+            static::DIR . '/Sub.php',
+            static::DIR . '/Subcategory.php',
+            static::DIR . '/Tag.php',
+            static::DIR . '/User.php',
+            static::DIR . '/UserSocial.php',
+        ], array_values($paths));
     }
 }
