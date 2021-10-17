@@ -4,7 +4,8 @@
     "type": "library",
     "license": "GPL-3.0-or-later",
     "scripts": {
-        "test": "phpunit --coverage-clover clover.xml"
+        "test": "phpunit --coverage-clover clover.xml",
+        "coverage": "php-coveralls -v"
     },
     "authors": [
         {

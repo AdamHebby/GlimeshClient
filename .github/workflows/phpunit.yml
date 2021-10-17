@@ -34,4 +34,4 @@ jobs:
     - name: Upload coverage results to Coveralls
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: php-coveralls --coverage_clover=clover.xml -v
+      run: composer run-script coverage
