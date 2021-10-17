@@ -98,8 +98,7 @@ class Builder
         $resolvedType = ObjectResolverTrait::resolveObjectKey($fieldName);
 
         if ($resolvedType !== null) {
-            $reflect = new \ReflectionClass($resolvedType);
-            $resolvedType = $reflect->getShortName();
+            $resolvedType = preg_replace('/(.*?)\\\([a-z]+)$/i', "$2", $resolvedType);
         }
 
         if ($resolvedType === null && isset($field['type']['ofType']['name'])) {
@@ -152,21 +151,37 @@ class Builder
             return null;
         }
 
-        $fieldsCode = file_get_contents(__DIR__ . '/resources/field.php.txt');
-
-        return str_replace(
+        return self::replaceValues(
+            __DIR__ . '/resources/field.php.txt',
             [
-                '%BUILDER_FIELD_DESCRIPTION%',
-                '%BUILDER_FIELD_TYPE%',
-                '%BUILDER_FIELD_NAME%',
-            ],
-            [
-                $field['description'] ?? 'Description not provided',
-                self::resolveField($field),
-                $field['name']
-            ],
-            $fieldsCode
+                '%BUILDER_FIELD_DESCRIPTION%' => $field['description'] ?? 'Description not provided',
+                '%BUILDER_FIELD_TYPE%' => self::resolveField($field),
+                '%BUILDER_FIELD_NAME%' => $field['name']
+            ]
         );
+    }
+
+    public static function replaceValues(string $filename, array $replace): string
+    {
+        $code = file_get_contents($filename);
+
+        return str_replace(array_keys($replace), array_values($replace), $code);
+    }
+
+    /**
+     * Builds all fields from array using buildField
+     *
+     * @param array $fieldArray
+     *
+     * @return string
+     */
+    public static function buildFields(array $fieldArray): string
+    {
+        $code = (array_map(function ($field) {
+            return self::buildField($field);
+        }, $fieldArray));
+
+        return rtrim(implode("\n", $code));
     }
 
     /**
@@ -187,30 +202,16 @@ class Builder
             $use .= "use GlimeshClient\Objects\AbstractObjectModel;\n";
         }
 
-        $fieldCode = array_map(function ($field) {
-            return self::buildField($field);
-        }, $fields);
-
-        $code = file_get_contents(__DIR__ . '/resources/object.php.txt');
-
-        return str_replace(
+        return self::replaceValues(
+            __DIR__ . '/resources/object.php.txt',
             [
-                '%BUILDER_USE%',
-                '%BUILDER_DESCRIPTION%',
-                '%BUILDER_STANDARD_DOCBLOCK%',
-                '%BUILDER_NAME%',
-                '%BUILDER_INTERFACES%',
-                '%BUILDER_FIELDS%',
-            ],
-            [
-                $use,
-                $type['description'] ?? 'Description not provided',
-                implode("\n", self::$standardDocBlock),
-                $type['name'],
-                $interfaces,
-                rtrim(implode("\n", $fieldCode)),
-            ],
-            $code
+                '%BUILDER_USE%' => $use,
+                '%BUILDER_DESCRIPTION%' => $type['description'] ?? 'Description not provided',
+                '%BUILDER_STANDARD_DOCBLOCK%' => implode("\n", self::$standardDocBlock),
+                '%BUILDER_NAME%' => $type['name'],
+                '%BUILDER_INTERFACES%' => $interfaces,
+                '%BUILDER_FIELDS%' => self::buildFields($fields),
+            ]
         );
     }
 
@@ -223,28 +224,14 @@ class Builder
      */
     public static function buildInputObject(array $type): string
     {
-        $fields = $type['inputFields'];
-
-        $fieldCode = array_map(function ($field) {
-            return self::buildField($field);
-        }, $fields);
-
-        $code = file_get_contents(__DIR__ . '/resources/input_object.php.txt');
-
-        return str_replace(
+        return self::replaceValues(
+            __DIR__ . '/resources/input_object.php.txt',
             [
-                '%BUILDER_DESCRIPTION%',
-                '%BUILDER_STANDARD_DOCBLOCK%',
-                '%BUILDER_NAME%',
-                '%BUILDER_FIELDS%',
-            ],
-            [
-                $type['description'] ?? 'Description not provided',
-                implode("\n", self::$standardDocBlock),
-                $type['name'],
-                rtrim(implode("\n", $fieldCode)),
-            ],
-            $code
+                '%BUILDER_DESCRIPTION%' => $type['description'] ?? 'Description not provided',
+                '%BUILDER_STANDARD_DOCBLOCK%' => implode("\n", self::$standardDocBlock),
+                '%BUILDER_NAME%' => $type['name'],
+                '%BUILDER_FIELDS%' => self::buildFields($type['inputFields']),
+            ]
         );
     }
 
@@ -257,20 +244,13 @@ class Builder
      */
     public static function buildInterface(array $type): string
     {
-        $code = file_get_contents(__DIR__ . '/resources/interface.php.txt');
-
-        return str_replace(
+        return self::replaceValues(
+            __DIR__ . '/resources/interface.php.txt',
             [
-                '%BUILDER_DESCRIPTION%',
-                '%BUILDER_STANDARD_DOCBLOCK%',
-                '%BUILDER_NAME%',
-            ],
-            [
-                $type['description'] ?? 'Description not provided',
-                implode("\n", self::$standardDocBlock),
-                $type['name'],
-            ],
-            $code
+                '%BUILDER_DESCRIPTION%' => $type['description'] ?? 'Description not provided',
+                '%BUILDER_STANDARD_DOCBLOCK%' => implode("\n", self::$standardDocBlock),
+                '%BUILDER_NAME%' => $type['name'],
+            ]
         );
     }
 
@@ -291,27 +271,15 @@ class Builder
             return "    public const {$enum['name']} = \"{$enum['name']}\";";
         }, $type['enumValues'] ?? []);
 
-        $fieldsCode = implode("\n", $fieldsCode);
-        $possibleValues = implode(",\n", $possibleValues);
-
-        $code = file_get_contents(__DIR__ . '/resources/enum.php.txt');
-
-        return str_replace(
+        return self::replaceValues(
+            __DIR__ . '/resources/enum.php.txt',
             [
-                '%BUILDER_DESCRIPTION%',
-                '%BUILDER_STANDARD_DOCBLOCK%',
-                '%BUILDER_NAME%',
-                '%BUILDER_POSSIBLE_VALUES%',
-                '%BUILDER_FIELDS%',
-            ],
-            [
-                $type['description'] ?? 'Description not provided',
-                implode("\n", self::$standardDocBlock),
-                $type['name'],
-                $possibleValues,
-                $fieldsCode,
-            ],
-            $code
+                '%BUILDER_DESCRIPTION%' => $type['description'] ?? 'Description not provided',
+                '%BUILDER_STANDARD_DOCBLOCK%' => implode("\n", self::$standardDocBlock),
+                '%BUILDER_NAME%' => $type['name'],
+                '%BUILDER_POSSIBLE_VALUES%' => implode(",\n", $possibleValues),
+                '%BUILDER_FIELDS%' => implode("\n", $fieldsCode),
+            ]
         );
     }
 
