@@ -6,6 +6,11 @@ use GlimeshClient\Traits\ObjectResolverTrait;
 
 /**
  * Standard Object for all Objects / Models used by Glimesh
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 abstract class AbstractObjectModel
 {

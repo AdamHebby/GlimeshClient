@@ -8,6 +8,14 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Tests the OAuthFile Adapter Authentication logic
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient_Tests
+ */
 class OAuthFileAdapterTest extends TestCase
 {
     public function testNoAuthIsExpired()

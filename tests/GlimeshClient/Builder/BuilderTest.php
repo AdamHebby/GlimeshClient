@@ -4,8 +4,15 @@ namespace GlimeshClient\Tests;
 
 use GlimeshClient\Builder\Builder;
 use PHPUnit\Framework\TestCase;
-use ReflectionObject;
 
+/**
+ * Tests the Builder class, from start to finish, rather complex
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient_Tests
+ */
 class BuilderTest extends TestCase
 {
     public const DIR = '/tmp/BuilderTest';

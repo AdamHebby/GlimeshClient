@@ -3,11 +3,17 @@
 namespace GlimeshClient\Tests\Objects;
 
 use GlimeshClient\Objects\Category;
-use GlimeshClient\Objects\Channel;
 use GlimeshClient\Objects\Stream;
-use GlimeshClient\Objects\Subcategory;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Tests the AbstractObjectModel using Objects
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient_Tests
+ */
 class AbstractObjectModelTest extends TestCase
 {
     public function testConstruct()

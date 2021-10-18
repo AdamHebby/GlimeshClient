@@ -2,16 +2,20 @@
 
 namespace GlimeshClient\Tests\Traits;
 
-use ArrayObject;
-use GlimeshClient\Objects\Follower;
 use GlimeshClient\Objects\User;
 use GlimeshClient\Traits\ObjectResolverTrait;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Tests the ObjectResolverTrait Logic
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient_Tests
+ */
 class ObjectResolverTraitTest extends TestCase
 {
-    use ObjectResolverTrait;
-
     public function testObjectInstantiation()
     {
         $data = [
@@ -56,7 +60,7 @@ class ObjectResolverTraitTest extends TestCase
         ];
 
 
-        $object = self::getObject('user', $data);
+        $object = ObjectResolverTrait::getObject('user', $data);
 
         $this->assertIsObject($object);
         $this->assertInstanceOf(User::class, $object);
