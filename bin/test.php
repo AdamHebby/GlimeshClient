@@ -3,7 +3,10 @@
 use GlimeshClient\Adapters\Authentication\ClientIDAuth;
 use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
 use GlimeshClient\Client;
+use GlimeshClient\Objects\Category;
+use GlimeshClient\Objects\Channel;
 use GlimeshClient\Objects\Enums\ChannelStatus;
+use GlimeshClient\Objects\Stream;
 use GraphQL\Query;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use Symfony\Component\Dotenv\Dotenv;
@@ -36,16 +39,8 @@ $client = new Client(
 
 $object = ($client->makeRequest(
     (new Query('channels'))->setSelectionSet([
-        'id',
-        (new Query('stream'))->setSelectionSet([
-            'thumbnail',
-        ]),
+        'id'
     ])->setArguments(['status' => 'ENUM:' . ChannelStatus::LIVE])
 ));
 
-foreach ($object as $o) {
-    /**
-     * @var Channel $o
-     */
-    var_dump($o->getAllNonObjectKeys());
-}
+var_dump($object);

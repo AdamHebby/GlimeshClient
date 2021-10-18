@@ -84,7 +84,7 @@ final class OAuthFileAdapter implements AuthenticationAdapter
 
         // Calculate the expiration date
         $dt = (new \DateTime($this->auth->created_at))->add(
-            new \DateInterval('PT' . ($this->auth->expires_in ?? 0) . 'H')
+            new \DateInterval('PT' . ($this->auth->expires_in ?? 0) . 'S')
         );
 
         // expired?

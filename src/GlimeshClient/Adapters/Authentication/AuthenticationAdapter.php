@@ -24,6 +24,8 @@ interface AuthenticationAdapter
      *
      * @param \GuzzleHttp\Client $client
      *
+     * @throws \Exception When Authentication fails
+     *
      * @return void
      */
     public function authenticate(\GuzzleHttp\Client $client): void;

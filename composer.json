@@ -20,6 +20,10 @@
             "GlimeshClient\\Builder\\": "bin/Builder/"
         }
     },
+    "suggest": {
+        "monolog/monolog": "For Logging the Client usage (Any PSR Logger will work)",
+        "symfony/cache": "For caching requests to Glimesh and reducing server load (Any PSR Cache will work)"
+    },
     "require": {
         "guzzlehttp/guzzle": "^7.3",
         "psr/log": "^1.1",
