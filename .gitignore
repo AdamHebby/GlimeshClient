@@ -3,3 +3,4 @@ vendor
 data
 tests/reports/
 .env
+composer.lock
