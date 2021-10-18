@@ -47,6 +47,7 @@ trait ObjectResolverTrait
         'category'              => \GlimeshClient\Objects\Category::class,
         'channel'               => \GlimeshClient\Objects\Channel::class,
         'chatmessage'           => \GlimeshClient\Objects\ChatMessage::class,
+        'chatMessage'           => \GlimeshClient\Objects\ChatMessage::class,
         'metadata'              => \GlimeshClient\Objects\StreamMetadata::class,
         'moderationlog'         => \GlimeshClient\Objects\ChannelModerationLog::class,
         'moderator'             => \GlimeshClient\Objects\ChannelModerator::class,

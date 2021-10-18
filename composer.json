@@ -27,7 +27,8 @@
     "require": {
         "guzzlehttp/guzzle": "^7.3",
         "psr/log": "^1.1",
-        "gmostafa/php-graphql-client": "^1.13"
+        "gmostafa/php-graphql-client": "^1.13",
+        "ratchet/pawl": "^0.3.5"
     },
     "require-dev": {
         "phpunit/php-code-coverage": "^9.2",

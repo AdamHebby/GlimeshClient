@@ -72,6 +72,11 @@ final class OAuthFileAdapter implements AuthenticationAdapter
             : "{$this->auth->token_type} {$this->auth->access_token}";
     }
 
+    public function getAccessToken(): string
+    {
+        return $this->auth->access_token;
+    }
+
     /**
      * @inheritDoc
      */
