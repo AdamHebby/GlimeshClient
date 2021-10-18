@@ -313,8 +313,6 @@ class Builder
 
 
             if ($code !== null && $path !== null) {
-                echo "$path/{$type['name']}.php \n";
-
                 if (!file_exists($path)) {
                     mkdir($path);
                 }

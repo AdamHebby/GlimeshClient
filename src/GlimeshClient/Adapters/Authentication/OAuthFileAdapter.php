@@ -3,16 +3,51 @@
 namespace GlimeshClient\Adapters\Authentication;
 
 /**
- * Client ID only
+ * OAuth File Adapter Authentication, uses a JSON file to update auth, will keep updating
+ * the file
+ *
+ * @author Adam Hebden <adam@adamhebden.com>
+ * @copyright 2021 Adam Hebden
+ * @license GPL-3.0-or-later
+ * @package GlimeshClient
  */
 final class OAuthFileAdapter implements AuthenticationAdapter
 {
-    private $clientId = null;
-    private $clientSecret = null;
-    private $jsonFile = null;
+    /**
+     * Stored Client ID for the auth
+     *
+     * @var string
+     */
+    private $clientId;
 
-    private $auth = null;
+    /**
+     * Stored Client Secret for the auth
+     *
+     * @var string
+     */
+    private $clientSecret;
 
+    /**
+     * JSON File path for storing auth
+     *
+     * @var string
+     */
+    private $jsonFile;
+
+    /**
+     * Stored Authentication object
+     *
+     * @var object
+     */
+    private $auth;
+
+    /**
+     * Constructor for OAuth
+     *
+     * @param string $clientId Your Glimesh Client ID
+     * @param string $clientSecret Your Glimesh Client Secret
+     * @param string $jsonFile JSON File path to store auth details in
+     */
     public function __construct(
         string $clientId,
         string $clientSecret,
@@ -27,6 +62,9 @@ final class OAuthFileAdapter implements AuthenticationAdapter
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getAuthentication(): ?string
     {
         return $this->isExpired()
@@ -34,22 +72,31 @@ final class OAuthFileAdapter implements AuthenticationAdapter
             : "{$this->auth->token_type} {$this->auth->access_token}";
     }
 
+    /**
+     * @inheritDoc
+     */
     public function isExpired(): bool
     {
-        if (!isset($this->auth) || !isset($this->auth->created_at)) {
-            return false;
+        // No / invalid auth stored
+        if (empty($this->auth) || !isset($this->auth->created_at)) {
+            return true;
         }
 
+        // Calculate the expiration date
         $dt = (new \DateTime($this->auth->created_at))->add(
             new \DateInterval('PT' . ($this->auth->expires_in ?? 0) . 'H')
         );
 
+        // expired?
         return (new \DateTime()) >= $dt;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function authenticate(\GuzzleHttp\Client $client): void
     {
-        if ($this->isExpired() === false) {
+        if ($this->isExpired()) {
             $res = $client->request('POST', 'https://glimesh.tv/api/oauth/token', [
                 'query' => [
                     'grant_type'    => 'client_credentials',
@@ -67,8 +114,15 @@ final class OAuthFileAdapter implements AuthenticationAdapter
         }
     }
 
+    /**
+     * Store the Auth details into a JSON file
+     *
+     * @return void
+     */
     protected function saveAuth(): void
     {
-        file_put_contents($this->jsonFile, json_encode($this->auth));
+        if (!empty($this->auth)) {
+            file_put_contents($this->jsonFile, json_encode($this->auth));
+        }
     }
 }
