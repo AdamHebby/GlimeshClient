@@ -26,7 +26,6 @@ class Category extends AbstractObjectModel
      */
     protected $name;
 
-
     /**
      * Slug of the category
      *
@@ -40,7 +39,6 @@ class Category extends AbstractObjectModel
      * @var \ArrayObject<Subcategory>
      */
     protected $subcategories;
-
 
     /**
      * Tags associated with the category

@@ -33,8 +33,6 @@ class ChatMessage extends AbstractObjectModel
      */
     protected $insertedAt;
 
-
-
     /**
      * The chat message.
      *

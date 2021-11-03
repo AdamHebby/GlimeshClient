@@ -110,7 +110,6 @@ class User extends AbstractObjectModel
      */
     protected $socialInstagram;
 
-
     /**
      * Qualified URL for the user's YouTube account
      *
