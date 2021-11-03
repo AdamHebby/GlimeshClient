@@ -13,119 +13,119 @@ namespace GlimeshClient\Objects;
 class Stream extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Average chatters during the stream
      *
      * @var int
      */
     protected $avgChatters;
 
     /**
-     * Description not provided
+     * Average viewers during the stream
      *
      * @var int
      */
     protected $avgViewers;
 
     /**
-     * Description not provided
+     * The category the current stream is in
      *
      * @var Category
      */
     protected $category;
 
     /**
-     * Description not provided
+     * Channel running with the stream
      *
      * @var Channel
      */
     protected $channel;
 
     /**
-     * Description not provided
+     * Concurrent chatters during last snapshot
      *
      * @var int
      */
     protected $countChatters;
 
     /**
-     * Description not provided
+     * Concurrent viewers during last snapshot
      *
      * @var int
      */
     protected $countViewers;
 
     /**
-     * Description not provided
+     * Datetime of when the stream ended, or null if still going
      *
      * @var \DateTime
      */
     protected $endedAt;
 
     /**
-     * Description not provided
+     * Unique stream identifier
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Stream created date
      *
      * @var \DateTime
      */
     protected $insertedAt;
 
     /**
-     * Description not provided
+     * Current stream metadata
      *
      * @var \ArrayObject<StreamMetadata>
      */
     protected $metadata;
 
     /**
-     * Description not provided
+     * Total new subscribers gained during the stream
      *
      * @var int
      */
     protected $newSubscribers;
 
     /**
-     * Description not provided
+     * Peak concurrent chatters
      *
      * @var int
      */
     protected $peakChatters;
 
     /**
-     * Description not provided
+     * Peak concurrent viewers
      *
      * @var int
      */
     protected $peakViewers;
 
     /**
-     * Description not provided
+     * Total resubscribers during the stream
      *
      * @var int
      */
     protected $resubSubscribers;
 
     /**
-     * Description not provided
+     * Datetime of when the stream was started
      *
      * @var \DateTime
      */
     protected $startedAt;
 
     /**
-     * Description not provided
+     * The subategory the current stream is in
      *
      * @var Subcategory
      */
     protected $subcategory;
 
     /**
-     * Description not provided
+     * Thumbnail URL of the stream
      *
      * @var string
      */
@@ -139,7 +139,7 @@ class Stream extends AbstractObjectModel
     protected $title;
 
     /**
-     * Description not provided
+     * Stream updated date
      *
      * @var \DateTime
      */

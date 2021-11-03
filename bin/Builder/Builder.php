@@ -170,6 +170,8 @@ class Builder
             return self::buildField($field);
         }, $fieldArray));
 
+        $code = array_filter($code);
+
         return rtrim(implode("\n", $code));
     }
 

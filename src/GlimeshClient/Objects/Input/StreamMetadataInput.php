@@ -13,98 +13,98 @@ namespace GlimeshClient\Objects\Input;
 class StreamMetadataInput extends AbstractInputObjectModel
 {
     /**
-     * Description not provided
+     * Stream audio codec
      *
      * @var string
      */
     protected $audioCodec;
 
     /**
-     * Description not provided
+     * Ingest Server URL
      *
      * @var string
      */
     protected $ingestServer;
 
     /**
-     * Description not provided
+     * Viewers on the ingest
      *
      * @var int
      */
     protected $ingestViewers;
 
     /**
-     * Description not provided
+     * Lost stream input data packets
      *
      * @var int
      */
     protected $lostPackets;
 
     /**
-     * Description not provided
+     * Negative Acknowledged stream input data packets
      *
      * @var int
      */
     protected $nackPackets;
 
     /**
-     * Description not provided
+     * Received stream input data packets
      *
      * @var int
      */
     protected $recvPackets;
 
     /**
-     * Description not provided
+     * Bitrate at the source
      *
      * @var int
      */
     protected $sourceBitrate;
 
     /**
-     * Description not provided
+     * Ping to the source
      *
      * @var int
      */
     protected $sourcePing;
 
     /**
-     * Description not provided
+     * Current Stream time in seconds
      *
      * @var int
      */
     protected $streamTimeSeconds;
 
     /**
-     * Description not provided
+     * Client vendor name
      *
      * @var string
      */
     protected $vendorName;
 
     /**
-     * Description not provided
+     * Client vendor version
      *
      * @var string
      */
     protected $vendorVersion;
 
     /**
-     * Description not provided
+     * Stream video codec
      *
      * @var string
      */
     protected $videoCodec;
 
     /**
-     * Description not provided
+     * Stream video height
      *
      * @var int
      */
     protected $videoHeight;
 
     /**
-     * Description not provided
+     * Stream video width
      *
      * @var int
      */

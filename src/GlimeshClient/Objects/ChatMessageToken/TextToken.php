@@ -6,7 +6,7 @@ use GlimeshClient\Interfaces\ChatMessageToken;
 use GlimeshClient\Objects\AbstractObjectModel;
 
 /**
- * Description not provided
+ * Chat Message Text Token
  *
  * @author Adam Hebden <adam@adamhebden.com>
  * @copyright 2021 Adam Hebden
@@ -16,14 +16,14 @@ use GlimeshClient\Objects\AbstractObjectModel;
 class TextToken extends AbstractObjectModel implements ChatMessageToken
 {
     /**
-     * Description not provided
+     * Token text
      *
      * @var string
      */
     protected $text;
 
     /**
-     * Description not provided
+     * Token type
      *
      * @var string
      */

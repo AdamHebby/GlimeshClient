@@ -13,21 +13,21 @@ namespace GlimeshClient\Objects;
 class User extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * User Avatar
      *
      * @var string
      */
     protected $avatar;
 
     /**
-     * Description not provided
+     * URL to the user's avatar
      *
      * @var string
      */
     protected $avatarUrl;
 
     /**
-     * Description not provided
+     * Datetime the user confirmed their email address
      *
      * @var \DateTime
      */
@@ -69,7 +69,7 @@ class User extends AbstractObjectModel
     protected $following;
 
     /**
-     * Description not provided
+     * Unique User identifier
      *
      * @var string
      */
@@ -109,7 +109,6 @@ class User extends AbstractObjectModel
      * @var string
      */
     protected $socialInstagram;
-
 
     /**
      * Qualified URL for the user's YouTube account

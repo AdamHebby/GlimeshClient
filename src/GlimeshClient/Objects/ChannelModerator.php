@@ -13,70 +13,70 @@ namespace GlimeshClient\Objects;
 class ChannelModerator extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Can ban a user
      *
      * @var boolean
      */
     protected $canBan;
 
     /**
-     * Description not provided
+     * Can delete a message
      *
      * @var boolean
      */
     protected $canDelete;
 
     /**
-     * Description not provided
+     * Can perform a long timeout action
      *
      * @var boolean
      */
     protected $canLongTimeout;
 
     /**
-     * Description not provided
+     * Can perform a short timeout action
      *
      * @var boolean
      */
     protected $canShortTimeout;
 
     /**
-     * Description not provided
+     * Can untimeout a user
      *
      * @var boolean
      */
     protected $canUnTimeout;
 
     /**
-     * Description not provided
+     * Can unban a user
      *
      * @var boolean
      */
     protected $canUnban;
 
     /**
-     * Description not provided
+     * Channel the moderator can moderate in
      *
      * @var Channel
      */
     protected $channel;
 
     /**
-     * Description not provided
+     * Moderator creation date
      *
      * @var \DateTime
      */
     protected $insertedAt;
 
     /**
-     * Description not provided
+     * Moderator updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * Moderating User
      *
      * @var User
      */

@@ -13,70 +13,70 @@ namespace GlimeshClient\Objects;
 class Sub extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * When the subscription ended
      *
      * @var \DateTime
      */
     protected $endedAt;
 
     /**
-     * Description not provided
+     * Subscription unique identifier
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Subscription created date
      *
      * @var \DateTime
      */
     protected $insertedAt;
 
     /**
-     * Description not provided
+     * Is the subscription currently active?
      *
      * @var boolean
      */
     protected $isActive;
 
     /**
-     * Description not provided
+     * Price of the subscription
      *
      * @var int
      */
     protected $price;
 
     /**
-     * Description not provided
+     * Subscription product name
      *
      * @var string
      */
     protected $productName;
 
     /**
-     * Description not provided
+     * When the subscription started
      *
      * @var \DateTime
      */
     protected $startedAt;
 
     /**
-     * Description not provided
+     * The streamer receiving the support from the subscription
      *
      * @var User
      */
     protected $streamer;
 
     /**
-     * Description not provided
+     * Subscription updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * The user giving the support with the subscription
      *
      * @var User
      */

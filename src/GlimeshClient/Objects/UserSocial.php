@@ -27,7 +27,7 @@ class UserSocial extends AbstractObjectModel
     protected $identifier;
 
     /**
-     * Description not provided
+     * User socials created date
      *
      * @var \DateTime
      */
@@ -41,7 +41,7 @@ class UserSocial extends AbstractObjectModel
     protected $platform;
 
     /**
-     * Description not provided
+     * User socials updated date
      *
      * @var \DateTime
      */

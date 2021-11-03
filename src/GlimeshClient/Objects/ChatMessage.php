@@ -13,27 +13,25 @@ namespace GlimeshClient\Objects;
 class ChatMessage extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Channel where the chat message occurs
      *
      * @var Channel
      */
     protected $channel;
 
     /**
-     * Description not provided
+     * Unique chat message identifier
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Chat message creation date
      *
      * @var \DateTime
      */
     protected $insertedAt;
-
-
 
     /**
      * The chat message.
@@ -43,21 +41,21 @@ class ChatMessage extends AbstractObjectModel
     protected $message;
 
     /**
-     * Description not provided
+     * List of chat message tokens used
      *
      * @var \ArrayObject<ChatMessageToken>
      */
     protected $tokens;
 
     /**
-     * Description not provided
+     * Chat message updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * User who sent the chat message
      *
      * @var User
      */

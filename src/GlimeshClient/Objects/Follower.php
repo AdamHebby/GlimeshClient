@@ -13,42 +13,42 @@ namespace GlimeshClient\Objects;
 class Follower extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Does this follower have live notifications enabled?
      *
      * @var boolean
      */
     protected $hasLiveNotifications;
 
     /**
-     * Description not provided
+     * Unique follower identifier
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Following creation date
      *
      * @var \DateTime
      */
     protected $insertedAt;
 
     /**
-     * Description not provided
+     * The streamer the user is following
      *
      * @var User
      */
     protected $streamer;
 
     /**
-     * Description not provided
+     * Following updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * The user that is following the streamer
      *
      * @var User
      */
