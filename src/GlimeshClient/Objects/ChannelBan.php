@@ -13,42 +13,42 @@ namespace GlimeshClient\Objects;
 class ChannelBan extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Channel the ban affects
      *
      * @var Channel
      */
     protected $channel;
 
     /**
-     * Description not provided
+     * When the ban expires
      *
      * @var \DateTime
      */
     protected $expiresAt;
 
     /**
-     * Description not provided
+     * Channel ban creation date
      *
      * @var \DateTime
      */
     protected $insertedAt;
 
     /**
-     * Description not provided
+     * Reason for channel ban
      *
      * @var string
      */
     protected $reason;
 
     /**
-     * Description not provided
+     * Channel ban updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * User the ban affects
      *
      * @var User
      */

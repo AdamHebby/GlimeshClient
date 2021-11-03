@@ -3,7 +3,7 @@
 namespace GlimeshClient\Objects\Enums;
 
 /**
- * Description not provided
+ * Current channel status
  *
  * @author Adam Hebden <adam@adamhebden.com>
  * @copyright 2021 Adam Hebden

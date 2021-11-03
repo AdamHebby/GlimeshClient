@@ -13,7 +13,7 @@ namespace GlimeshClient\Objects;
 class Tag extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Parent category
      *
      * @var Category
      */
@@ -27,14 +27,14 @@ class Tag extends AbstractObjectModel
     protected $countUsage;
 
     /**
-     * Description not provided
+     * Unique tag identifier
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Tag creation date
      *
      * @var \DateTime
      */
@@ -55,7 +55,7 @@ class Tag extends AbstractObjectModel
     protected $slug;
 
     /**
-     * Description not provided
+     * Tag updated date
      *
      * @var \DateTime
      */

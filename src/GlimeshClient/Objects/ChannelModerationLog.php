@@ -13,42 +13,42 @@ namespace GlimeshClient\Objects;
 class ChannelModerationLog extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Action performed
      *
      * @var string
      */
     protected $action;
 
     /**
-     * Description not provided
+     * Channel the event occurred in
      *
      * @var Channel
      */
     protected $channel;
 
     /**
-     * Description not provided
+     * Event creation date
      *
      * @var \DateTime
      */
     protected $insertedAt;
 
     /**
-     * Description not provided
+     * Moderator that performed the event
      *
      * @var ChannelModerator
      */
     protected $moderator;
 
     /**
-     * Description not provided
+     * Event updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * Receiving user of the event
      *
      * @var User
      */

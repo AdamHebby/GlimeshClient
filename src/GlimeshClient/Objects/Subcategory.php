@@ -13,28 +13,28 @@ namespace GlimeshClient\Objects;
 class Subcategory extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Subcategory background image URL
      *
      * @var string
      */
     protected $backgroundImageUrl;
 
     /**
-     * Description not provided
+     * Parent category
      *
      * @var Category
      */
     protected $category;
 
     /**
-     * Description not provided
+     * ID of subcategory
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Subcategory creation date
      *
      * @var \DateTime
      */
@@ -55,28 +55,28 @@ class Subcategory extends AbstractObjectModel
     protected $slug;
 
     /**
-     * Description not provided
+     * Subcategory source
      *
      * @var string
      */
     protected $source;
 
     /**
-     * Description not provided
+     * Subcategory source ID
      *
      * @var string
      */
     protected $sourceId;
 
     /**
-     * Description not provided
+     * Subcategory updated date
      *
      * @var \DateTime
      */
     protected $updatedAt;
 
     /**
-     * Description not provided
+     * Was the subcategory created by a user?
      *
      * @var boolean
      */

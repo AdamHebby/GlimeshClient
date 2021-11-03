@@ -13,7 +13,7 @@ namespace GlimeshClient\Objects;
 class Category extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * Unique category identifier
      *
      * @var string
      */
@@ -35,7 +35,7 @@ class Category extends AbstractObjectModel
     protected $slug;
 
     /**
-     * Description not provided
+     * Subcategories within the category
      *
      * @var \ArrayObject<Subcategory>
      */
@@ -43,7 +43,7 @@ class Category extends AbstractObjectModel
 
 
     /**
-     * Description not provided
+     * Tags associated with the category
      *
      * @var \ArrayObject<Tag>
      */

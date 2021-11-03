@@ -936,7 +936,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique category identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -984,7 +984,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategories within the category",
                             "isDeprecated": false,
                             "name": "subcategories",
                             "type": {
@@ -1012,7 +1012,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Tags associated with the category",
                             "isDeprecated": false,
                             "name": "tags",
                             "type": {
@@ -1039,7 +1039,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "List of bans in the channel",
                             "isDeprecated": false,
                             "name": "bans",
                             "type": {
@@ -1055,7 +1055,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Toggle for blocking anyone from posting links",
                             "isDeprecated": false,
                             "name": "blockLinks",
                             "type": {
@@ -1067,7 +1067,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Category the current stream is in",
                             "isDeprecated": false,
                             "name": "category",
                             "type": {
@@ -1079,7 +1079,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "List of chat messages sent in the channel",
                             "isDeprecated": false,
                             "name": "chatMessages",
                             "type": {
@@ -1095,7 +1095,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Chat rules in html",
                             "isDeprecated": false,
                             "name": "chatRulesHtml",
                             "type": {
@@ -1107,7 +1107,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Chat rules in markdown",
                             "isDeprecated": false,
                             "name": "chatRulesMd",
                             "type": {
@@ -1119,7 +1119,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Toggle for links automatically being clickable",
                             "isDeprecated": false,
                             "name": "disableHyperlinks",
                             "type": {
@@ -1131,7 +1131,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Hash-based Message Authentication Code for the stream",
                             "isDeprecated": false,
                             "name": "hmacKey",
                             "type": {
@@ -1143,7 +1143,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique channel identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -1155,7 +1155,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Is the stream inaccessible?",
                             "isDeprecated": false,
                             "name": "inaccessible",
                             "type": {
@@ -1167,7 +1167,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -1207,7 +1207,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Minimum account age length before chatting",
                             "isDeprecated": false,
                             "name": "minimumAccountAge",
                             "type": {
@@ -1219,7 +1219,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "List of moderation events in the channel",
                             "isDeprecated": false,
                             "name": "moderationLogs",
                             "type": {
@@ -1235,7 +1235,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "List of moderators in the channel",
                             "isDeprecated": false,
                             "name": "moderators",
                             "type": {
@@ -1251,7 +1251,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Toggle for requiring confirmed email before chatting",
                             "isDeprecated": false,
                             "name": "requireConfirmedEmail",
                             "type": {
@@ -1263,7 +1263,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Only show recent chat messages?",
                             "isDeprecated": false,
                             "name": "showRecentChatMessagesOnly",
                             "type": {
@@ -1275,7 +1275,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The current status of the channnel",
                             "isDeprecated": false,
                             "name": "status",
                             "type": {
@@ -1287,7 +1287,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "If the channel is live, this will be the current Stream",
                             "isDeprecated": false,
                             "name": "stream",
                             "type": {
@@ -1299,7 +1299,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Current streams unique stream key",
                             "isDeprecated": false,
                             "name": "streamKey",
                             "type": {
@@ -1311,7 +1311,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "User associated with the channel",
                             "isDeprecated": false,
                             "name": "streamer",
                             "type": {
@@ -1327,7 +1327,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategory the current stream is in",
                             "isDeprecated": false,
                             "name": "subcategory",
                             "type": {
@@ -1339,7 +1339,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Tags associated with the channel",
                             "isDeprecated": false,
                             "name": "tags",
                             "type": {
@@ -1355,7 +1355,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Current stream thumbnail",
                             "isDeprecated": false,
                             "name": "thumbnail",
                             "type": {
@@ -1379,7 +1379,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -1422,7 +1422,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel the ban affects",
                             "isDeprecated": false,
                             "name": "channel",
                             "type": {
@@ -1438,7 +1438,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "When the ban expires",
                             "isDeprecated": false,
                             "name": "expiresAt",
                             "type": {
@@ -1450,7 +1450,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel ban creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -1466,7 +1466,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Reason for channel ban",
                             "isDeprecated": false,
                             "name": "reason",
                             "type": {
@@ -1478,7 +1478,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel ban updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -1494,7 +1494,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "User the ban affects",
                             "isDeprecated": false,
                             "name": "user",
                             "type": {
@@ -1521,7 +1521,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Action performed",
                             "isDeprecated": false,
                             "name": "action",
                             "type": {
@@ -1533,7 +1533,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel the event occurred in",
                             "isDeprecated": false,
                             "name": "channel",
                             "type": {
@@ -1549,7 +1549,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Event creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -1565,7 +1565,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Moderator that performed the event",
                             "isDeprecated": false,
                             "name": "moderator",
                             "type": {
@@ -1581,7 +1581,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Event updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -1597,7 +1597,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Receiving user of the event",
                             "isDeprecated": false,
                             "name": "user",
                             "type": {
@@ -1624,7 +1624,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Can ban a user",
                             "isDeprecated": false,
                             "name": "canBan",
                             "type": {
@@ -1636,7 +1636,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Can delete a message",
                             "isDeprecated": false,
                             "name": "canDelete",
                             "type": {
@@ -1648,7 +1648,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Can perform a long timeout action",
                             "isDeprecated": false,
                             "name": "canLongTimeout",
                             "type": {
@@ -1660,7 +1660,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Can perform a short timeout action",
                             "isDeprecated": false,
                             "name": "canShortTimeout",
                             "type": {
@@ -1672,7 +1672,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Can untimeout a user",
                             "isDeprecated": false,
                             "name": "canUnTimeout",
                             "type": {
@@ -1684,7 +1684,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Can unban a user",
                             "isDeprecated": false,
                             "name": "canUnban",
                             "type": {
@@ -1696,7 +1696,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel the moderator can moderate in",
                             "isDeprecated": false,
                             "name": "channel",
                             "type": {
@@ -1712,7 +1712,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Moderator creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -1728,7 +1728,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Moderator updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -1744,7 +1744,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Moderating User",
                             "isDeprecated": false,
                             "name": "user",
                             "type": {
@@ -1765,7 +1765,7 @@
                     "possibleTypes": null
                 },
                 {
-                    "description": null,
+                    "description": "Current channel status",
                     "enumValues": [
                         {
                             "deprecationReason": null,
@@ -1794,7 +1794,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel where the chat message occurs",
                             "isDeprecated": false,
                             "name": "channel",
                             "type": {
@@ -1810,7 +1810,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique chat message identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -1822,7 +1822,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Chat message creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -1874,7 +1874,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "List of chat message tokens used",
                             "isDeprecated": false,
                             "name": "tokens",
                             "type": {
@@ -1890,7 +1890,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Chat message updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -1906,7 +1906,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "User who sent the chat message",
                             "isDeprecated": false,
                             "name": "user",
                             "type": {
@@ -1948,13 +1948,13 @@
                     "possibleTypes": null
                 },
                 {
-                    "description": null,
+                    "description": "Chat Message Token Interface",
                     "enumValues": null,
                     "fields": [
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token text",
                             "isDeprecated": false,
                             "name": "text",
                             "type": {
@@ -1966,7 +1966,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token type",
                             "isDeprecated": false,
                             "name": "type",
                             "type": {
@@ -2009,13 +2009,13 @@
                     "possibleTypes": null
                 },
                 {
-                    "description": null,
+                    "description": "Chat Message Emote Token",
                     "enumValues": null,
                     "fields": [
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token src URL",
                             "isDeprecated": false,
                             "name": "src",
                             "type": {
@@ -2027,7 +2027,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token text",
                             "isDeprecated": false,
                             "name": "text",
                             "type": {
@@ -2039,7 +2039,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token type",
                             "isDeprecated": false,
                             "name": "type",
                             "type": {
@@ -2051,7 +2051,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Emote Token URL",
                             "isDeprecated": false,
                             "name": "url",
                             "type": {
@@ -2080,7 +2080,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Does this follower have live notifications enabled?",
                             "isDeprecated": false,
                             "name": "hasLiveNotifications",
                             "type": {
@@ -2092,7 +2092,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique follower identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -2104,7 +2104,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Following creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -2120,7 +2120,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The streamer the user is following",
                             "isDeprecated": false,
                             "name": "streamer",
                             "type": {
@@ -2136,7 +2136,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Following updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -2152,7 +2152,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The user that is following the streamer",
                             "isDeprecated": false,
                             "name": "user",
                             "type": {
@@ -2867,7 +2867,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Average chatters during the stream",
                             "isDeprecated": false,
                             "name": "avgChatters",
                             "type": {
@@ -2879,7 +2879,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Average viewers during the stream",
                             "isDeprecated": false,
                             "name": "avgViewers",
                             "type": {
@@ -2891,7 +2891,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The category the current stream is in",
                             "isDeprecated": false,
                             "name": "category",
                             "type": {
@@ -2907,7 +2907,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Channel running with the stream",
                             "isDeprecated": false,
                             "name": "channel",
                             "type": {
@@ -2923,7 +2923,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Concurrent chatters during last snapshot",
                             "isDeprecated": false,
                             "name": "countChatters",
                             "type": {
@@ -2935,7 +2935,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Concurrent viewers during last snapshot",
                             "isDeprecated": false,
                             "name": "countViewers",
                             "type": {
@@ -2947,7 +2947,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Datetime of when the stream ended, or null if still going",
                             "isDeprecated": false,
                             "name": "endedAt",
                             "type": {
@@ -2959,7 +2959,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique stream identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -2971,7 +2971,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream created date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -2987,7 +2987,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Current stream metadata",
                             "isDeprecated": false,
                             "name": "metadata",
                             "type": {
@@ -3003,7 +3003,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Total new subscribers gained during the stream",
                             "isDeprecated": false,
                             "name": "newSubscribers",
                             "type": {
@@ -3015,7 +3015,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Peak concurrent chatters",
                             "isDeprecated": false,
                             "name": "peakChatters",
                             "type": {
@@ -3027,7 +3027,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Peak concurrent viewers",
                             "isDeprecated": false,
                             "name": "peakViewers",
                             "type": {
@@ -3039,7 +3039,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Total resubscribers during the stream",
                             "isDeprecated": false,
                             "name": "resubSubscribers",
                             "type": {
@@ -3051,7 +3051,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Datetime of when the stream was started",
                             "isDeprecated": false,
                             "name": "startedAt",
                             "type": {
@@ -3067,7 +3067,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The subategory the current stream is in",
                             "isDeprecated": false,
                             "name": "subcategory",
                             "type": {
@@ -3079,7 +3079,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Thumbnail URL of the stream",
                             "isDeprecated": false,
                             "name": "thumbnail",
                             "type": {
@@ -3103,7 +3103,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -3130,7 +3130,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream audio codec",
                             "isDeprecated": false,
                             "name": "audioCodec",
                             "type": {
@@ -3142,7 +3142,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique stream metadata identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -3154,7 +3154,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Ingest Server URL",
                             "isDeprecated": false,
                             "name": "ingestServer",
                             "type": {
@@ -3166,7 +3166,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Viewers on the ingest",
                             "isDeprecated": false,
                             "name": "ingestViewers",
                             "type": {
@@ -3178,7 +3178,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream metadata created date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -3194,7 +3194,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Lost stream input data packets",
                             "isDeprecated": false,
                             "name": "lostPackets",
                             "type": {
@@ -3206,7 +3206,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Negative Acknowledged stream input data packets",
                             "isDeprecated": false,
                             "name": "nackPackets",
                             "type": {
@@ -3218,7 +3218,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Received stream input data packets",
                             "isDeprecated": false,
                             "name": "recvPackets",
                             "type": {
@@ -3230,7 +3230,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Bitrate at the source",
                             "isDeprecated": false,
                             "name": "sourceBitrate",
                             "type": {
@@ -3242,7 +3242,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Ping to the source",
                             "isDeprecated": false,
                             "name": "sourcePing",
                             "type": {
@@ -3254,7 +3254,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Current stream metadata references",
                             "isDeprecated": false,
                             "name": "stream",
                             "type": {
@@ -3270,7 +3270,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Current Stream time in seconds",
                             "isDeprecated": false,
                             "name": "streamTimeSeconds",
                             "type": {
@@ -3282,7 +3282,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream metadata updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -3298,7 +3298,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Client vendor name",
                             "isDeprecated": false,
                             "name": "vendorName",
                             "type": {
@@ -3310,7 +3310,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Client vendor version",
                             "isDeprecated": false,
                             "name": "vendorVersion",
                             "type": {
@@ -3322,7 +3322,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream video codec",
                             "isDeprecated": false,
                             "name": "videoCodec",
                             "type": {
@@ -3334,7 +3334,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream video height",
                             "isDeprecated": false,
                             "name": "videoHeight",
                             "type": {
@@ -3346,7 +3346,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Stream video width",
                             "isDeprecated": false,
                             "name": "videoWidth",
                             "type": {
@@ -3369,7 +3369,7 @@
                     "inputFields": [
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Stream audio codec",
                             "name": "audioCodec",
                             "type": {
                                 "kind": "SCALAR",
@@ -3379,7 +3379,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Ingest Server URL",
                             "name": "ingestServer",
                             "type": {
                                 "kind": "SCALAR",
@@ -3389,7 +3389,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Viewers on the ingest",
                             "name": "ingestViewers",
                             "type": {
                                 "kind": "SCALAR",
@@ -3399,7 +3399,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Lost stream input data packets",
                             "name": "lostPackets",
                             "type": {
                                 "kind": "SCALAR",
@@ -3409,7 +3409,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Negative Acknowledged stream input data packets",
                             "name": "nackPackets",
                             "type": {
                                 "kind": "SCALAR",
@@ -3419,7 +3419,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Received stream input data packets",
                             "name": "recvPackets",
                             "type": {
                                 "kind": "SCALAR",
@@ -3429,7 +3429,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Bitrate at the source",
                             "name": "sourceBitrate",
                             "type": {
                                 "kind": "SCALAR",
@@ -3439,7 +3439,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Ping to the source",
                             "name": "sourcePing",
                             "type": {
                                 "kind": "SCALAR",
@@ -3449,7 +3449,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Current Stream time in seconds",
                             "name": "streamTimeSeconds",
                             "type": {
                                 "kind": "SCALAR",
@@ -3459,7 +3459,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Client vendor name",
                             "name": "vendorName",
                             "type": {
                                 "kind": "SCALAR",
@@ -3469,7 +3469,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Client vendor version",
                             "name": "vendorVersion",
                             "type": {
                                 "kind": "SCALAR",
@@ -3479,7 +3479,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Stream video codec",
                             "name": "videoCodec",
                             "type": {
                                 "kind": "SCALAR",
@@ -3489,7 +3489,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Stream video height",
                             "name": "videoHeight",
                             "type": {
                                 "kind": "SCALAR",
@@ -3499,7 +3499,7 @@
                         },
                         {
                             "defaultValue": null,
-                            "description": null,
+                            "description": "Stream video width",
                             "name": "videoWidth",
                             "type": {
                                 "kind": "SCALAR",
@@ -3530,7 +3530,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "When the subscription ended",
                             "isDeprecated": false,
                             "name": "endedAt",
                             "type": {
@@ -3542,7 +3542,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subscription unique identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -3554,7 +3554,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subscription created date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -3570,7 +3570,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Is the subscription currently active?",
                             "isDeprecated": false,
                             "name": "isActive",
                             "type": {
@@ -3582,7 +3582,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Price of the subscription",
                             "isDeprecated": false,
                             "name": "price",
                             "type": {
@@ -3594,7 +3594,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subscription product name",
                             "isDeprecated": false,
                             "name": "productName",
                             "type": {
@@ -3606,7 +3606,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "When the subscription started",
                             "isDeprecated": false,
                             "name": "startedAt",
                             "type": {
@@ -3622,7 +3622,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The streamer receiving the support from the subscription",
                             "isDeprecated": false,
                             "name": "streamer",
                             "type": {
@@ -3634,7 +3634,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subscription updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -3650,7 +3650,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "The user giving the support with the subscription",
                             "isDeprecated": false,
                             "name": "user",
                             "type": {
@@ -3677,7 +3677,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategory background image URL",
                             "isDeprecated": false,
                             "name": "backgroundImageUrl",
                             "type": {
@@ -3689,7 +3689,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Parent category",
                             "isDeprecated": false,
                             "name": "category",
                             "type": {
@@ -3701,7 +3701,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "ID of subcategory",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -3713,7 +3713,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategory creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -3753,7 +3753,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategory source",
                             "isDeprecated": false,
                             "name": "source",
                             "type": {
@@ -3765,7 +3765,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategory source ID",
                             "isDeprecated": false,
                             "name": "sourceId",
                             "type": {
@@ -3777,7 +3777,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Subcategory updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -3793,7 +3793,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Was the subcategory created by a user?",
                             "isDeprecated": false,
                             "name": "userCreated",
                             "type": {
@@ -3896,7 +3896,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Parent category",
                             "isDeprecated": false,
                             "name": "category",
                             "type": {
@@ -3920,7 +3920,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique tag identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -3932,7 +3932,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Tag creation date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
@@ -3972,7 +3972,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Tag updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
@@ -3993,13 +3993,13 @@
                     "possibleTypes": null
                 },
                 {
-                    "description": null,
+                    "description": "Chat Message Text Token",
                     "enumValues": null,
                     "fields": [
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token text",
                             "isDeprecated": false,
                             "name": "text",
                             "type": {
@@ -4011,7 +4011,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token type",
                             "isDeprecated": false,
                             "name": "type",
                             "type": {
@@ -4044,13 +4044,13 @@
                     "possibleTypes": null
                 },
                 {
-                    "description": null,
+                    "description": "Chat Message URL Token",
                     "enumValues": null,
                     "fields": [
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token text",
                             "isDeprecated": false,
                             "name": "text",
                             "type": {
@@ -4062,7 +4062,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token type",
                             "isDeprecated": false,
                             "name": "type",
                             "type": {
@@ -4074,7 +4074,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Token URL",
                             "isDeprecated": false,
                             "name": "url",
                             "type": {
@@ -4103,7 +4103,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "User Avatar",
                             "isDeprecated": false,
                             "name": "avatar",
                             "type": {
@@ -4115,7 +4115,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "URL to the user's avatar",
                             "isDeprecated": false,
                             "name": "avatarUrl",
                             "type": {
@@ -4127,7 +4127,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Datetime the user confirmed their email address",
                             "isDeprecated": false,
                             "name": "confirmedAt",
                             "type": {
@@ -4207,7 +4207,7 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "Unique User identifier",
                             "isDeprecated": false,
                             "name": "id",
                             "type": {
@@ -4378,13 +4378,17 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "User socials created date",
                             "isDeprecated": false,
                             "name": "insertedAt",
                             "type": {
-                                "kind": "SCALAR",
-                                "name": "NaiveDateTime",
-                                "ofType": null
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "NaiveDateTime",
+                                    "ofType": null
+                                }
                             }
                         },
                         {
@@ -4402,13 +4406,17 @@
                         {
                             "args": [],
                             "deprecationReason": null,
-                            "description": null,
+                            "description": "User socials updated date",
                             "isDeprecated": false,
                             "name": "updatedAt",
                             "type": {
-                                "kind": "SCALAR",
-                                "name": "NaiveDateTime",
-                                "ofType": null
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "NaiveDateTime",
+                                    "ofType": null
+                                }
                             }
                         },
                         {

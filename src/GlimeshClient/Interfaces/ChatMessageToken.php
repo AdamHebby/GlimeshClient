@@ -3,7 +3,7 @@
 namespace GlimeshClient\Interfaces;
 
 /**
- * Description not provided
+ * Chat Message Token Interface
  *
  * @author Adam Hebden <adam@adamhebden.com>
  * @copyright 2021 Adam Hebden

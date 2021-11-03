@@ -6,7 +6,7 @@ use GlimeshClient\Interfaces\ChatMessageToken;
 use GlimeshClient\Objects\AbstractObjectModel;
 
 /**
- * Description not provided
+ * Chat Message Emote Token
  *
  * @author Adam Hebden <adam@adamhebden.com>
  * @copyright 2021 Adam Hebden
@@ -16,28 +16,28 @@ use GlimeshClient\Objects\AbstractObjectModel;
 class EmoteToken extends AbstractObjectModel implements ChatMessageToken
 {
     /**
-     * Description not provided
+     * Token src URL
      *
      * @var string
      */
     protected $src;
 
     /**
-     * Description not provided
+     * Token text
      *
      * @var string
      */
     protected $text;
 
     /**
-     * Description not provided
+     * Token type
      *
      * @var string
      */
     protected $type;
 
     /**
-     * Description not provided
+     * Emote Token URL
      *
      * @var string
      */

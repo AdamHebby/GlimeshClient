@@ -13,77 +13,77 @@ namespace GlimeshClient\Objects;
 class Channel extends AbstractObjectModel
 {
     /**
-     * Description not provided
+     * List of bans in the channel
      *
      * @var \ArrayObject<ChannelBan>
      */
     protected $bans;
 
     /**
-     * Description not provided
+     * Toggle for blocking anyone from posting links
      *
      * @var boolean
      */
     protected $blockLinks;
 
     /**
-     * Description not provided
+     * Category the current stream is in
      *
      * @var Category
      */
     protected $category;
 
     /**
-     * Description not provided
+     * List of chat messages sent in the channel
      *
      * @var \ArrayObject<ChatMessage>
      */
     protected $chatMessages;
 
     /**
-     * Description not provided
+     * Chat rules in html
      *
      * @var string
      */
     protected $chatRulesHtml;
 
     /**
-     * Description not provided
+     * Chat rules in markdown
      *
      * @var string
      */
     protected $chatRulesMd;
 
     /**
-     * Description not provided
+     * Toggle for links automatically being clickable
      *
      * @var boolean
      */
     protected $disableHyperlinks;
 
     /**
-     * Description not provided
+     * Hash-based Message Authentication Code for the stream
      *
      * @var string
      */
     protected $hmacKey;
 
     /**
-     * Description not provided
+     * Unique channel identifier
      *
      * @var string
      */
     protected $id;
 
     /**
-     * Description not provided
+     * Is the stream inaccessible?
      *
      * @var boolean
      */
     protected $inaccessible;
 
     /**
-     * Description not provided
+     * Channel creation date
      *
      * @var \DateTime
      */
@@ -104,84 +104,84 @@ class Channel extends AbstractObjectModel
     protected $matureContent;
 
     /**
-     * Description not provided
+     * Minimum account age length before chatting
      *
      * @var int
      */
     protected $minimumAccountAge;
 
     /**
-     * Description not provided
+     * List of moderation events in the channel
      *
      * @var \ArrayObject<ChannelModerationLog>
      */
     protected $moderationLogs;
 
     /**
-     * Description not provided
+     * List of moderators in the channel
      *
      * @var \ArrayObject<ChannelModerator>
      */
     protected $moderators;
 
     /**
-     * Description not provided
+     * Toggle for requiring confirmed email before chatting
      *
      * @var boolean
      */
     protected $requireConfirmedEmail;
 
     /**
-     * Description not provided
+     * Only show recent chat messages?
      *
      * @var boolean
      */
     protected $showRecentChatMessagesOnly;
 
     /**
-     * Description not provided
+     * The current status of the channnel
      *
      * @var ChannelStatus
      */
     protected $status;
 
     /**
-     * Description not provided
+     * If the channel is live, this will be the current Stream
      *
      * @var Stream
      */
     protected $stream;
 
     /**
-     * Description not provided
+     * Current streams unique stream key
      *
      * @var string
      */
     protected $streamKey;
 
     /**
-     * Description not provided
+     * User associated with the channel
      *
      * @var User
      */
     protected $streamer;
 
     /**
-     * Description not provided
+     * Subcategory the current stream is in
      *
      * @var Subcategory
      */
     protected $subcategory;
 
     /**
-     * Description not provided
+     * Tags associated with the channel
      *
      * @var \ArrayObject<Tag>
      */
     protected $tags;
 
     /**
-     * Description not provided
+     * Current stream thumbnail
      *
      * @var string
      */
@@ -195,7 +195,7 @@ class Channel extends AbstractObjectModel
     protected $title;
 
     /**
-     * Description not provided
+     * Channel updated date
      *
      * @var \DateTime
      */
