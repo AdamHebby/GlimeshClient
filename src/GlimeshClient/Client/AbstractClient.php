@@ -57,8 +57,6 @@ abstract class AbstractClient
 
     /**
      * Get an error string from an error array item returned from the API
-     *
-     *
      */
     protected static function getErrorString(array $glimeshError): string
     {
@@ -72,8 +70,6 @@ abstract class AbstractClient
 
     /**
      * Returns a query in a pretty printed form
-     *
-     *
      */
     public static function prettyPrintQuery(string $string): string
     {

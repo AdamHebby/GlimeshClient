@@ -41,8 +41,6 @@ class BasicClient extends AbstractClient
     /**
      * Make a request to the API using GraphQL, will return a complex object structure
      * based on the return value
-     *
-     *
      */
     public function makeRequest(\GraphQL\Query $query): object
     {
@@ -58,8 +56,6 @@ class BasicClient extends AbstractClient
 
     /**
      * Make a request to the API using GraphQL, will return a simple, unmodified array
-     *
-     *
      */
     public function makeRawRequest(\GraphQL\Query $query): array
     {

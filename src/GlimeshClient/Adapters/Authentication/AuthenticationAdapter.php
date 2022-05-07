@@ -20,9 +20,7 @@ interface AuthenticationAdapter
     /**
      * Calls external resources with Guzzle if required
      *
-     *
      * @throws \Exception When Authentication fails
-     *
      */
     public function authenticate(\GuzzleHttp\Client $client): void;
 
