@@ -2,12 +2,13 @@
 
 use GlimeshClient\Adapters\Authentication\ClientIDAuth;
 use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
-use GlimeshClient\Client;
+use GlimeshClient\Client\BasicClient;
 use GlimeshClient\Objects\Category;
 use GlimeshClient\Objects\Channel;
 use GlimeshClient\Objects\Enums\ChannelStatus;
 use GlimeshClient\Objects\Stream;
 use GraphQL\Query;
+use GraphQL\RawObject;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use Symfony\Component\Dotenv\Dotenv;
 
@@ -26,7 +27,7 @@ $guzzle = new GuzzleHttpClient(['http_errors' => true, 'allow_redirects' => true
 //     $logger
 // );
 
-$client = new Client(
+$client = new BasicClient(
     $guzzle,
     new OAuthFileAdapter(
         $_ENV['CLIENT_ID'],
@@ -36,11 +37,10 @@ $client = new Client(
     $logger
 );
 
-
 $object = ($client->makeRequest(
     (new Query('channels'))->setSelectionSet([
-        'id'
-    ])->setArguments(['status' => 'ENUM:' . ChannelStatus::LIVE])
+        'id', 'status'
+    ])->setArguments(['status' => new RawObject(ChannelStatus::LIVE->name)])
 ));
 
 var_dump($object);

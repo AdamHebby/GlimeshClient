@@ -6,7 +6,7 @@ namespace GlimeshClient\Objects;
  * A stream is a single live stream in, either current or historical.
  *
  * @author Adam Hebden <adam@adamhebden.com>
- * @copyright 2021 Adam Hebden
+ * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
  */

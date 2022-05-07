@@ -60,8 +60,6 @@ abstract class AbstractObjectModel
      * Get All possible properties, can exclude parameters
      *
      * @param array $exclude Parameters to exclude
-     *
-     * @return array
      */
     public static function getAllKeys(array $exclude = []): array
     {
@@ -75,8 +73,6 @@ abstract class AbstractObjectModel
      * Get all Parameters that are not objects themselves, can exclude parameters
      *
      * @param array $exclude Parameters to exclude
-     *
-     * @return array
      */
     public static function getAllNonObjectKeys(array $exclude = []): array
     {

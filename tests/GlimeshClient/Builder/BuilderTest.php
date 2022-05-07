@@ -463,17 +463,17 @@ class BuilderTest extends TestCase
             if ($type['name'] === 'ChannelStatus') {
                 $object = Builder::buildENUM($type);
 
-                $object = str_replace('class ChannelStatus', 'class ChannelStatusTest', $object);
+                $object = str_replace('enum ChannelStatus', 'enum ChannelStatusTest', $object);
 
                 $rand = uniqid(__FUNCTION__);
                 file_put_contents(static::DIR . "/$rand.php", $object);
 
                 require_once(static::DIR . "/$rand.php");
 
-                $ref = new \ReflectionClass('\GlimeshClient\Objects\Enums\ChannelStatusTest');
+                $ref = new \ReflectionEnum('\GlimeshClient\Objects\Enums\ChannelStatusTest');
 
                 $this->assertSame('ChannelStatusTest', $ref->getShortName());
-                $this->assertCount(3, $ref->getProperties());
+                $this->assertCount(2, $ref->getCases());
             }
         }
     }

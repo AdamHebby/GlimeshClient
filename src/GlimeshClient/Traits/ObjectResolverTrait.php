@@ -47,6 +47,7 @@ trait ObjectResolverTrait
         'category'              => \GlimeshClient\Objects\Category::class,
         'channel'               => \GlimeshClient\Objects\Channel::class,
         'chatmessage'           => \GlimeshClient\Objects\ChatMessage::class,
+        'chatMessage'           => \GlimeshClient\Objects\ChatMessage::class,
         'metadata'              => \GlimeshClient\Objects\StreamMetadata::class,
         'moderationlog'         => \GlimeshClient\Objects\ChannelModerationLog::class,
         'moderator'             => \GlimeshClient\Objects\ChannelModerator::class,
@@ -90,6 +91,10 @@ trait ObjectResolverTrait
 
             return new \ArrayObject($return);
         } else {
+            if (enum_exists($class)) {
+                return $class::from($data[0]);
+            }
+
             return new $class($data);
         }
     }
@@ -97,9 +102,7 @@ trait ObjectResolverTrait
     /**
      * Is this a Date Field?
      *
-     * @param string $value
      *
-     * @return boolean
      */
     public static function isDateField(string $value): bool
     {
@@ -109,9 +112,7 @@ trait ObjectResolverTrait
     /**
      * Should this key be an array or a single object
      *
-     * @param string $key
      *
-     * @return boolean
      */
     public static function isArrayOfObjects(string $key): bool
     {
@@ -121,9 +122,7 @@ trait ObjectResolverTrait
     /**
      * Return class for key
      *
-     * @param string $key
      *
-     * @return string|null
      */
     public static function resolveObjectKey(string $key): ?string
     {

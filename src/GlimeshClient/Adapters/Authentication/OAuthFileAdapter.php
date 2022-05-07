@@ -14,27 +14,6 @@ namespace GlimeshClient\Adapters\Authentication;
 final class OAuthFileAdapter implements AuthenticationAdapter
 {
     /**
-     * Stored Client ID for the auth
-     *
-     * @var string
-     */
-    private $clientId;
-
-    /**
-     * Stored Client Secret for the auth
-     *
-     * @var string
-     */
-    private $clientSecret;
-
-    /**
-     * JSON File path for storing auth
-     *
-     * @var string
-     */
-    private $jsonFile;
-
-    /**
      * Stored Authentication object
      *
      * @var object
@@ -49,14 +28,10 @@ final class OAuthFileAdapter implements AuthenticationAdapter
      * @param string $jsonFile JSON File path to store auth details in
      */
     public function __construct(
-        string $clientId,
-        string $clientSecret,
-        string $jsonFile
+        private readonly string $clientId,
+        private readonly string $clientSecret,
+        private readonly string $jsonFile
     ) {
-        $this->clientId     = $clientId;
-        $this->clientSecret = $clientSecret;
-        $this->jsonFile     = $jsonFile;
-
         if (file_exists($this->jsonFile)) {
             $this->auth = json_decode(file_get_contents($this->jsonFile));
         }
@@ -70,6 +45,14 @@ final class OAuthFileAdapter implements AuthenticationAdapter
         return $this->isExpired()
             ? null
             : "{$this->auth->token_type} {$this->auth->access_token}";
+    }
+
+    /**
+     * Get the current access token
+     */
+    public function getAccessToken(): string
+    {
+        return $this->auth->access_token;
     }
 
     /**
@@ -116,8 +99,6 @@ final class OAuthFileAdapter implements AuthenticationAdapter
 
     /**
      * Store the Auth details into a JSON file
-     *
-     * @return void
      */
     protected function saveAuth(): void
     {

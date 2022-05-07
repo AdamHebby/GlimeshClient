@@ -14,26 +14,18 @@ interface AuthenticationAdapter
 {
     /**
      * Should return locally stored auth if possible
-     *
-     * @return string|null
      */
     public function getAuthentication(): ?string;
 
     /**
      * Calls external resources with Guzzle if required
      *
-     * @param \GuzzleHttp\Client $client
-     *
      * @throws \Exception When Authentication fails
-     *
-     * @return void
      */
     public function authenticate(\GuzzleHttp\Client $client): void;
 
     /**
      * Is the current authentication expired?
-     *
-     * @return boolean
      */
     public function isExpired(): bool;
 }
