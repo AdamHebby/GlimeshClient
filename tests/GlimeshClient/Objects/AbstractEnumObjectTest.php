@@ -15,12 +15,8 @@ use PHPUnit\Framework\TestCase;
  */
 class AbstractEnumObjectTest extends TestCase
 {
-    public function testConstruct()
+    public function testEnumValues()
     {
-        $enum = new ChannelStatus(["LIVE"]);
-        $this->assertEquals($enum->currentValue, ChannelStatus::LIVE);
-
-        $enum = new ChannelStatus(["OFFLINE"]);
-        $this->assertEquals($enum->currentValue, ChannelStatus::OFFLINE);
+        $this->assertEquals(2, count(ChannelStatus::cases()));
     }
 }

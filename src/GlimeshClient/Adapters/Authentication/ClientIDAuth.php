@@ -13,20 +13,12 @@ namespace GlimeshClient\Adapters\Authentication;
 final class ClientIDAuth implements AuthenticationAdapter
 {
     /**
-     * Stored Client ID
-     *
-     * @var string
-     */
-    private $clientId = null;
-
-    /**
      * Client ID Auth Constructor, not much to it
      *
      * @param string $clientId
      */
-    public function __construct(string $clientId)
+    public function __construct(private readonly string $clientId)
     {
-        $this->clientId = $clientId;
     }
 
     /**

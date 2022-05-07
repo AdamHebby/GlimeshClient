@@ -9,7 +9,7 @@ use GlimeshClient\Objects\AbstractObjectModel;
  * Chat Message URL Token
  *
  * @author Adam Hebden <adam@adamhebden.com>
- * @copyright 2021 Adam Hebden
+ * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
  */

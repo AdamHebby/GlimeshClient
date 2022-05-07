@@ -6,7 +6,7 @@ namespace GlimeshClient\Objects;
  * A user of Glimesh, can be a streamer, a viewer or both!
  *
  * @author Adam Hebden <adam@adamhebden.com>
- * @copyright 2021 Adam Hebden
+ * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
  */

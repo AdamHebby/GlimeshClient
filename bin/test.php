@@ -8,6 +8,7 @@ use GlimeshClient\Objects\Channel;
 use GlimeshClient\Objects\Enums\ChannelStatus;
 use GlimeshClient\Objects\Stream;
 use GraphQL\Query;
+use GraphQL\RawObject;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use Symfony\Component\Dotenv\Dotenv;
 
@@ -36,11 +37,10 @@ $client = new BasicClient(
     $logger
 );
 
-
 $object = ($client->makeRequest(
     (new Query('channels'))->setSelectionSet([
-        'id'
-    ])->setArguments(['status' => 'ENUM:' . ChannelStatus::LIVE])
+        'id', 'status'
+    ])->setArguments(['status' => new RawObject(ChannelStatus::LIVE->name)])
 ));
 
 var_dump($object);

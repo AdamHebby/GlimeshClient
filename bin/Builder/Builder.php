@@ -41,7 +41,7 @@ class Builder
      */
     public static $standardDocBlock = [
         ' * @author Adam Hebden <adam@adamhebden.com>',
-        ' * @copyright 2021 Adam Hebden',
+        ' * @copyright 2022 Adam Hebden',
         ' * @license GPL-3.0-or-later',
         ' * @package GlimeshClient',
     ];
@@ -254,12 +254,8 @@ class Builder
      */
     public static function buildENUM(array $type): string
     {
-        $possibleValues = array_map(function ($enum) {
-            return "        \"{$enum['name']}\"";
-        }, $type['enumValues'] ?? []);
-
-        $fieldsCode = array_map(function ($enum) {
-            return "    public const {$enum['name']} = \"{$enum['name']}\";";
+        $enumValues = array_map(function ($enum) {
+            return "    case {$enum['name']} = \"{$enum['name']}\";";
         }, $type['enumValues'] ?? []);
 
         return self::replaceValues(
@@ -268,8 +264,7 @@ class Builder
                 '%BUILDER_DESCRIPTION%' => $type['description'] ?? 'Description not provided',
                 '%BUILDER_STANDARD_DOCBLOCK%' => implode("\n", self::$standardDocBlock),
                 '%BUILDER_NAME%' => $type['name'],
-                '%BUILDER_POSSIBLE_VALUES%' => implode(",\n", $possibleValues),
-                '%BUILDER_FIELDS%' => implode("\n", $fieldsCode),
+                '%BUILDER_ENUM_VALUES%' => implode("\n", $enumValues),
             ]
         );
     }

@@ -7,6 +7,7 @@ use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Ratchet\Client\WebSocket;
+use Ratchet\RFC6455\Messaging\Message;
 use React\EventLoop\LoopInterface;
 use React\Promise\Deferred;
 use React\Promise\PromiseInterface;
@@ -24,20 +25,6 @@ use React\Promise\PromiseInterface;
 class WebsocketClient extends AbstractClient
 {
     use EventEmitterTrait;
-
-    /**
-     * Current Authentication Adapter in use
-     *
-     * @var OAuthFileAdapter
-     */
-    protected $authAdapter = null;
-
-    /**
-     * LoopInterface to use
-     *
-     * @var LoopInterface
-     */
-    public $loop = null;
 
     /**
      * Array of current connections
@@ -61,44 +48,63 @@ class WebsocketClient extends AbstractClient
      */
     public function __construct(
         \GuzzleHttp\Client $guzzleClient,
-        OAuthFileAdapter $authAdapter,
+        protected OAuthFileAdapter $authAdapter,
         LoggerInterface $logger = null,
-        \React\EventLoop\Loop $loop
+        /**
+         * LoopInterface to use
+         */
+        public \React\EventLoop\Loop $loop
     ) {
-        $this->loop         = $loop;
-        $this->authAdapter  = $authAdapter;
         $this->guzzleClient = $guzzleClient;
         $this->logger       = $logger ?? new NullLogger();
 
-        $this->logger->info('Authenticating with Glimesh using ' . get_class($authAdapter));
-
+        $this->logger->info('Authenticating with Glimesh using ' . $authAdapter::class);
         $this->authAdapter->authenticate($guzzleClient);
 
-        $this->loop->addPeriodicTimer(15, function() {
+        $this->loop->addPeriodicTimer(20, function() {
             foreach ($this->connections as $connKey => $connection) {
-                $this->logger->info("Sending heartbeat... {$connKey}");
-                // $connection->send('["1","1","phoenix","heartbeat",{}]');
+                $this->logger->debug("Sending heartbeat... {$connKey}");
+                $this->sendHeartbeat($connection);
             }
+        });
+
+        pcntl_signal(SIGINT, function(): never {
+            $this->logger->debug('SIGINT received, closing connections');
+            die; // Interrupts CTRL C
+        });
+
+        register_shutdown_function(function() {
+            foreach ($this->connections as $connection) {
+                $connection->close();
+            }
+            $this->loop->stop();
         });
     }
 
     /**
-     * Make a request to the API using GraphQL, will return a simple, unmodified array
+     * Get all connections
      *
-     * @param \GraphQL\Query $query
+     * @return WebSocket[]
      */
-    public function makeRequest(\GraphQL\Query $query, ?callable $onData = null)
+    public function getConnections(): array
     {
-        $queryString = $query->__toString();
-        $queryString = preg_replace('/^(query)/', 'subscription', $queryString);
-        $queryString = str_replace("\n", " ", $queryString);
+        return $this->connections;
+    }
 
-        return \Ratchet\Client\connect(self::$wsUrl . $this->authAdapter->getAccessToken(), [], [])->then(
-            function(WebSocket $conn) use ($queryString, $onData) {
+    /**
+     * Make a request to the API using GraphQL, will return a simple, unmodified array
+     */
+    public function makeRequest(\GraphQL\Query $query, ?callable $onData = null): PromiseInterface
+    {
+        return \Ratchet\Client\connect(
+            self::$wsUrl . $this->authAdapter->getAccessToken(),
+            [],
+            []
+        )->then(
+            function(WebSocket $conn) use ($query, $onData) {
                 $connKey = uniqid('conn_');
-                $this->connections[$connKey] = $conn;
 
-                $conn->on('message', function($msg) use ($conn, $onData) {
+                $conn->on('message', function(Message $msg) use ($conn, $onData) {
                     $data = json_decode($msg, true);
 
                     if ($data[3] === 'subscription:data') {
@@ -116,21 +122,69 @@ class WebsocketClient extends AbstractClient
                     }
                 });
 
+
                 $conn->on('close', function () use ($connKey) {
-                    $this->logger->info("Connection closed {$connKey}");
+                    $this->logger->debug("Connection closed {$connKey}");
                     unset($this->connections[$connKey]);
                 });
 
                 // https://glimesh.github.io/api-docs/docs/chat/websockets/
+                $this->sendJoinCommand($conn);
+                $this->sendDocumentQuery($conn, $query);
 
-                $conn->send('["1","1","__absinthe__:control","phx_join",{}]');
-                $conn->send('["1","1","__absinthe__:control","doc",{"query":"' . $queryString . '","variables":{} } ]');
-
-                $this->logger->info("Connection opened {$connKey}");
+                $this->logger->debug("Connection opened {$connKey}");
                 $this->emit('connection', [$conn]);
-            }, function (\Throwable $e) {
-                echo "Could not connect: {$e->getMessage()}\n";
+                $this->connections[$connKey] = $conn;
             }
         );
+    }
+
+    /**
+     * Sends a heartbeat to the websocket, needs to happen every 30s
+     */
+    protected function sendHeartbeat(WebSocket $connection): bool
+    {
+        return $connection->send(json_encode([
+            1,
+            1,
+            'pheonix',
+            'heartbeat',
+            (object)[]
+        ]));
+    }
+
+    /**
+     * Send Absinthe Document Query
+     */
+    protected function sendDocumentQuery(WebSocket $connection, \GraphQL\Query $query): bool
+    {
+        $queryString = $query->__toString();
+        $queryString = preg_replace('/^(query)/', 'subscription', $queryString);
+        $queryString = str_replace("\n", " ", $queryString);
+
+        return $connection->send(json_encode([
+            1,
+            1,
+            '__absinthe__:control',
+            'doc',
+            (object)[
+                'query' => $queryString,
+                'variables' => (object)[],
+            ]
+        ]));
+    }
+
+    /**
+     * Send Join Command
+     */
+    protected function sendJoinCommand(WebSocket $connection): bool
+    {
+        return $connection->send(json_encode([
+            1,
+            1,
+            '__absinthe__:control',
+            'phx_join',
+            (object)[]
+        ]));
     }
 }

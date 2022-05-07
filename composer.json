@@ -25,10 +25,11 @@
         "symfony/cache": "For caching requests to Glimesh and reducing server load (Any PSR Cache will work)"
     },
     "require": {
+        "php": ">=8.1.0",
         "guzzlehttp/guzzle": "^7.3",
         "psr/log": "^1.1",
         "gmostafa/php-graphql-client": "^1.13",
-        "ratchet/pawl": "^0.3.5"
+        "ratchet/pawl": "^0.4.1"
     },
     "require-dev": {
         "phpunit/php-code-coverage": "^9.2",

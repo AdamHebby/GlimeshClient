@@ -20,7 +20,7 @@ abstract class AbstractClient
     /**
      * Glimesh URL
      */
-    public const GlimUrl = 'https://glimesh.tv';
+    public final const GLIMESH_URL = 'https://glimesh.tv';
 
     /**
      * Current GuzzleClient used to interact with the API
@@ -47,8 +47,6 @@ abstract class AbstractClient
      * Get a multiline error string from an error array item returned from the API
      *
      * @param array $glimeshError
-     *
-     * @return string
      */
     protected static function getAllErrorStrings(array $glimeshErrors): string
     {
@@ -60,9 +58,7 @@ abstract class AbstractClient
     /**
      * Get an error string from an error array item returned from the API
      *
-     * @param array $glimeshError
      *
-     * @return string
      */
     protected static function getErrorString(array $glimeshError): string
     {
@@ -77,9 +73,7 @@ abstract class AbstractClient
     /**
      * Returns a query in a pretty printed form
      *
-     * @param string $string
      *
-     * @return string
      */
     public static function prettyPrintQuery(string $string): string
     {
@@ -97,20 +91,5 @@ abstract class AbstractClient
         }
 
         return implode("\n", $lines) . "\n";
-    }
-
-    /**
-     * Get the query string, converting anything that needs to be converted
-     *
-     * @param \GraphQL\Query $query
-     *
-     * @return string
-     */
-    public static function getQueryString(\GraphQL\Query $query): string
-    {
-        $queryString = $query->__toString();
-        $queryString = preg_replace('/\"ENUM:(.*?)\"/', '$1', $queryString);
-
-        return $queryString;
     }
 }

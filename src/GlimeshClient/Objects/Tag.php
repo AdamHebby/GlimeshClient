@@ -6,7 +6,7 @@ namespace GlimeshClient\Objects;
  * Tags are user created labels that are either global or category specific.
  *
  * @author Adam Hebden <adam@adamhebden.com>
- * @copyright 2021 Adam Hebden
+ * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
  */

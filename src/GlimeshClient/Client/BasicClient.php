@@ -33,7 +33,7 @@ class BasicClient extends AbstractClient
         $this->guzzleClient = $guzzleClient;
         $this->logger       = $logger ?? new NullLogger();
 
-        $this->logger->info('Authenticating with Glimesh using ' . get_class($authAdapter));
+        $this->logger->info('Authenticating with Glimesh using ' . $authAdapter::class);
 
         $this->authAdapter->authenticate($guzzleClient);
     }
@@ -42,15 +42,16 @@ class BasicClient extends AbstractClient
      * Make a request to the API using GraphQL, will return a complex object structure
      * based on the return value
      *
-     * @param \GraphQL\Query $query
      *
-     * @return object
      */
     public function makeRequest(\GraphQL\Query $query): object
     {
         $data = $this->makeRawRequest($query);
+        $arrayKeys = array_keys($data);
 
-        $key = reset(array_keys($data));
+        $key = reset($arrayKeys);
+
+        $this->logger->debug('Request made, building object');
 
         return self::getObject($key, $data[$key]);
     }
@@ -58,17 +59,15 @@ class BasicClient extends AbstractClient
     /**
      * Make a request to the API using GraphQL, will return a simple, unmodified array
      *
-     * @param \GraphQL\Query $query
      *
-     * @return array
      */
     public function makeRawRequest(\GraphQL\Query $query): array
     {
         $req = $this->guzzleClient->request(
             'GET',
-            self::GlimUrl . '/api',
+            self::GLIMESH_URL . '/api',
             [
-                'body' => self::getQueryString($query),
+                'body' => $query->__toString(),
                 'headers' => [
                     'Authorization' => $this->authAdapter->getAuthentication()
                 ]
