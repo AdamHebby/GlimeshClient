@@ -50,8 +50,6 @@ abstract class AbstractObjectModel
      * Converts the current object and all children to an array, stringifies DateTime objects
      *
      * @param bool $trimEmpty Removes any empty properties or objects
-     *
-     * @return array
      */
     public function toArray($trimEmpty = true): array
     {
