@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A linked social account for a Glimesh user.
  *
@@ -12,45 +14,47 @@ namespace GlimeshClient\Objects;
  */
 class UserSocial extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Description not provided
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Platform unique identifier, usually a ID, made into a string
      *
-     * @var string
+     * @var ?string
      */
-    protected $identifier;
+    public readonly ?string $identifier;
 
     /**
      * User socials created date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Platform that is linked, eg: twitter
      *
-     * @var string
+     * @var ?string
      */
-    protected $platform;
+    public readonly ?string $platform;
 
     /**
      * User socials updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * Username for the user on the linked platform
      *
-     * @var string
+     * @var ?string
      */
-    protected $username;
+    public readonly ?string $username;
 }

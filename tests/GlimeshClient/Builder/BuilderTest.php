@@ -122,7 +122,7 @@ class BuilderTest extends TestCase
             ))
         );
         $this->assertEquals(
-            '\ArrayObject<StreamMetadata>',
+            'StreamMetadata',
             Builder::resolveField(json_decode(
                 '{
                     "args": [],
@@ -251,9 +251,9 @@ class BuilderTest extends TestCase
         $field .= "    /**\n";
         $field .= "     * Name of the category\n";
         $field .= "     *\n";
-        $field .= "     * @var string\n";
+        $field .= "     * @var ?string\n";
         $field .= "     */\n";
-        $field .= "    protected \$name;\n";
+        $field .= "    public readonly ?string \$name;\n";
 
         $this->assertEquals($field, Builder::buildField(json_decode(
             '{
@@ -291,9 +291,9 @@ class BuilderTest extends TestCase
         $field .= "    /**\n";
         $field .= "     * Description not provided\n";
         $field .= "     *\n";
-        $field .= "     * @var \\ArrayObject<Subcategory>\n";
+        $field .= "     * @var ?\\ArrayObject<Subcategory>\n";
         $field .= "     */\n";
-        $field .= "    protected \$subcategories;\n";
+        $field .= "    public readonly ?\\ArrayObject \$subcategories;\n";
 
         $this->assertEquals($field, Builder::buildField(json_decode(
             '{
@@ -319,9 +319,9 @@ class BuilderTest extends TestCase
         $field .= "    /**\n";
         $field .= "     * Description not provided\n";
         $field .= "     *\n";
-        $field .= "     * @var Category\n";
+        $field .= "     * @var ?Category\n";
         $field .= "     */\n";
-        $field .= "    protected \$category;\n";
+        $field .= "    public readonly ?Category \$category;\n";
 
         $this->assertEquals($field, Builder::buildField(json_decode(
             '{
@@ -347,9 +347,9 @@ class BuilderTest extends TestCase
         $field .= "    /**\n";
         $field .= "     * Description not provided\n";
         $field .= "     *\n";
-        $field .= "     * @var ChannelStatus\n";
+        $field .= "     * @var ?ChannelStatus\n";
         $field .= "     */\n";
-        $field .= "    protected \$status;\n";
+        $field .= "    public readonly ?ChannelStatus \$status;\n";
 
         $this->assertEquals($field, Builder::buildField(json_decode(
             '{
@@ -476,6 +476,12 @@ class BuilderTest extends TestCase
                 $this->assertCount(2, $ref->getCases());
             }
         }
+    }
+
+    public function testBuilderThrowsOnUnresolvedType()
+    {
+        $this->expectException(\Exception::class);
+        Builder::resolveField(['name' => 'unknown', 'type' => ['name' => 'unknown']]);
     }
 
     public function testBuildFull()

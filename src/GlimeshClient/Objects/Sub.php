@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A subscription is an exchange of money for support.
  *
@@ -12,73 +14,75 @@ namespace GlimeshClient\Objects;
  */
 class Sub extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * When the subscription ended
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $endedAt;
+    public readonly ?\DateTime $endedAt;
 
     /**
      * Subscription unique identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Subscription created date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Is the subscription currently active?
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $isActive;
+    public readonly ?bool $isActive;
 
     /**
      * Price of the subscription
      *
-     * @var int
+     * @var ?int
      */
-    protected $price;
+    public readonly ?int $price;
 
     /**
      * Subscription product name
      *
-     * @var string
+     * @var ?string
      */
-    protected $productName;
+    public readonly ?string $productName;
 
     /**
      * When the subscription started
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $startedAt;
+    public readonly ?\DateTime $startedAt;
 
     /**
      * The streamer receiving the support from the subscription
      *
-     * @var User
+     * @var ?User
      */
-    protected $streamer;
+    public readonly ?User $streamer;
 
     /**
      * Subscription updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * The user giving the support with the subscription
      *
-     * @var User
+     * @var ?User
      */
-    protected $user;
+    public readonly ?User $user;
 }

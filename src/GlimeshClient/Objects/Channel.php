@@ -2,6 +2,9 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+use GlimeshClient\Objects\Enums\ChannelStatus;
+
 /**
  * A channel is a user's actual container for live streaming.
  *
@@ -12,192 +15,194 @@ namespace GlimeshClient\Objects;
  */
 class Channel extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * List of bans in the channel
      *
-     * @var \ArrayObject<ChannelBan>
+     * @var ?\ArrayObject<ChannelBan>
      */
-    protected $bans;
+    public readonly ?\ArrayObject $bans;
 
     /**
      * Toggle for blocking anyone from posting links
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $blockLinks;
+    public readonly ?bool $blockLinks;
 
     /**
      * Category the current stream is in
      *
-     * @var Category
+     * @var ?Category
      */
-    protected $category;
+    public readonly ?Category $category;
 
     /**
      * List of chat messages sent in the channel
      *
-     * @var \ArrayObject<ChatMessage>
+     * @var ?\ArrayObject<ChatMessage>
      */
-    protected $chatMessages;
+    public readonly ?\ArrayObject $chatMessages;
 
     /**
      * Chat rules in html
      *
-     * @var string
+     * @var ?string
      */
-    protected $chatRulesHtml;
+    public readonly ?string $chatRulesHtml;
 
     /**
      * Chat rules in markdown
      *
-     * @var string
+     * @var ?string
      */
-    protected $chatRulesMd;
+    public readonly ?string $chatRulesMd;
 
     /**
      * Toggle for links automatically being clickable
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $disableHyperlinks;
+    public readonly ?bool $disableHyperlinks;
 
     /**
      * Hash-based Message Authentication Code for the stream
      *
-     * @var string
+     * @var ?string
      */
-    protected $hmacKey;
+    public readonly ?string $hmacKey;
 
     /**
      * Unique channel identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Is the stream inaccessible?
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $inaccessible;
+    public readonly ?bool $inaccessible;
 
     /**
      * Channel creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * The language a user can expect in the stream.
      *
-     * @var string
+     * @var ?string
      */
-    protected $language;
+    public readonly ?string $language;
 
     /**
      * If the streamer has flagged this channel as only appropriate for Mature Audiences.
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $matureContent;
+    public readonly ?bool $matureContent;
 
     /**
      * Minimum account age length before chatting
      *
-     * @var int
+     * @var ?int
      */
-    protected $minimumAccountAge;
+    public readonly ?int $minimumAccountAge;
 
     /**
      * List of moderation events in the channel
      *
-     * @var \ArrayObject<ChannelModerationLog>
+     * @var ?\ArrayObject<ChannelModerationLog>
      */
-    protected $moderationLogs;
+    public readonly ?\ArrayObject $moderationLogs;
 
     /**
      * List of moderators in the channel
      *
-     * @var \ArrayObject<ChannelModerator>
+     * @var ?\ArrayObject<ChannelModerator>
      */
-    protected $moderators;
+    public readonly ?\ArrayObject $moderators;
 
     /**
      * Toggle for requiring confirmed email before chatting
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $requireConfirmedEmail;
+    public readonly ?bool $requireConfirmedEmail;
 
     /**
      * Only show recent chat messages?
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $showRecentChatMessagesOnly;
+    public readonly ?bool $showRecentChatMessagesOnly;
 
     /**
      * The current status of the channnel
      *
-     * @var ChannelStatus
+     * @var ?ChannelStatus
      */
-    protected $status;
+    public readonly ?ChannelStatus $status;
 
     /**
      * If the channel is live, this will be the current Stream
      *
-     * @var Stream
+     * @var ?Stream
      */
-    protected $stream;
+    public readonly ?Stream $stream;
 
     /**
      * Current streams unique stream key
      *
-     * @var string
+     * @var ?string
      */
-    protected $streamKey;
+    public readonly ?string $streamKey;
 
     /**
      * User associated with the channel
      *
-     * @var User
+     * @var ?User
      */
-    protected $streamer;
+    public readonly ?User $streamer;
 
     /**
      * Subcategory the current stream is in
      *
-     * @var Subcategory
+     * @var ?Subcategory
      */
-    protected $subcategory;
+    public readonly ?Subcategory $subcategory;
 
     /**
      * Tags associated with the channel
      *
-     * @var \ArrayObject<Tag>
+     * @var ?\ArrayObject<Tag>
      */
-    protected $tags;
+    public readonly ?\ArrayObject $tags;
 
     /**
      * Current stream thumbnail
      *
-     * @var string
+     * @var ?string
      */
-    protected $thumbnail;
+    public readonly ?string $thumbnail;
 
     /**
      * The title of the current stream, live or offline.
      *
-     * @var string
+     * @var ?string
      */
-    protected $title;
+    public readonly ?string $title;
 
     /**
      * Channel updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 }

@@ -9,5 +9,7 @@ namespace GlimeshClient\Objects;
  */
 class %BUILDER_NAME% extends AbstractObjectModel%BUILDER_INTERFACES%
 {
+    use ObjectModelTrait;
+
 %BUILDER_FIELDS%
 }

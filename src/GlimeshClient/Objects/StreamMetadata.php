@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A single instance of stream metadata.
  *
@@ -12,129 +14,131 @@ namespace GlimeshClient\Objects;
  */
 class StreamMetadata extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Stream audio codec
      *
-     * @var string
+     * @var ?string
      */
-    protected $audioCodec;
+    public readonly ?string $audioCodec;
 
     /**
      * Unique stream metadata identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Ingest Server URL
      *
-     * @var string
+     * @var ?string
      */
-    protected $ingestServer;
+    public readonly ?string $ingestServer;
 
     /**
      * Viewers on the ingest
      *
-     * @var string
+     * @var ?string
      */
-    protected $ingestViewers;
+    public readonly ?string $ingestViewers;
 
     /**
      * Stream metadata created date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Lost stream input data packets
      *
-     * @var int
+     * @var ?int
      */
-    protected $lostPackets;
+    public readonly ?int $lostPackets;
 
     /**
      * Negative Acknowledged stream input data packets
      *
-     * @var int
+     * @var ?int
      */
-    protected $nackPackets;
+    public readonly ?int $nackPackets;
 
     /**
      * Received stream input data packets
      *
-     * @var int
+     * @var ?int
      */
-    protected $recvPackets;
+    public readonly ?int $recvPackets;
 
     /**
      * Bitrate at the source
      *
-     * @var int
+     * @var ?int
      */
-    protected $sourceBitrate;
+    public readonly ?int $sourceBitrate;
 
     /**
      * Ping to the source
      *
-     * @var int
+     * @var ?int
      */
-    protected $sourcePing;
+    public readonly ?int $sourcePing;
 
     /**
      * Current stream metadata references
      *
-     * @var Stream
+     * @var ?Stream
      */
-    protected $stream;
+    public readonly ?Stream $stream;
 
     /**
      * Current Stream time in seconds
      *
-     * @var int
+     * @var ?int
      */
-    protected $streamTimeSeconds;
+    public readonly ?int $streamTimeSeconds;
 
     /**
      * Stream metadata updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * Client vendor name
      *
-     * @var string
+     * @var ?string
      */
-    protected $vendorName;
+    public readonly ?string $vendorName;
 
     /**
      * Client vendor version
      *
-     * @var string
+     * @var ?string
      */
-    protected $vendorVersion;
+    public readonly ?string $vendorVersion;
 
     /**
      * Stream video codec
      *
-     * @var string
+     * @var ?string
      */
-    protected $videoCodec;
+    public readonly ?string $videoCodec;
 
     /**
      * Stream video height
      *
-     * @var int
+     * @var ?int
      */
-    protected $videoHeight;
+    public readonly ?int $videoHeight;
 
     /**
      * Stream video width
      *
-     * @var int
+     * @var ?int
      */
-    protected $videoWidth;
+    public readonly ?int $videoWidth;
 }

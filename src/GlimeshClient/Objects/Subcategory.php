@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * Subcategories are specific games, topics, or genre's that exist under a Category.
  *
@@ -12,73 +14,75 @@ namespace GlimeshClient\Objects;
  */
 class Subcategory extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Subcategory background image URL
      *
-     * @var string
+     * @var ?string
      */
-    protected $backgroundImageUrl;
+    public readonly ?string $backgroundImageUrl;
 
     /**
      * Parent category
      *
-     * @var Category
+     * @var ?Category
      */
-    protected $category;
+    public readonly ?Category $category;
 
     /**
      * ID of subcategory
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Subcategory creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Name of the subcategory
      *
-     * @var string
+     * @var ?string
      */
-    protected $name;
+    public readonly ?string $name;
 
     /**
      * URL friendly name of the subcategory
      *
-     * @var string
+     * @var ?string
      */
-    protected $slug;
+    public readonly ?string $slug;
 
     /**
      * Subcategory source
      *
-     * @var string
+     * @var ?string
      */
-    protected $source;
+    public readonly ?string $source;
 
     /**
      * Subcategory source ID
      *
-     * @var string
+     * @var ?string
      */
-    protected $sourceId;
+    public readonly ?string $sourceId;
 
     /**
      * Subcategory updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * Was the subcategory created by a user?
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $userCreated;
+    public readonly ?bool $userCreated;
 }

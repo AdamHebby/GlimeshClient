@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * Categories are the containers for live streaming content.
  *
@@ -12,38 +14,40 @@ namespace GlimeshClient\Objects;
  */
 class Category extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Unique category identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Name of the category
      *
-     * @var string
+     * @var ?string
      */
-    protected $name;
+    public readonly ?string $name;
 
     /**
      * Slug of the category
      *
-     * @var string
+     * @var ?string
      */
-    protected $slug;
+    public readonly ?string $slug;
 
     /**
      * Subcategories within the category
      *
-     * @var \ArrayObject<Subcategory>
+     * @var ?\ArrayObject<Subcategory>
      */
-    protected $subcategories;
+    public readonly ?\ArrayObject $subcategories;
 
     /**
      * Tags associated with the category
      *
-     * @var \ArrayObject<Tag>
+     * @var ?\ArrayObject<Tag>
      */
-    protected $tags;
+    public readonly ?\ArrayObject $tags;
 }

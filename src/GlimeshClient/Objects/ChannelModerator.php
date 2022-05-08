@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A channel moderator
  *
@@ -12,73 +14,75 @@ namespace GlimeshClient\Objects;
  */
 class ChannelModerator extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Can ban a user
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $canBan;
+    public readonly ?bool $canBan;
 
     /**
      * Can delete a message
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $canDelete;
+    public readonly ?bool $canDelete;
 
     /**
      * Can perform a long timeout action
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $canLongTimeout;
+    public readonly ?bool $canLongTimeout;
 
     /**
      * Can perform a short timeout action
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $canShortTimeout;
+    public readonly ?bool $canShortTimeout;
 
     /**
      * Can untimeout a user
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $canUnTimeout;
+    public readonly ?bool $canUnTimeout;
 
     /**
      * Can unban a user
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $canUnban;
+    public readonly ?bool $canUnban;
 
     /**
      * Channel the moderator can moderate in
      *
-     * @var Channel
+     * @var ?Channel
      */
-    protected $channel;
+    public readonly ?Channel $channel;
 
     /**
      * Moderator creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Moderator updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * Moderating User
      *
-     * @var User
+     * @var ?User
      */
-    protected $user;
+    public readonly ?User $user;
 }

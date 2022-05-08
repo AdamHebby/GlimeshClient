@@ -4,6 +4,8 @@ namespace GlimeshClient\Client;
 
 use GlimeshClient\Adapters\Authentication\AuthenticationAdapter;
 use GlimeshClient\Traits\ObjectResolverTrait;
+use GuzzleHttp\Client;
+use Psr\Log\LoggerInterface;
 
 /**
  * Glimesh Abstract common Client
@@ -24,29 +26,21 @@ abstract class AbstractClient
 
     /**
      * Current GuzzleClient used to interact with the API
-     *
-     * @var \GuzzleHttp\Client
      */
-    protected $guzzleClient = null;
+    protected ?Client $guzzleClient = null;
 
     /**
      * Current Authentication Adapter in use
-     *
-     * @var AuthenticationAdapter
      */
-    protected $authAdapter = null;
+    protected ?AuthenticationAdapter $authAdapter = null;
 
     /**
      * Current Logger
-     *
-     * @var \Psr\Log\LoggerInterface
      */
-    protected $logger = null;
+    protected ?LoggerInterface $logger = null;
 
     /**
      * Get a multiline error string from an error array item returned from the API
-     *
-     * @param array $glimeshError
      */
     protected static function getAllErrorStrings(array $glimeshErrors): string
     {
@@ -77,13 +71,15 @@ abstract class AbstractClient
         $t = "    ";
         $ct = 0;
         foreach ($lines as $index => $line) {
-            if (substr($line, -1, 1) === '{') {
-                $ct += 1;
-            } elseif (substr($line, -1, 1) === '}') {
+            if (substr($line, -1, 1) === '}') {
                 $ct -= 1;
             }
 
             $lines[$index] = str_repeat($t, $ct) . $lines[$index];
+
+            if (substr($line, -1, 1) === '{') {
+                $ct += 1;
+            }
         }
 
         return implode("\n", $lines) . "\n";

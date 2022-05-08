@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * Description not provided
  *
@@ -12,66 +14,68 @@ namespace GlimeshClient\Objects;
  */
 class RootQueryType extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * List all categories
      *
-     * @var \ArrayObject<Category>
+     * @var ?\ArrayObject<Category>
      */
-    protected $categories;
+    public readonly ?\ArrayObject $categories;
 
     /**
      * Query individual category
      *
-     * @var Category
+     * @var ?Category
      */
-    protected $category;
+    public readonly ?Category $category;
 
     /**
      * Query individual channel
      *
-     * @var Channel
+     * @var ?Channel
      */
-    protected $channel;
+    public readonly ?Channel $channel;
 
     /**
      * List all channels
      *
-     * @var \ArrayObject<Channel>
+     * @var ?\ArrayObject<Channel>
      */
-    protected $channels;
+    public readonly ?\ArrayObject $channels;
 
     /**
      * List all follows or followers
      *
-     * @var \ArrayObject<Follower>
+     * @var ?\ArrayObject<Follower>
      */
-    protected $followers;
+    public readonly ?\ArrayObject $followers;
 
     /**
      * Get yourself
      *
-     * @var User
+     * @var ?User
      */
-    protected $myself;
+    public readonly ?User $myself;
 
     /**
      * List all subscribers or subscribees
      *
-     * @var \ArrayObject<Sub>
+     * @var ?\ArrayObject<Sub>
      */
-    protected $subscriptions;
+    public readonly ?\ArrayObject $subscriptions;
 
     /**
      * Query individual user
      *
-     * @var User
+     * @var ?User
      */
-    protected $user;
+    public readonly ?User $user;
 
     /**
      * List all users
      *
-     * @var \ArrayObject<User>
+     * @var ?\ArrayObject<User>
      */
-    protected $users;
+    public readonly ?\ArrayObject $users;
 }

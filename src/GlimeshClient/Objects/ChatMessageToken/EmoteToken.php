@@ -2,8 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
 use GlimeshClient\Interfaces\ChatMessageToken;
-use GlimeshClient\Objects\AbstractObjectModel;
 
 /**
  * Chat Message Emote Token
@@ -15,31 +15,33 @@ use GlimeshClient\Objects\AbstractObjectModel;
  */
 class EmoteToken extends AbstractObjectModel implements ChatMessageToken
 {
+    use ObjectModelTrait;
+
     /**
      * Token src URL
      *
-     * @var string
+     * @var ?string
      */
-    protected $src;
+    public readonly ?string $src;
 
     /**
      * Token text
      *
-     * @var string
+     * @var ?string
      */
-    protected $text;
+    public readonly ?string $text;
 
     /**
      * Token type
      *
-     * @var string
+     * @var ?string
      */
-    protected $type;
+    public readonly ?string $type;
 
     /**
      * Emote Token URL
      *
-     * @var string
+     * @var ?string
      */
-    protected $url;
+    public readonly ?string $url;
 }

@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * Description not provided
  *
@@ -12,24 +14,26 @@ namespace GlimeshClient\Objects;
  */
 class RootSubscriptionType extends AbstractObjectModel
 {
-    /**
-     * Description not provided
-     *
-     * @var Channel
-     */
-    protected $channel;
+    use ObjectModelTrait;
 
     /**
      * Description not provided
      *
-     * @var ChatMessage
+     * @var ?Channel
      */
-    protected $chatMessage;
+    public readonly ?Channel $channel;
 
     /**
      * Description not provided
      *
-     * @var Follower
+     * @var ?ChatMessage
      */
-    protected $followers;
+    public readonly ?ChatMessage $chatMessage;
+
+    /**
+     * Description not provided
+     *
+     * @var ?Follower
+     */
+    public readonly ?Follower $followers;
 }

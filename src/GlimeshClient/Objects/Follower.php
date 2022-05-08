@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A follower is a user who subscribes to notifications for a particular user's channel.
  *
@@ -12,45 +14,47 @@ namespace GlimeshClient\Objects;
  */
 class Follower extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Does this follower have live notifications enabled?
      *
-     * @var boolean
+     * @var ?bool
      */
-    protected $hasLiveNotifications;
+    public readonly ?bool $hasLiveNotifications;
 
     /**
      * Unique follower identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Following creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * The streamer the user is following
      *
-     * @var User
+     * @var ?User
      */
-    protected $streamer;
+    public readonly ?User $streamer;
 
     /**
      * Following updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * The user that is following the streamer
      *
-     * @var User
+     * @var ?User
      */
-    protected $user;
+    public readonly ?User $user;
 }

@@ -4,10 +4,12 @@ namespace GlimeshClient\Client;
 
 use Evenement\EventEmitterTrait;
 use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
+use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Ratchet\Client\WebSocket;
 use Ratchet\RFC6455\Messaging\Message;
+use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use React\Promise\Deferred;
 use React\Promise\PromiseInterface;
@@ -31,30 +33,29 @@ class WebsocketClient extends AbstractClient
      *
      * @var array<\Ratchet\Client\WebSocket>
      */
-    protected $connections = [];
+    protected array $connections = [];
 
     /**
      * WebSocket URL
-     *
-     * @var string
      */
-    protected static $wsUrl = 'wss://glimesh.tv/api/socket/websocket?vsn=2.0.0&token=';
+    protected static string $wsUrl = 'wss://glimesh.tv/api/socket/websocket?vsn=2.0.0&token=';
     /**
      * Client Constructor
      *
-     * @param \GuzzleHttp\Client $guzzleClient Guzzle Client to interact with the API
+     * @param Client $guzzleClient Guzzle Client to interact with the API
      * @param OAuthFileAdapter $authAdapter Auth to use
      * @param LoggerInterface|null $logger Defaults to NullLogger
      */
     public function __construct(
-        \GuzzleHttp\Client $guzzleClient,
-        protected OAuthFileAdapter $authAdapter,
+        Client $guzzleClient,
+        OAuthFileAdapter $authAdapter,
         LoggerInterface $logger = null,
         /**
          * LoopInterface to use
          */
-        public \React\EventLoop\Loop $loop
+        public Loop $loop
     ) {
+        $this->authAdapter  = $authAdapter;
         $this->guzzleClient = $guzzleClient;
         $this->logger       = $logger ?? new NullLogger();
 

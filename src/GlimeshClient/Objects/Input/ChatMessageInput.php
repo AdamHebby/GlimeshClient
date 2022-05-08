@@ -15,7 +15,7 @@ class ChatMessageInput extends AbstractInputObjectModel
     /**
      * Description not provided
      *
-     * @var string
+     * @var ?string
      */
-    protected $message;
+    public readonly ?string $message;
 }
