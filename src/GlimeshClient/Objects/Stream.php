@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A stream is a single live stream in, either current or historical.
  *
@@ -12,136 +14,138 @@ namespace GlimeshClient\Objects;
  */
 class Stream extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Average chatters during the stream
      *
-     * @var int
+     * @var ?int
      */
-    protected $avgChatters;
+    public readonly ?int $avgChatters;
 
     /**
      * Average viewers during the stream
      *
-     * @var int
+     * @var ?int
      */
-    protected $avgViewers;
+    public readonly ?int $avgViewers;
 
     /**
      * The category the current stream is in
      *
-     * @var Category
+     * @var ?Category
      */
-    protected $category;
+    public readonly ?Category $category;
 
     /**
      * Channel running with the stream
      *
-     * @var Channel
+     * @var ?Channel
      */
-    protected $channel;
+    public readonly ?Channel $channel;
 
     /**
      * Concurrent chatters during last snapshot
      *
-     * @var int
+     * @var ?int
      */
-    protected $countChatters;
+    public readonly ?int $countChatters;
 
     /**
      * Concurrent viewers during last snapshot
      *
-     * @var int
+     * @var ?int
      */
-    protected $countViewers;
+    public readonly ?int $countViewers;
 
     /**
      * Datetime of when the stream ended, or null if still going
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $endedAt;
+    public readonly ?\DateTime $endedAt;
 
     /**
      * Unique stream identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Stream created date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Current stream metadata
      *
-     * @var \ArrayObject<StreamMetadata>
+     * @var ?\ArrayObject<StreamMetadata>
      */
-    protected $metadata;
+    public readonly ?\ArrayObject $metadata;
 
     /**
      * Total new subscribers gained during the stream
      *
-     * @var int
+     * @var ?int
      */
-    protected $newSubscribers;
+    public readonly ?int $newSubscribers;
 
     /**
      * Peak concurrent chatters
      *
-     * @var int
+     * @var ?int
      */
-    protected $peakChatters;
+    public readonly ?int $peakChatters;
 
     /**
      * Peak concurrent viewers
      *
-     * @var int
+     * @var ?int
      */
-    protected $peakViewers;
+    public readonly ?int $peakViewers;
 
     /**
      * Total resubscribers during the stream
      *
-     * @var int
+     * @var ?int
      */
-    protected $resubSubscribers;
+    public readonly ?int $resubSubscribers;
 
     /**
      * Datetime of when the stream was started
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $startedAt;
+    public readonly ?\DateTime $startedAt;
 
     /**
      * The subategory the current stream is in
      *
-     * @var Subcategory
+     * @var ?Subcategory
      */
-    protected $subcategory;
+    public readonly ?Subcategory $subcategory;
 
     /**
      * Thumbnail URL of the stream
      *
-     * @var string
+     * @var ?string
      */
-    protected $thumbnail;
+    public readonly ?string $thumbnail;
 
     /**
      * The title of the stream.
      *
-     * @var string
+     * @var ?string
      */
-    protected $title;
+    public readonly ?string $title;
 
     /**
      * Stream updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 }

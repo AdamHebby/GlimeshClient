@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A channel timeout or ban
  *
@@ -12,45 +14,47 @@ namespace GlimeshClient\Objects;
  */
 class ChannelBan extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Channel the ban affects
      *
-     * @var Channel
+     * @var ?Channel
      */
-    protected $channel;
+    public readonly ?Channel $channel;
 
     /**
      * When the ban expires
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $expiresAt;
+    public readonly ?\DateTime $expiresAt;
 
     /**
      * Channel ban creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Reason for channel ban
      *
-     * @var string
+     * @var ?string
      */
-    protected $reason;
+    public readonly ?string $reason;
 
     /**
      * Channel ban updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * User the ban affects
      *
-     * @var User
+     * @var ?User
      */
-    protected $user;
+    public readonly ?User $user;
 }

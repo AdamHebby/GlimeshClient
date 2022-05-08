@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * Description not provided
  *
@@ -12,73 +14,75 @@ namespace GlimeshClient\Objects;
  */
 class RootMutationType extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Ban a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var ?ChannelModerationLog
      */
-    protected $banUser;
+    public readonly ?ChannelModerationLog $banUser;
 
     /**
      * Create a chat message
      *
-     * @var ChatMessage
+     * @var ?ChatMessage
      */
-    protected $createChatMessage;
+    public readonly ?ChatMessage $createChatMessage;
 
     /**
      * Deletes a specific chat message from channel.
      *
-     * @var ChannelModerationLog
+     * @var ?ChannelModerationLog
      */
-    protected $deleteMessage;
+    public readonly ?ChannelModerationLog $deleteMessage;
 
     /**
      * End a stream
      *
-     * @var Stream
+     * @var ?Stream
      */
-    protected $endStream;
+    public readonly ?Stream $endStream;
 
     /**
      * Update a stream's metadata
      *
-     * @var StreamMetadata
+     * @var ?StreamMetadata
      */
-    protected $logStreamMetadata;
+    public readonly ?StreamMetadata $logStreamMetadata;
 
     /**
      * Long timeout (15 minutes) a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var ?ChannelModerationLog
      */
-    protected $longTimeoutUser;
+    public readonly ?ChannelModerationLog $longTimeoutUser;
 
     /**
      * Short timeout (5 minutes) a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var ?ChannelModerationLog
      */
-    protected $shortTimeoutUser;
+    public readonly ?ChannelModerationLog $shortTimeoutUser;
 
     /**
      * Start a stream
      *
-     * @var Stream
+     * @var ?Stream
      */
-    protected $startStream;
+    public readonly ?Stream $startStream;
 
     /**
      * Unban a user from a chat channel.
      *
-     * @var ChannelModerationLog
+     * @var ?ChannelModerationLog
      */
-    protected $unbanUser;
+    public readonly ?ChannelModerationLog $unbanUser;
 
     /**
      * Update a stream's thumbnail
      *
-     * @var Stream
+     * @var ?Stream
      */
-    protected $uploadStreamThumbnail;
+    public readonly ?Stream $uploadStreamThumbnail;
 }

@@ -3,7 +3,7 @@
 namespace GlimeshClient\Client;
 
 use GlimeshClient\Adapters\Authentication\AuthenticationAdapter;
-use GlimeshClient\Traits\ObjectResolverTrait;
+use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
@@ -25,7 +25,7 @@ class BasicClient extends AbstractClient
      * @param LoggerInterface|null $logger Defaults to NullLogger
      */
     public function __construct(
-        \GuzzleHttp\Client $guzzleClient,
+        Client $guzzleClient,
         AuthenticationAdapter $authAdapter,
         LoggerInterface $logger = null
     ) {

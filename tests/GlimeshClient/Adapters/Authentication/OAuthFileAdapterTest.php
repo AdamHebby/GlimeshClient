@@ -68,6 +68,7 @@ class OAuthFileAdapterTest extends TestCase
         );
 
         $this->assertEquals('TEST FAKE_ACCESS_TOKEN', $auth->getAuthentication());
+        $this->assertEquals('FAKE_ACCESS_TOKEN', $auth->getAccessToken());
         $this->assertFalse($auth->isExpired());
         unlink($authFile);
     }

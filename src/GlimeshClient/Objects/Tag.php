@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * Tags are user created labels that are either global or category specific.
  *
@@ -12,52 +14,54 @@ namespace GlimeshClient\Objects;
  */
 class Tag extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Parent category
      *
-     * @var Category
+     * @var ?Category
      */
-    protected $category;
+    public readonly ?Category $category;
 
     /**
      * The number of streams started with this tag
      *
-     * @var int
+     * @var ?int
      */
-    protected $countUsage;
+    public readonly ?int $countUsage;
 
     /**
      * Unique tag identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Tag creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * Name of the tag
      *
-     * @var string
+     * @var ?string
      */
-    protected $name;
+    public readonly ?string $name;
 
     /**
      * URL friendly name of the tag
      *
-     * @var string
+     * @var ?string
      */
-    protected $slug;
+    public readonly ?string $slug;
 
     /**
      * Tag updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 }

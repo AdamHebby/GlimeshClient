@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A chat message sent to a channel by a user.
  *
@@ -12,52 +14,54 @@ namespace GlimeshClient\Objects;
  */
 class ChatMessage extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * Channel where the chat message occurs
      *
-     * @var Channel
+     * @var ?Channel
      */
-    protected $channel;
+    public readonly ?Channel $channel;
 
     /**
      * Unique chat message identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * Chat message creation date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $insertedAt;
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * The chat message.
      *
-     * @var string
+     * @var ?string
      */
-    protected $message;
+    public readonly ?string $message;
 
     /**
      * List of chat message tokens used
      *
-     * @var \ArrayObject<ChatMessageToken>
+     * @var ?\ArrayObject<ChatMessageToken>
      */
-    protected $tokens;
+    public readonly ?\ArrayObject $tokens;
 
     /**
      * Chat message updated date
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $updatedAt;
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * User who sent the chat message
      *
-     * @var User
+     * @var ?User
      */
-    protected $user;
+    public readonly ?User $user;
 }

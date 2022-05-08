@@ -2,6 +2,8 @@
 
 namespace GlimeshClient\Objects;
 
+use GlimeshClient\Traits\ObjectModelTrait;
+
 /**
  * A user of Glimesh, can be a streamer, a viewer or both!
  *
@@ -12,129 +14,131 @@ namespace GlimeshClient\Objects;
  */
 class User extends AbstractObjectModel
 {
+    use ObjectModelTrait;
+
     /**
      * User Avatar
      *
-     * @var string
+     * @var ?string
      */
-    protected $avatar;
+    public readonly ?string $avatar;
 
     /**
      * URL to the user's avatar
      *
-     * @var string
+     * @var ?string
      */
-    protected $avatarUrl;
+    public readonly ?string $avatarUrl;
 
     /**
      * Datetime the user confirmed their email address
      *
-     * @var \DateTime
+     * @var ?\DateTime
      */
-    protected $confirmedAt;
+    public readonly ?\DateTime $confirmedAt;
 
     /**
      * Description not provided
      *
-     * @var int
+     * @var ?int
      */
-    protected $countFollowers;
+    public readonly ?int $countFollowers;
 
     /**
      * Description not provided
      *
-     * @var int
+     * @var ?int
      */
-    protected $countFollowing;
+    public readonly ?int $countFollowing;
 
     /**
      * Exactly the same as the username, but with casing the user prefers
      *
-     * @var string
+     * @var ?string
      */
-    protected $displayname;
+    public readonly ?string $displayname;
 
     /**
      * A list of users who are following you
      *
-     * @var \ArrayObject<Follower>
+     * @var ?\ArrayObject<Follower>
      */
-    protected $followers;
+    public readonly ?\ArrayObject $followers;
 
     /**
      * A list of users who you are following
      *
-     * @var \ArrayObject<Follower>
+     * @var ?\ArrayObject<Follower>
      */
-    protected $following;
+    public readonly ?\ArrayObject $following;
 
     /**
      * Unique User identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $id;
+    public readonly ?string $id;
 
     /**
      * HTML version of the user's profile, should be safe for rendering directly
      *
-     * @var string
+     * @var ?string
      */
-    protected $profileContentHtml;
+    public readonly ?string $profileContentHtml;
 
     /**
      * Markdown version of the user's profile
      *
-     * @var string
+     * @var ?string
      */
-    protected $profileContentMd;
+    public readonly ?string $profileContentMd;
 
     /**
      * Qualified URL for the user's Discord server
      *
-     * @var string
+     * @var ?string
      */
-    protected $socialDiscord;
+    public readonly ?string $socialDiscord;
 
     /**
      * Qualified URL for the user's Guilded server
      *
-     * @var string
+     * @var ?string
      */
-    protected $socialGuilded;
+    public readonly ?string $socialGuilded;
 
     /**
      * Qualified URL for the user's Instagram account
      *
-     * @var string
+     * @var ?string
      */
-    protected $socialInstagram;
+    public readonly ?string $socialInstagram;
 
     /**
      * Qualified URL for the user's YouTube account
      *
-     * @var string
+     * @var ?string
      */
-    protected $socialYoutube;
+    public readonly ?string $socialYoutube;
 
     /**
      * A list of linked social accounts for the user
      *
-     * @var \ArrayObject<UserSocial>
+     * @var ?\ArrayObject<UserSocial>
      */
-    protected $socials;
+    public readonly ?\ArrayObject $socials;
 
     /**
      * Lowercase user identifier
      *
-     * @var string
+     * @var ?string
      */
-    protected $username;
+    public readonly ?string $username;
 
     /**
      * YouTube Intro URL for the user's profile
      *
-     * @var string
+     * @var ?string
      */
-    protected $youtubeIntroUrl;
+    public readonly ?string $youtubeIntroUrl;
 }

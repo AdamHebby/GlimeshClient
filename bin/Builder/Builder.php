@@ -15,6 +15,8 @@ use GlimeshClient\Traits\ObjectResolverTrait;
  */
 class Builder
 {
+    use ObjectResolverTrait;
+
     /**
      * Schema Array, as loaded from api.json in construct
      *
@@ -84,7 +86,7 @@ class Builder
         $fieldName = $field['name'];
         $typeName = isset($field['type']['name']) ? $field['type']['name'] : '';
 
-        $resolvedType = ObjectResolverTrait::resolveObjectKey($fieldName);
+        $resolvedType = self::resolveObjectKey($fieldName);
 
         if ($resolvedType !== null) {
             $resolvedType = preg_replace('/(.*?)\\\([a-z]+)$/i', "$2", $resolvedType);
@@ -95,8 +97,11 @@ class Builder
         }
 
         if ($resolvedType === null) {
-            if (in_array(strtolower($typeName), ['string', 'int', 'boolean'])) {
+            if (in_array(strtolower($typeName), ['string', 'int'])) {
                 $resolvedType = strtolower($typeName);
+            }
+            if (strtolower($typeName) === 'boolean') {
+                $resolvedType = 'bool';
             }
         }
 
@@ -112,10 +117,6 @@ class Builder
             if (class_exists("\\GlimeshClient\\Objects\\{$typeName}")) {
                 return $typeName;
             }
-        }
-
-        if (isset($field['type']['kind']) && $field['type']['kind'] === 'LIST') {
-            $resolvedType = "\ArrayObject<$resolvedType>";
         }
 
         if ($resolvedType == null) {
@@ -140,11 +141,20 @@ class Builder
             return null;
         }
 
+        $fieldName = self::resolveField($field);
+        $fieldDoc  = $fieldName;
+
+        if (isset($field['type']['kind']) && $field['type']['kind'] === 'LIST') {
+            $fieldDoc = "\ArrayObject<$fieldName>";
+            $fieldName = '\ArrayObject';
+        }
+
         return self::replaceValues(
             __DIR__ . '/resources/field.php.txt',
             [
                 '%BUILDER_FIELD_DESCRIPTION%' => $field['description'] ?? 'Description not provided',
-                '%BUILDER_FIELD_TYPE%' => self::resolveField($field),
+                '%BUILDER_FIELD_TYPE%' => $fieldDoc,
+                '%BUILDER_P_FIELD_TYPE%' => $fieldName,
                 '%BUILDER_FIELD_NAME%' => $field['name']
             ]
         );
@@ -186,17 +196,25 @@ class Builder
     {
         $fields = $type['fields'];
 
-        $use = '';
+        $use = [
+            "use GlimeshClient\Traits\ObjectModelTrait;"
+        ];
+
         $interfaces = empty($type['interfaces']) ? null : ' implements ' . $type['interfaces'][0]['name'];
         if (!empty($interfaces)) {
-            $use .= "\nuse GlimeshClient\Interfaces\\{$type['interfaces'][0]['name']};\n";
-            $use .= "use GlimeshClient\Objects\AbstractObjectModel;\n";
+            $use[] = "use GlimeshClient\Interfaces\\{$type['interfaces'][0]['name']};";
+        }
+
+        foreach ($fields as $field) {
+            if ($field['type']['kind'] === 'ENUM') {
+                $use[] = "use GlimeshClient\Objects\Enums\\{$field['type']['name']};";
+            }
         }
 
         return self::replaceValues(
             __DIR__ . '/resources/object.php.txt',
             [
-                '%BUILDER_USE%' => $use,
+                '%BUILDER_USE%' => "\n" . implode("\n", $use) . "\n",
                 '%BUILDER_DESCRIPTION%' => $type['description'] ?? 'Description not provided',
                 '%BUILDER_STANDARD_DOCBLOCK%' => implode("\n", self::$standardDocBlock),
                 '%BUILDER_NAME%' => $type['name'],

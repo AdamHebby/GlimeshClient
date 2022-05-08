@@ -16,6 +16,8 @@ use PHPUnit\Framework\TestCase;
  */
 class ObjectResolverTraitTest extends TestCase
 {
+    use ObjectResolverTrait;
+
     public function testObjectInstantiation()
     {
         $data = [
@@ -60,7 +62,7 @@ class ObjectResolverTraitTest extends TestCase
         ];
 
 
-        $object = ObjectResolverTrait::getObject('user', $data);
+        $object = self::getObject('user', $data);
 
         $this->assertIsObject($object);
         $this->assertInstanceOf(User::class, $object);
@@ -71,7 +73,7 @@ class ObjectResolverTraitTest extends TestCase
     public function testTraitThrows()
     {
         try {
-            ObjectResolverTrait::getObject('', []);
+            self::getObject('', []);
         } catch (\Throwable $th) {
             $this->assertTrue(stristr($th->getMessage(), 'Class not implemented for') >= 0);
         }

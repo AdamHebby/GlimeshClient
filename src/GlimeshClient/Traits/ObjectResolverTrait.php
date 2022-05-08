@@ -19,7 +19,7 @@ trait ObjectResolverTrait
      *
      * @var array
      */
-    public static $mappingMulitple = [
+    protected static $mappingMulitple = [
         'bans'           => \GlimeshClient\Objects\ChannelBan::class,
         'categories'     => \GlimeshClient\Objects\Category::class,
         'channels'       => \GlimeshClient\Objects\Channel::class,
@@ -42,7 +42,7 @@ trait ObjectResolverTrait
 -     *
 -     * @var array
 -     */
-    public static $mappingSingle = [
+    protected static $mappingSingle = [
         'ban'                   => \GlimeshClient\Objects\ChannelBan::class,
         'category'              => \GlimeshClient\Objects\Category::class,
         'channel'               => \GlimeshClient\Objects\Channel::class,
@@ -75,7 +75,7 @@ trait ObjectResolverTrait
      *
      * @return AbstractObjectModel|ArrayObject
      */
-    public static function getObject(string $key, array $data = []): object
+    protected static function getObject(string $key, array $data = []): object
     {
         $class = self::resolveObjectKey($key);
 
@@ -101,30 +101,24 @@ trait ObjectResolverTrait
 
     /**
      * Is this a Date Field?
-     *
-     *
      */
-    public static function isDateField(string $value): bool
+    protected static function isDateField(string $value): bool
     {
         return preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$/', $value);
     }
 
     /**
      * Should this key be an array or a single object
-     *
-     *
      */
-    public static function isArrayOfObjects(string $key): bool
+    protected static function isArrayOfObjects(string $key): bool
     {
         return isset(self::$mappingMulitple[$key]);
     }
 
     /**
      * Return class for key
-     *
-     *
      */
-    public static function resolveObjectKey(string $key): ?string
+    protected static function resolveObjectKey(string $key): ?string
     {
         if (self::isArrayOfObjects($key)) {
             return self::$mappingMulitple[$key];
