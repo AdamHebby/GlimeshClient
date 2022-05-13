@@ -4,3 +4,4 @@ data
 tests/reports/
 .env
 composer.lock
+bin/builder/resources/api.json
