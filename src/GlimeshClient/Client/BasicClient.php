@@ -3,7 +3,10 @@
 namespace GlimeshClient\Client;
 
 use GlimeshClient\Adapters\Authentication\AuthenticationAdapter;
+use GlimeshClient\Response\GlimeshApiResponse;
+use GraphQL\Query;
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
@@ -39,47 +42,32 @@ class BasicClient extends AbstractClient
     }
 
     /**
-     * Make a request to the API using GraphQL, will return a complex object structure
-     * based on the return value
+     * Make a request to the API using GraphQL, will return a simple, unmodified array
      */
-    public function makeRequest(\GraphQL\Query $query): object
+    public function makeRequest(Query $query): GlimeshApiResponse
     {
-        $data = $this->makeRawRequest($query);
-        $arrayKeys = array_keys($data);
-
-        $key = reset($arrayKeys);
-
-        $this->logger->debug('Request made, building object');
-
-        return self::getObject($key, $data[$key]);
+        return new GlimeshApiResponse(
+            $query,
+            $this->makeRawStringRequest($query->__toString())
+        );
     }
 
     /**
-     * Make a request to the API using GraphQL, will return a simple, unmodified array
+     * Not recommended
      */
-    public function makeRawRequest(\GraphQL\Query $query): array
+    public function makeRawStringRequest(string $request): Response
     {
-        $req = $this->guzzleClient->request(
+        $response = $this->guzzleClient->request(
             'GET',
-            self::GLIMESH_URL . '/api',
+            self::GLIMESH_URL . '/api/graph',
             [
-                'body' => $query->__toString(),
+                'body' => $request,
                 'headers' => [
                     'Authorization' => $this->authAdapter->getAuthentication()
                 ]
             ]
         );
 
-        $data = json_decode($req->getBody()->getContents(), true);
-
-        if (!isset($data['data'])) {
-            throw new \Exception(self::getAllErrorStrings($data['errors']));
-        }
-
-        array_map(function(array $error) {
-            $this->logger->error(self::getErrorString($error));
-        }, $data['errors'] ?? []);
-
-        return $data['data'];
+        return $response;
     }
 }

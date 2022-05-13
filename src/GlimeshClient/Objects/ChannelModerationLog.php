@@ -26,9 +26,16 @@ class ChannelModerationLog extends AbstractObjectModel
     /**
      * Channel the event occurred in
      *
-     * @var ?Channel
+     * @var ?\ArrayObject<Channel>
      */
-    public readonly ?Channel $channel;
+    public readonly ?\ArrayObject $channel;
+
+    /**
+     * Unique moderation event identifier
+     *
+     * @var ?string
+     */
+    public readonly ?string $id;
 
     /**
      * Event creation date
@@ -40,9 +47,9 @@ class ChannelModerationLog extends AbstractObjectModel
     /**
      * Moderator that performed the event
      *
-     * @var ?ChannelModerator
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?ChannelModerator $moderator;
+    public readonly ?\ArrayObject $moderator;
 
     /**
      * Event updated date
@@ -54,7 +61,7 @@ class ChannelModerationLog extends AbstractObjectModel
     /**
      * Receiving user of the event
      *
-     * @var ?User
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?User $user;
+    public readonly ?\ArrayObject $user;
 }

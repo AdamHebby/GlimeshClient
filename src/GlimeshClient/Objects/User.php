@@ -17,11 +17,18 @@ class User extends AbstractObjectModel
     use ObjectModelTrait;
 
     /**
-     * User Avatar
+     * Description not provided
      *
-     * @var ?string
+     * @var ?bool
      */
-    public readonly ?string $avatar;
+    public readonly ?bool $allowGlimeshNewsletterEmails;
+
+    /**
+     * Description not provided
+     *
+     * @var ?bool
+     */
+    public readonly ?bool $allowLiveSubscriptionEmails;
 
     /**
      * URL to the user's avatar
@@ -29,6 +36,13 @@ class User extends AbstractObjectModel
      * @var ?string
      */
     public readonly ?string $avatarUrl;
+
+    /**
+     * A user's channel, if they have one
+     *
+     * @var ?\ArrayObject<Channel>
+     */
+    public readonly ?\ArrayObject $channel;
 
     /**
      * Datetime the user confirmed their email address
@@ -59,18 +73,32 @@ class User extends AbstractObjectModel
     public readonly ?string $displayname;
 
     /**
-     * A list of users who are following you
+     * Email for the user, hidden behind a scope
+     *
+     * @var ?string
+     */
+    public readonly ?string $email;
+
+    /**
+     * Description not provided
      *
      * @var ?\ArrayObject<Follower>
      */
     public readonly ?\ArrayObject $followers;
 
     /**
-     * A list of users who you are following
+     * Description not provided
      *
      * @var ?\ArrayObject<Follower>
      */
     public readonly ?\ArrayObject $following;
+
+    /**
+     * Shortcut to a user's followed channels
+     *
+     * @var ?\ArrayObject<Channel>
+     */
+    public readonly ?\ArrayObject $followingLiveChannels;
 
     /**
      * Unique User identifier
@@ -78,6 +106,13 @@ class User extends AbstractObjectModel
      * @var ?string
      */
     public readonly ?string $id;
+
+    /**
+     * Account creation date
+     *
+     * @var ?\DateTime
+     */
+    public readonly ?\DateTime $insertedAt;
 
     /**
      * HTML version of the user's profile, should be safe for rendering directly
@@ -127,6 +162,20 @@ class User extends AbstractObjectModel
      * @var ?\ArrayObject<UserSocial>
      */
     public readonly ?\ArrayObject $socials;
+
+    /**
+     * The primary role the user performs on the Glimesh team
+     *
+     * @var ?string
+     */
+    public readonly ?string $teamRole;
+
+    /**
+     * Account last updated date
+     *
+     * @var ?\DateTime
+     */
+    public readonly ?\DateTime $updatedAt;
 
     /**
      * Lowercase user identifier

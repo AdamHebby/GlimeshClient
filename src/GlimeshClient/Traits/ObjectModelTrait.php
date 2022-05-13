@@ -4,6 +4,7 @@ namespace GlimeshClient\Traits;
 
 trait ObjectModelTrait
 {
+    use ObjectResolverTrait;
     /**
      * Sets object parameters from data given by API, recursively
      *

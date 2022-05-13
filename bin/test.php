@@ -1,12 +1,8 @@
 <?php
 
-use GlimeshClient\Adapters\Authentication\ClientIDAuth;
 use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
 use GlimeshClient\Client\BasicClient;
-use GlimeshClient\Objects\Category;
-use GlimeshClient\Objects\Channel;
 use GlimeshClient\Objects\Enums\ChannelStatus;
-use GlimeshClient\Objects\Stream;
 use GraphQL\Query;
 use GraphQL\RawObject;
 use GuzzleHttp\Client as GuzzleHttpClient;
@@ -21,12 +17,6 @@ $logger->pushHandler(new \Monolog\Handler\ErrorLogHandler());
 
 $guzzle = new GuzzleHttpClient(['http_errors' => true, 'allow_redirects' => true]);
 
-// $client = new Client(
-//     $guzzle,
-//     new ClientIDAuth($_ENV['CLIENT_ID']),
-//     $logger
-// );
-
 $client = new BasicClient(
     $guzzle,
     new OAuthFileAdapter(
@@ -37,10 +27,76 @@ $client = new BasicClient(
     $logger
 );
 
-$object = ($client->makeRequest(
+$response = $client->makeRequest(
     (new Query('channels'))->setSelectionSet([
-        'id', 'status'
-    ])->setArguments(['status' => new RawObject(ChannelStatus::LIVE->name)])
-));
+        'count',
+        (new Query('pageInfo '))->setSelectionSet([
+            'endCursor',
+            'hasNextPage',
+            'hasPreviousPage',
+            'startCursor',
+        ]),
+        (new Query('edges'))->setSelectionSet([
+            (new Query('node'))->setSelectionSet([
+                'id', 'status',
+                (new Query('bans'))->setSelectionSet([
+                    'count',
+                    (new Query('pageInfo'))->setSelectionSet([
+                        'endCursor',
+                        'hasNextPage',
+                        'hasPreviousPage',
+                        'startCursor',
+                    ]),
+                    (new Query('edges'))->setSelectionSet([
+                        (new Query('node'))->setSelectionSet([
+                            'id', 'reason'
+                        ])
+                    ])
+                ])->setArguments(['first' => 2])
+            ])
+        ])
+    ])->setArguments([
+        'status' => new RawObject(ChannelStatus::LIVE->value),
+        'first' => 5
+    ])
+);
 
-var_dump($object);
+$channels = $response->getAsObject();
+
+var_dump($channels);
+
+$channels = $client->makeRequest(
+    (new Query('channels'))->setSelectionSet([
+        'count',
+        (new Query('pageInfo '))->setSelectionSet([
+            'endCursor',
+            'hasNextPage',
+            'hasPreviousPage',
+            'startCursor',
+        ]),
+        (new Query('edges'))->setSelectionSet([
+            (new Query('node'))->setSelectionSet([
+                'id', 'status',
+                (new Query('bans'))->setSelectionSet([
+                    'count',
+                    (new Query('pageInfo'))->setSelectionSet([
+                        'endCursor',
+                        'hasNextPage',
+                        'hasPreviousPage',
+                        'startCursor',
+                    ]),
+                    (new Query('edges'))->setSelectionSet([
+                        (new Query('node'))->setSelectionSet([
+                            'id', 'reason'
+                        ])
+                    ])
+                ])->setArguments(['first' => 2])
+            ])
+        ])
+    ])->setArguments([
+        'status' => new RawObject(ChannelStatus::LIVE->value),
+        'first' => 5,
+        'after' => $channels->pageInfo->endCursor
+    ])
+);
+

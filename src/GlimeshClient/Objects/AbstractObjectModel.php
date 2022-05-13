@@ -14,61 +14,59 @@ use GlimeshClient\Traits\ObjectResolverTrait;
  */
 abstract class AbstractObjectModel
 {
-    use ObjectResolverTrait;
+    // /**
+    //  * Get All possible properties, can exclude parameters
+    //  *
+    //  * @param array $exclude Parameters to exclude
+    //  */
+    // public static function getAllKeys(array $exclude = []): array
+    // {
+    //     $selfVars   = array_keys(get_class_vars(self::class));
+    //     $staticVars = array_keys(get_class_vars(static::class));
 
-    /**
-     * Get All possible properties, can exclude parameters
-     *
-     * @param array $exclude Parameters to exclude
-     */
-    public static function getAllKeys(array $exclude = []): array
-    {
-        $selfVars   = array_keys(get_class_vars(self::class));
-        $staticVars = array_keys(get_class_vars(static::class));
+    //     return array_diff($staticVars, $selfVars, $exclude);
+    // }
 
-        return array_diff($staticVars, $selfVars, $exclude);
-    }
+    // /**
+    //  * Get all Parameters that are not objects themselves, can exclude parameters
+    //  *
+    //  * @param array $exclude Parameters to exclude
+    //  */
+    // public static function getAllNonObjectKeys(array $exclude = []): array
+    // {
+    //     $selfVars   = array_keys(get_class_vars(self::class));
+    //     $staticVars = array_keys(get_class_vars(static::class));
+    //     $objects    = array_merge(
+    //         array_keys(self::$mappingMulitple),
+    //         array_keys(self::$mappingSingle),
+    //     );
 
-    /**
-     * Get all Parameters that are not objects themselves, can exclude parameters
-     *
-     * @param array $exclude Parameters to exclude
-     */
-    public static function getAllNonObjectKeys(array $exclude = []): array
-    {
-        $selfVars   = array_keys(get_class_vars(self::class));
-        $staticVars = array_keys(get_class_vars(static::class));
-        $objects    = array_merge(
-            array_keys(self::$mappingMulitple),
-            array_keys(self::$mappingSingle),
-        );
+    //     return array_diff($staticVars, $selfVars, $objects, $exclude);
+    // }
 
-        return array_diff($staticVars, $selfVars, $objects, $exclude);
-    }
+    // /**
+    //  * Converts the current object and all children to an array, stringifies DateTime objects
+    //  *
+    //  * @param bool $trimEmpty Removes any empty properties or objects
+    //  */
+    // public function toArray($trimEmpty = true): array
+    // {
+    //     $array = [];
 
-    /**
-     * Converts the current object and all children to an array, stringifies DateTime objects
-     *
-     * @param bool $trimEmpty Removes any empty properties or objects
-     */
-    public function toArray($trimEmpty = true): array
-    {
-        $array = [];
+    //     foreach ($this as $key => $value) {
+    //         if ($value instanceof AbstractObjectModel) {
+    //             $value = $value->toArray($trimEmpty);
+    //         }
 
-        foreach ($this as $key => $value) {
-            if ($value instanceof AbstractObjectModel) {
-                $value = $value->toArray($trimEmpty);
-            }
+    //         if ($value instanceof \DateTimeInterface) {
+    //             $value = $value->format('Y-m-d\TH:i:s');
+    //         }
 
-            if ($value instanceof \DateTimeInterface) {
-                $value = $value->format('Y-m-d\TH:i:s');
-            }
+    //         if (!$trimEmpty || !empty($value)) {
+    //             $array[$key] = $value;
+    //         }
+    //     }
 
-            if (!$trimEmpty || !empty($value)) {
-                $array[$key] = $value;
-            }
-        }
-
-        return $array;
-    }
+    //     return $array;
+    // }
 }

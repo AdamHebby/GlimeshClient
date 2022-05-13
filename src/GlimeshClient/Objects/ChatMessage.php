@@ -19,9 +19,9 @@ class ChatMessage extends AbstractObjectModel
     /**
      * Channel where the chat message occurs
      *
-     * @var ?Channel
+     * @var ?\ArrayObject<Channel>
      */
-    public readonly ?Channel $channel;
+    public readonly ?\ArrayObject $channel;
 
     /**
      * Unique chat message identifier
@@ -38,11 +38,18 @@ class ChatMessage extends AbstractObjectModel
     public readonly ?\DateTime $insertedAt;
 
     /**
-     * The chat message.
+     * The chat message contents, be careful to sanitize because any user input is allowed
      *
      * @var ?string
      */
     public readonly ?string $message;
+
+    /**
+     * A collection of metadata attributed to the chat message
+     *
+     * @var ?ChatMessageMetadata
+     */
+    public readonly ?ChatMessageMetadata $metadata;
 
     /**
      * List of chat message tokens used
@@ -61,7 +68,7 @@ class ChatMessage extends AbstractObjectModel
     /**
      * User who sent the chat message
      *
-     * @var ?User
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?User $user;
+    public readonly ?\ArrayObject $user;
 }

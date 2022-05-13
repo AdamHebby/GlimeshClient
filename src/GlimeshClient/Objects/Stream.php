@@ -17,20 +17,6 @@ class Stream extends AbstractObjectModel
     use ObjectModelTrait;
 
     /**
-     * Average chatters during the stream
-     *
-     * @var ?int
-     */
-    public readonly ?int $avgChatters;
-
-    /**
-     * Average viewers during the stream
-     *
-     * @var ?int
-     */
-    public readonly ?int $avgViewers;
-
-    /**
      * The category the current stream is in
      *
      * @var ?Category
@@ -40,16 +26,9 @@ class Stream extends AbstractObjectModel
     /**
      * Channel running with the stream
      *
-     * @var ?Channel
+     * @var ?\ArrayObject<Channel>
      */
-    public readonly ?Channel $channel;
-
-    /**
-     * Concurrent chatters during last snapshot
-     *
-     * @var ?int
-     */
-    public readonly ?int $countChatters;
+    public readonly ?\ArrayObject $channel;
 
     /**
      * Concurrent viewers during last snapshot
@@ -59,7 +38,7 @@ class Stream extends AbstractObjectModel
     public readonly ?int $countViewers;
 
     /**
-     * Datetime of when the stream ended, or null if still going
+     * Datetime of when the stream was ended, or null if still going
      *
      * @var ?\DateTime
      */
@@ -87,32 +66,11 @@ class Stream extends AbstractObjectModel
     public readonly ?\ArrayObject $metadata;
 
     /**
-     * Total new subscribers gained during the stream
-     *
-     * @var ?int
-     */
-    public readonly ?int $newSubscribers;
-
-    /**
-     * Peak concurrent chatters
-     *
-     * @var ?int
-     */
-    public readonly ?int $peakChatters;
-
-    /**
      * Peak concurrent viewers
      *
      * @var ?int
      */
     public readonly ?int $peakViewers;
-
-    /**
-     * Total resubscribers during the stream
-     *
-     * @var ?int
-     */
-    public readonly ?int $resubSubscribers;
 
     /**
      * Datetime of when the stream was started
@@ -122,21 +80,14 @@ class Stream extends AbstractObjectModel
     public readonly ?\DateTime $startedAt;
 
     /**
-     * The subategory the current stream is in
-     *
-     * @var ?Subcategory
-     */
-    public readonly ?Subcategory $subcategory;
-
-    /**
      * Thumbnail URL of the stream
      *
      * @var ?string
      */
-    public readonly ?string $thumbnail;
+    public readonly ?string $thumbnailUrl;
 
     /**
-     * The title of the stream.
+     * The title of the channel when the stream was started
      *
      * @var ?string
      */

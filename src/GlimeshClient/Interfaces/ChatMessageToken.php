@@ -1,6 +1,6 @@
 <?php
 
-namespace GlimeshClient\Interfaces;
+namespace GlimeshClient\Objects\Enums;
 
 /**
  * Chat Message Token Interface
@@ -10,6 +10,7 @@ namespace GlimeshClient\Interfaces;
  * @license GPL-3.0-or-later
  * @package GlimeshClient
  */
-interface ChatMessageToken
+enum ChatMessageToken: string
 {
+
 }

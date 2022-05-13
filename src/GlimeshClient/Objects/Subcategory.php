@@ -31,7 +31,7 @@ class Subcategory extends AbstractObjectModel
     public readonly ?Category $category;
 
     /**
-     * ID of subcategory
+     * Unique subcategory identifier
      *
      * @var ?string
      */

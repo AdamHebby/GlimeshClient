@@ -4,6 +4,7 @@ namespace GlimeshClient\Client;
 
 use Evenement\EventEmitterTrait;
 use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
+use GlimeshClient\Response\GlimeshWebsocketResponse;
 use GuzzleHttp\Client;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -105,21 +106,18 @@ class WebsocketClient extends AbstractClient
             function(WebSocket $conn) use ($query, $onData) {
                 $connKey = uniqid('conn_');
 
-                $conn->on('message', function(Message $msg) use ($conn, $onData) {
+                $conn->on('message', function(Message $msg) use ($conn, $onData, $query) {
                     $data = json_decode($msg, true);
 
                     if ($data[3] === 'subscription:data') {
-                        $data = $data[4]['result']['data'];
+                        $data = $data[4]['result'];
 
-                        $keys = array_keys($data);
-                        $key = reset($keys);
-
-                        $obj = self::getObject($key, $data[$key]);
+                        $response = new GlimeshWebsocketResponse($query, $data);
 
                         if ($onData !== null) {
-                            $onData($conn, $obj);
+                            $onData($conn, $response);
                         }
-                        $this->emit('subscription:data', [$conn, $obj]);
+                        $this->emit('subscription:data', [$conn, $response]);
                     }
                 });
 

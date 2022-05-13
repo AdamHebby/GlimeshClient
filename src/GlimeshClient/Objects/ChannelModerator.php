@@ -61,9 +61,16 @@ class ChannelModerator extends AbstractObjectModel
     /**
      * Channel the moderator can moderate in
      *
-     * @var ?Channel
+     * @var ?\ArrayObject<Channel>
      */
-    public readonly ?Channel $channel;
+    public readonly ?\ArrayObject $channel;
+
+    /**
+     * Unique channel moderator identifier
+     *
+     * @var ?string
+     */
+    public readonly ?string $id;
 
     /**
      * Moderator creation date
@@ -82,7 +89,7 @@ class ChannelModerator extends AbstractObjectModel
     /**
      * Moderating User
      *
-     * @var ?User
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?User $user;
+    public readonly ?\ArrayObject $user;
 }

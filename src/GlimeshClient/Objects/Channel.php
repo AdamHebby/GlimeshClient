@@ -39,6 +39,13 @@ class Channel extends AbstractObjectModel
     public readonly ?Category $category;
 
     /**
+     * Background URL for the Chat Box
+     *
+     * @var ?string
+     */
+    public readonly ?string $chatBgUrl;
+
+    /**
      * List of chat messages sent in the channel
      *
      * @var ?\ArrayObject<ChatMessage>
@@ -95,14 +102,14 @@ class Channel extends AbstractObjectModel
     public readonly ?\DateTime $insertedAt;
 
     /**
-     * The language a user can expect in the stream.
+     * The language a user can expect in the stream
      *
      * @var ?string
      */
     public readonly ?string $language;
 
     /**
-     * If the streamer has flagged this channel as only appropriate for Mature Audiences.
+     * If the streamer has flagged this channel as only appropriate for Mature Audiences
      *
      * @var ?bool
      */
@@ -130,11 +137,25 @@ class Channel extends AbstractObjectModel
     public readonly ?\ArrayObject $moderators;
 
     /**
+     * Channel poster URL
+     *
+     * @var ?string
+     */
+    public readonly ?string $posterUrl;
+
+    /**
      * Toggle for requiring confirmed email before chatting
      *
      * @var ?bool
      */
     public readonly ?bool $requireConfirmedEmail;
+
+    /**
+     * Toggle for homepage visibility
+     *
+     * @var ?bool
+     */
+    public readonly ?bool $showOnHomepage;
 
     /**
      * Only show recent chat messages?
@@ -153,9 +174,9 @@ class Channel extends AbstractObjectModel
     /**
      * If the channel is live, this will be the current Stream
      *
-     * @var ?Stream
+     * @var ?\ArrayObject<Stream>
      */
-    public readonly ?Stream $stream;
+    public readonly ?\ArrayObject $stream;
 
     /**
      * Current streams unique stream key
@@ -167,30 +188,30 @@ class Channel extends AbstractObjectModel
     /**
      * User associated with the channel
      *
-     * @var ?User
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?User $streamer;
+    public readonly ?\ArrayObject $streamer;
+
+    /**
+     * Description not provided
+     *
+     * @var ?\ArrayObject<Stream>
+     */
+    public readonly ?\ArrayObject $streams;
 
     /**
      * Subcategory the current stream is in
      *
-     * @var ?Subcategory
+     * @var ?\ArrayObject<Subcategory>
      */
-    public readonly ?Subcategory $subcategory;
+    public readonly ?\ArrayObject $subcategory;
 
     /**
-     * Tags associated with the channel
+     * Tags associated with the current stream
      *
      * @var ?\ArrayObject<Tag>
      */
     public readonly ?\ArrayObject $tags;
-
-    /**
-     * Current stream thumbnail
-     *
-     * @var ?string
-     */
-    public readonly ?string $thumbnail;
 
     /**
      * The title of the current stream, live or offline.

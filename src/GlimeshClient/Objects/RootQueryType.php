@@ -33,9 +33,9 @@ class RootQueryType extends AbstractObjectModel
     /**
      * Query individual channel
      *
-     * @var ?Channel
+     * @var ?\ArrayObject<Channel>
      */
-    public readonly ?Channel $channel;
+    public readonly ?\ArrayObject $channel;
 
     /**
      * List all channels
@@ -52,25 +52,25 @@ class RootQueryType extends AbstractObjectModel
     public readonly ?\ArrayObject $followers;
 
     /**
-     * Get yourself
+     * List the channels currently on the homepage
      *
-     * @var ?User
+     * @var ?\ArrayObject<Channel>
      */
-    public readonly ?User $myself;
+    public readonly ?\ArrayObject $homepageChannels;
 
     /**
-     * List all subscribers or subscribees
+     * Get yourself
      *
-     * @var ?\ArrayObject<Sub>
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?\ArrayObject $subscriptions;
+    public readonly ?\ArrayObject $myself;
 
     /**
      * Query individual user
      *
-     * @var ?User
+     * @var ?\ArrayObject<User>
      */
-    public readonly ?User $user;
+    public readonly ?\ArrayObject $user;
 
     /**
      * List all users

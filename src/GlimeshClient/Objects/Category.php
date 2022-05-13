@@ -24,6 +24,13 @@ class Category extends AbstractObjectModel
     public readonly ?string $id;
 
     /**
+     * Category creation date
+     *
+     * @var ?\DateTime
+     */
+    public readonly ?\DateTime $insertedAt;
+
+    /**
      * Name of the category
      *
      * @var ?string
@@ -50,4 +57,11 @@ class Category extends AbstractObjectModel
      * @var ?\ArrayObject<Tag>
      */
     public readonly ?\ArrayObject $tags;
+
+    /**
+     * Category updated date
+     *
+     * @var ?\DateTime
+     */
+    public readonly ?\DateTime $updatedAt;
 }

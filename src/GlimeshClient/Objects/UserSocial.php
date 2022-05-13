@@ -17,7 +17,7 @@ class UserSocial extends AbstractObjectModel
     use ObjectModelTrait;
 
     /**
-     * Description not provided
+     * Unique social account identifier
      *
      * @var ?string
      */

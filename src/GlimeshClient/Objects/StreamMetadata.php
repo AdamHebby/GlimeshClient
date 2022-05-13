@@ -89,9 +89,9 @@ class StreamMetadata extends AbstractObjectModel
     /**
      * Current stream metadata references
      *
-     * @var ?Stream
+     * @var ?\ArrayObject<Stream>
      */
-    public readonly ?Stream $stream;
+    public readonly ?\ArrayObject $stream;
 
     /**
      * Current Stream time in seconds

@@ -3,6 +3,8 @@
 namespace GlimeshClient\Traits;
 
 use GlimeshClient\Objects\AbstractObjectModel;
+use GlimeshClient\Objects\PagedArrayObject;
+use GlimeshClient\Objects\PageInfo;
 
 /**
  * Trait for Resolving Glimesh Objects
@@ -14,58 +16,7 @@ use GlimeshClient\Objects\AbstractObjectModel;
  */
 trait ObjectResolverTrait
 {
-    /**
-     * keys that contain multiple objects, makes us return ObjectArray of this class
-     *
-     * @var array
-     */
-    protected static $mappingMulitple = [
-        'bans'           => \GlimeshClient\Objects\ChannelBan::class,
-        'categories'     => \GlimeshClient\Objects\Category::class,
-        'channels'       => \GlimeshClient\Objects\Channel::class,
-        'chatMessages'   => \GlimeshClient\Objects\ChatMessage::class,
-        'followers'      => \GlimeshClient\Objects\Follower::class,
-        'following'      => \GlimeshClient\Objects\Follower::class,
-        'moderationLogs' => \GlimeshClient\Objects\ChannelModerationLog::class,
-        'moderators'     => \GlimeshClient\Objects\ChannelModerator::class,
-        'streamers'      => \GlimeshClient\Objects\User::class,
-        'streams'        => \GlimeshClient\Objects\Stream::class,
-        'subcategories'  => \GlimeshClient\Objects\Subcategory::class,
-        'subscriptions'  => \GlimeshClient\Objects\Sub::class,
-        'tags'           => \GlimeshClient\Objects\Tag::class,
-        'tokens'         => \GlimeshClient\Interfaces\ChatMessageToken::class,
-        'users'          => \GlimeshClient\Objects\User::class,
-    ];
-
-    /**
--     * Single ojects
--     *
--     * @var array
--     */
-    protected static $mappingSingle = [
-        'ban'                   => \GlimeshClient\Objects\ChannelBan::class,
-        'category'              => \GlimeshClient\Objects\Category::class,
-        'channel'               => \GlimeshClient\Objects\Channel::class,
-        'chatmessage'           => \GlimeshClient\Objects\ChatMessage::class,
-        'chatMessage'           => \GlimeshClient\Objects\ChatMessage::class,
-        'metadata'              => \GlimeshClient\Objects\StreamMetadata::class,
-        'moderationlog'         => \GlimeshClient\Objects\ChannelModerationLog::class,
-        'moderator'             => \GlimeshClient\Objects\ChannelModerator::class,
-        'socials'               => \GlimeshClient\Objects\UserSocial::class,
-        'socials'               => \GlimeshClient\Objects\UserSocial::class,
-        'stream'                => \GlimeshClient\Objects\Stream::class,
-        'streamer'              => \GlimeshClient\Objects\User::class,
-        'subcategory'           => \GlimeshClient\Objects\Subcategory::class,
-        'subscription'          => \GlimeshClient\Objects\Sub::class,
-        'tag'                   => \GlimeshClient\Objects\Tag::class,
-        'token'                 => \GlimeshClient\Interfaces\ChatMessageToken::class,
-        'user'                  => \GlimeshClient\Objects\User::class,
-        'status'                => \GlimeshClient\Objects\Enums\ChannelStatus::class,
-        'channelstatus'         => \GlimeshClient\Objects\Enums\ChannelStatus::class,
-        'RootMutationType'      => \GlimeshClient\Objects\RootMutationType::class,
-        'RootSubscriptionType'  => \GlimeshClient\Objects\RootSubscriptionType::class,
-        'RootQueryType'         => \GlimeshClient\Objects\RootQueryType::class,
-    ];
+    use FieldMappingTrait;
 
     /**
      * Returns an object based on the key and data. If an array of objects, returns \ArrayObject
@@ -85,8 +36,16 @@ trait ObjectResolverTrait
         if (self::isArrayOfObjects($key)) {
             $return = [];
 
-            foreach ($data as $itemKey => $item) {
-                $return[$itemKey] = new $class($item);
+            foreach ($data['edges'] as $itemKey => $item) {
+                $return[$itemKey] = new $class($item['node']);
+            }
+
+            if (isset($data['pageInfo'])) {
+                return new PagedArrayObject(
+                    $return,
+                    new PageInfo($data['pageInfo']),
+                    $data['count'] ?? count($return)
+                );
             }
 
             return new \ArrayObject($return);
@@ -112,7 +71,7 @@ trait ObjectResolverTrait
      */
     protected static function isArrayOfObjects(string $key): bool
     {
-        return isset(self::$mappingMulitple[$key]);
+        return isset(self::$mappingMultiple[$key]);
     }
 
     /**
@@ -121,7 +80,7 @@ trait ObjectResolverTrait
     protected static function resolveObjectKey(string $key): ?string
     {
         if (self::isArrayOfObjects($key)) {
-            return self::$mappingMulitple[$key];
+            return self::$mappingMultiple[$key];
         }
 
         if (isset(self::$mappingSingle[$key])) {

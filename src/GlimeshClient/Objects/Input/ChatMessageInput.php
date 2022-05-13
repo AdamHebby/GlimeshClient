@@ -1,6 +1,6 @@
 <?php
 
-namespace GlimeshClient\Objects\Input;
+namespace GlimeshClient\Objects\Enums;
 
 /**
  * Description not provided
@@ -10,12 +10,7 @@ namespace GlimeshClient\Objects\Input;
  * @license GPL-3.0-or-later
  * @package GlimeshClient
  */
-class ChatMessageInput extends AbstractInputObjectModel
+enum ChatMessageInput: string
 {
-    /**
-     * Description not provided
-     *
-     * @var ?string
-     */
-    public readonly ?string $message;
+
 }

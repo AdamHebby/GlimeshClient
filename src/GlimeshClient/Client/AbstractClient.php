@@ -17,8 +17,6 @@ use Psr\Log\LoggerInterface;
  */
 abstract class AbstractClient
 {
-    use ObjectResolverTrait;
-
     /**
      * Glimesh URL
      */
@@ -38,50 +36,4 @@ abstract class AbstractClient
      * Current Logger
      */
     protected ?LoggerInterface $logger = null;
-
-    /**
-     * Get a multiline error string from an error array item returned from the API
-     */
-    protected static function getAllErrorStrings(array $glimeshErrors): string
-    {
-        return implode("\n", (array_map(function(array $error) {
-            return self::getErrorString($error);
-        }, $glimeshErrors ?? [])));
-    }
-
-    /**
-     * Get an error string from an error array item returned from the API
-     */
-    protected static function getErrorString(array $glimeshError): string
-    {
-        return sprintf(
-            "Glimesh API Error, Col %s Line %s: %s",
-            $glimeshError['locations'][0]['column'],
-            $glimeshError['locations'][0]['line'],
-            $glimeshError['message'],
-        );
-    }
-
-    /**
-     * Returns a query in a pretty printed form
-     */
-    public static function prettyPrintQuery(string $string): string
-    {
-        $lines = explode("\n", $string);
-        $t = "    ";
-        $ct = 0;
-        foreach ($lines as $index => $line) {
-            if (substr($line, -1, 1) === '}') {
-                $ct -= 1;
-            }
-
-            $lines[$index] = str_repeat($t, $ct) . $lines[$index];
-
-            if (substr($line, -1, 1) === '{') {
-                $ct += 1;
-            }
-        }
-
-        return implode("\n", $lines) . "\n";
-    }
 }
