@@ -10,6 +10,7 @@ This Library aims to provide a fully working Glimesh Client, all objects and int
  - Extract Builder into separate repo
  - Final Clean up
  - Update README with up-to-date example
+ - Refactor Unit Tests for V2
 
 ## Installation
 
