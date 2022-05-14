@@ -19,21 +19,21 @@ class RootSubscriptionType extends AbstractObjectModel
     /**
      * Description not provided
      *
-     * @var ?\ArrayObject<Channel>
+     * @var ?Channel
      */
-    public readonly ?\ArrayObject $channel;
+    public readonly ?Channel $channel;
 
     /**
      * Description not provided
      *
-     * @var ?\ArrayObject<ChatMessage>
+     * @var ?ChatMessage
      */
-    public readonly ?\ArrayObject $chatMessage;
+    public readonly ?ChatMessage $chatMessage;
 
     /**
      * Description not provided
      *
-     * @var ?\ArrayObject<Follower>
+     * @var ?Follower
      */
-    public readonly ?\ArrayObject $followers;
+    public readonly ?Follower $followers;
 }

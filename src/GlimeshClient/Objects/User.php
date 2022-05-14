@@ -40,9 +40,9 @@ class User extends AbstractObjectModel
     /**
      * A user's channel, if they have one
      *
-     * @var ?\ArrayObject<Channel>
+     * @var ?Channel
      */
-    public readonly ?\ArrayObject $channel;
+    public readonly ?Channel $channel;
 
     /**
      * Datetime the user confirmed their email address

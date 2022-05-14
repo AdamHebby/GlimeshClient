@@ -32,13 +32,13 @@ class FieldBuilder extends AbstractBuilder
             return null;
         }
 
-        $fieldName = $this->objectResolver->resolveField($field);
-        $fieldDoc  = $fieldName;
+        $fieldType = $this->objectResolver->resolveField($field);
+        $fieldDoc  = $fieldType;
 
-        if (in_array($fieldName, $this->resolver->getConnectionNodeMap()) ||
-            isset($field['type']['kind']) && $field['type']['kind'] === 'LIST') {
-            $fieldDoc = "\ArrayObject<$fieldName>";
-            $fieldName = '\ArrayObject';
+        if (isset($this->resolver->getConnectionNodeMap()[$field['type']['name']]) ||
+            (isset($field['type']['kind']) && $field['type']['kind'] === 'LIST')) {
+            $fieldDoc = "\ArrayObject<$fieldType>";
+            $fieldType = '\ArrayObject';
         }
 
         $description = $field['description'] ?? 'Description not provided';
@@ -48,7 +48,7 @@ class FieldBuilder extends AbstractBuilder
             [
                 '%BUILDER_FIELD_DESCRIPTION%' => $description,
                 '%BUILDER_FIELD_TYPE%' => $fieldDoc,
-                '%BUILDER_P_FIELD_TYPE%' => $fieldName,
+                '%BUILDER_P_FIELD_TYPE%' => $fieldType,
                 '%BUILDER_FIELD_NAME%' => $field['name']
             ]
         );

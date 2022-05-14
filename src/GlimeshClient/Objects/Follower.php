@@ -40,9 +40,9 @@ class Follower extends AbstractObjectModel
     /**
      * The streamer the user is following
      *
-     * @var ?\ArrayObject<User>
+     * @var ?User
      */
-    public readonly ?\ArrayObject $streamer;
+    public readonly ?User $streamer;
 
     /**
      * Following updated date
@@ -54,7 +54,7 @@ class Follower extends AbstractObjectModel
     /**
      * The user that is following the streamer
      *
-     * @var ?\ArrayObject<User>
+     * @var ?User
      */
-    public readonly ?\ArrayObject $user;
+    public readonly ?User $user;
 }

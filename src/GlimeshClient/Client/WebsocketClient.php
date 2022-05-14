@@ -112,9 +112,9 @@ class WebsocketClient extends AbstractClient
                     if ($data[3] === 'subscription:data') {
                         $data = $data[4]['result'];
 
-                        $response = new GlimeshWebsocketResponse($query, $data);
+                        $response = new GlimeshWebsocketResponse($query, json_encode($data));
 
-                        if ($onData !== null) {
+                        if ($onData) {
                             $onData($conn, $response);
                         }
                         $this->emit('subscription:data', [$conn, $response]);

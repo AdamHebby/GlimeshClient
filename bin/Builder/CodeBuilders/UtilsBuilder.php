@@ -20,6 +20,9 @@ class UtilsBuilder extends AbstractBuilder
     {
         list($mappingSingle, $mappingMultiple) = $this->objectResolver->buildFieldToObjectMap();
 
+        ksort($mappingMultiple);
+        ksort($mappingSingle);
+
         $mappingMultipleCode = implode("\n", $this->buildClassArray($mappingMultiple));
         $mappingSingleCode   = implode("\n", $this->buildClassArray($mappingSingle));
 

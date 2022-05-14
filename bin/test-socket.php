@@ -4,6 +4,7 @@ use GlimeshClient\Adapters\Authentication\OAuthFileAdapter;
 use GlimeshClient\Client;
 use GlimeshClient\Client\WebsocketClient;
 use GlimeshClient\Objects\ChatMessage;
+use GlimeshClient\Response\GlimeshWebsocketResponse;
 use GraphQL\Query;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use Ratchet\Client\WebSocket;
@@ -42,8 +43,10 @@ $socket = new WebsocketClient(
 );
 
 
-$socket->makeRequest($query, function(WebSocket $connection, ChatMessage $object) {
-    var_dump($object->message);
+$socket->makeRequest($query, function(WebSocket $connection, GlimeshWebsocketResponse $response) {
+    $object = $response->getAsObject();
+
+    var_dump($object);
 });
 
 $reactLoop->run();

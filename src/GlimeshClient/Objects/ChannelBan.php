@@ -19,9 +19,9 @@ class ChannelBan extends AbstractObjectModel
     /**
      * Channel the ban affects
      *
-     * @var ?\ArrayObject<Channel>
+     * @var ?Channel
      */
-    public readonly ?\ArrayObject $channel;
+    public readonly ?Channel $channel;
 
     /**
      * When the ban expires
@@ -61,7 +61,7 @@ class ChannelBan extends AbstractObjectModel
     /**
      * User the ban affects
      *
-     * @var ?\ArrayObject<User>
+     * @var ?User
      */
-    public readonly ?\ArrayObject $user;
+    public readonly ?User $user;
 }

@@ -174,9 +174,9 @@ class Channel extends AbstractObjectModel
     /**
      * If the channel is live, this will be the current Stream
      *
-     * @var ?\ArrayObject<Stream>
+     * @var ?Stream
      */
-    public readonly ?\ArrayObject $stream;
+    public readonly ?Stream $stream;
 
     /**
      * Current streams unique stream key
@@ -188,9 +188,9 @@ class Channel extends AbstractObjectModel
     /**
      * User associated with the channel
      *
-     * @var ?\ArrayObject<User>
+     * @var ?User
      */
-    public readonly ?\ArrayObject $streamer;
+    public readonly ?User $streamer;
 
     /**
      * Description not provided
@@ -202,9 +202,9 @@ class Channel extends AbstractObjectModel
     /**
      * Subcategory the current stream is in
      *
-     * @var ?\ArrayObject<Subcategory>
+     * @var ?Subcategory
      */
-    public readonly ?\ArrayObject $subcategory;
+    public readonly ?Subcategory $subcategory;
 
     /**
      * Tags associated with the current stream

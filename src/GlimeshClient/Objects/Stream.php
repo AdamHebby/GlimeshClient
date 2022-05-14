@@ -26,9 +26,9 @@ class Stream extends AbstractObjectModel
     /**
      * Channel running with the stream
      *
-     * @var ?\ArrayObject<Channel>
+     * @var ?Channel
      */
-    public readonly ?\ArrayObject $channel;
+    public readonly ?Channel $channel;
 
     /**
      * Concurrent viewers during last snapshot

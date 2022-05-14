@@ -19,7 +19,8 @@ trait ObjectResolverTrait
     use FieldMappingTrait;
 
     /**
-     * Returns an object based on the key and data. If an array of objects, returns \ArrayObject
+     * Returns an object based on the key and data.
+     * If an array of objects, returns \ArrayObject
      *
      * @param string $key  key given by API results
      * @param array  $data data of object

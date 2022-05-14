@@ -17,11 +17,11 @@ class SchemaMappingResolver
 
     private array $connectionNodeMap = [];
 
-    private static array $ignoreTypes = [
-        'RootMutationType'
+    private static array $ignoreTypeNames = [
+        'RootMutationType',
     ];
 
-    private static array $acceptsTypes = [
+    private static array $acceptsTypeKinds = [
         'INTERFACE',
         'OBJECT',
         'INPUT_OBJECT',
@@ -64,9 +64,9 @@ class SchemaMappingResolver
         }
     }
 
-    public function getObjectByName(string $name): array
+    public function getObjectByName(string $name): ?array
     {
-        return $this->objects[$name];
+        return $this->objects[$name] ?? null;
     }
 
     public function getObjects(): array
@@ -97,8 +97,8 @@ class SchemaMappingResolver
     private function unsetUnacceptedObjects(array $schema): array
     {
         foreach ($schema as $key => $type) {
-            if (!in_array($type['kind'], self::$acceptsTypes) ||
-                in_array($type['name'], self::$ignoreTypes) ||
+            if (!in_array($type['kind'], self::$acceptsTypeKinds) ||
+                in_array($type['name'], self::$ignoreTypeNames) ||
                 substr($type['name'], 0, 2) === '__'
             ) {
                 unset($schema[$key]);
