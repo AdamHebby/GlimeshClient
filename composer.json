@@ -14,6 +14,12 @@
             "homepage": "https://github.com/AdamHebby"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/AdamHebby/GlimeshClientBuilder.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "GlimeshClient\\": "src/GlimeshClient/",
@@ -32,6 +38,7 @@
         "ratchet/pawl": "^0.4.1"
     },
     "require-dev": {
+        "adamhebby/glimesh-client-builder": "dev-feature/BuilderExtractionAndUpgrades",
         "phpunit/php-code-coverage": "^9.2",
         "phpunit/phpunit": "^9.5",
         "monolog/monolog": "^2.3",

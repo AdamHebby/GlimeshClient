@@ -1,0 +1,199 @@
+{
+    "data": {
+        "channels": {
+            "count": 5,
+            "edges": [
+                {
+                    "node": {
+                        "bans": {
+                            "count": 2,
+                            "edges": [
+                                {
+                                    "node": {
+                                        "id": "6544",
+                                        "reason": null
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "id": "4566",
+                                        "reason": null
+                                    }
+                                }
+                            ],
+                            "pageInfo": {
+                                "endCursor": "aaaaaaaaaaaaaaaa",
+                                "hasNextPage": true,
+                                "hasPreviousPage": false,
+                                "startCursor": "bbbbbbbbbbbbbb"
+                            }
+                        },
+                        "category": {
+                            "id": "4",
+                            "insertedAt": "2020-08-16T13:07:39",
+                            "name": "Tech",
+                            "slug": "tech"
+                        },
+                        "id": "1",
+                        "language": "en",
+                        "status": "LIVE",
+                        "streamer": {
+                            "displayname": "Test Name NAME",
+                            "id": "2",
+                            "insertedAt": "2021-01-15T23:29:49"
+                        },
+                        "title": "Test Title"
+                    }
+                },
+                {
+                    "node": {
+                        "bans": {
+                            "count": 2,
+                            "edges": [
+                                {
+                                    "node": {
+                                        "id": "3",
+                                        "reason": null
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "id": "4",
+                                        "reason": null
+                                    }
+                                }
+                            ],
+                            "pageInfo": {
+                                "endCursor": "ccccccccccccccccccccc",
+                                "hasNextPage": false,
+                                "hasPreviousPage": false,
+                                "startCursor": "ddddddddddddddddddddd"
+                            }
+                        },
+                        "category": {
+                            "id": "1",
+                            "insertedAt": "2020-08-16T13:07:39",
+                            "name": "Gaming",
+                            "slug": "gaming"
+                        },
+                        "id": "4",
+                        "language": "en",
+                        "status": "LIVE",
+                        "streamer": {
+                            "displayname": "Test Name",
+                            "id": "6",
+                            "insertedAt": "2021-04-15T21:02:43"
+                        },
+                        "title": "Test Title"
+                    }
+                },
+                {
+                    "node": {
+                        "bans": {
+                            "count": 2,
+                            "edges": [
+                                {
+                                    "node": {
+                                        "id": "7777",
+                                        "reason": null
+                                    }
+                                },
+                                {
+                                    "node": {
+                                        "id": "8888",
+                                        "reason": null
+                                    }
+                                }
+                            ],
+                            "pageInfo": {
+                                "endCursor": "eeeeeeeeeeeeeeeeeeeeee",
+                                "hasNextPage": false,
+                                "hasPreviousPage": false,
+                                "startCursor": "fffffffffffffffffffff"
+                            }
+                        },
+                        "category": {
+                            "id": "3",
+                            "insertedAt": "2020-08-16T13:07:39",
+                            "name": "Music",
+                            "slug": "music"
+                        },
+                        "id": "9",
+                        "language": "en",
+                        "status": "LIVE",
+                        "streamer": {
+                            "displayname": "Test Name",
+                            "id": "10",
+                            "insertedAt": "2021-06-07T03:36:31"
+                        },
+                        "title": "Test Title"
+                    }
+                },
+                {
+                    "node": {
+                        "bans": {
+                            "count": 0,
+                            "edges": [],
+                            "pageInfo": {
+                                "endCursor": null,
+                                "hasNextPage": false,
+                                "hasPreviousPage": false,
+                                "startCursor": null
+                            }
+                        },
+                        "category": {
+                            "id": "1",
+                            "insertedAt": "2020-08-16T13:07:39",
+                            "name": "Gaming",
+                            "slug": "gaming"
+                        },
+                        "id": "11",
+                        "language": "en",
+                        "status": "LIVE",
+                        "streamer": {
+                            "displayname": "Test Name",
+                            "id": "12",
+                            "insertedAt": "2021-06-22T05:25:13"
+                        },
+                        "title": "Test Title"
+                    }
+                },
+                {
+                    "node": {
+                        "bans": {
+                            "count": 0,
+                            "edges": [],
+                            "pageInfo": {
+                                "endCursor": null,
+                                "hasNextPage": false,
+                                "hasPreviousPage": false,
+                                "startCursor": null
+                            }
+                        },
+                        "category": {
+                            "id": "1",
+                            "insertedAt": "2020-08-16T13:07:39",
+                            "name": "Gaming",
+                            "slug": "gaming"
+                        },
+                        "id": "13",
+                        "language": "en",
+                        "status": "LIVE",
+                        "streamer": {
+                            "displayname": "Test Name",
+                            "id": "14",
+                            "insertedAt": "2021-08-12T20:05:42"
+                        },
+                        "title": "Test Title"
+                    }
+                }
+            ],
+            "pageInfo": {
+                "endCursor": "ggggggggggggggggggggggggggg",
+                "hasNextPage": true,
+                "hasPreviousPage": false,
+                "startCursor": "hhhhhhhhhhhhhhhhhhhhhhhhhhh"
+            }
+        }
+    }
+}

@@ -1,6 +1,0 @@
-    /**
-     * %BUILDER_FIELD_DESCRIPTION%
-     *
-     * @var ?%BUILDER_FIELD_TYPE%
-     */
-    public readonly ?%BUILDER_P_FIELD_TYPE% $%BUILDER_FIELD_NAME%;

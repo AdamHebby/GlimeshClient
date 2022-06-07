@@ -9,6 +9,7 @@ namespace GlimeshClient\Objects\Enums;
  * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
+ * @generated 2022-06-07
  */
 enum ChannelStatus: string
 {

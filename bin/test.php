@@ -38,7 +38,13 @@ $response = $client->makeRequest(
         ]),
         (new Query('edges'))->setSelectionSet([
             (new Query('node'))->setSelectionSet([
-                'id', 'status',
+                'id', 'status', 'title', 'language',
+                (new Query('streamer'))->setSelectionSet([
+                    'id', 'displayname', 'insertedAt'
+                ]),
+                (new Query('category'))->setSelectionSet([
+                    'id', 'name', 'slug', 'insertedAt'
+                ]),
                 (new Query('bans'))->setSelectionSet([
                     'count',
                     (new Query('pageInfo'))->setSelectionSet([
@@ -60,6 +66,8 @@ $response = $client->makeRequest(
         'first' => 5
     ])
 );
+
+file_put_contents(__DIR__ . '/../test.json', ($response->getAsJson()));
 
 $channels = $response->getAsObject();
 
@@ -99,4 +107,3 @@ $channels = $client->makeRequest(
         'after' => $channels->pageInfo->endCursor
     ])
 );
-
