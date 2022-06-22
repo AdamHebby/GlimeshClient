@@ -8,7 +8,7 @@ namespace GlimeshClient\Objects;
  * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
- * @generated 2022-06-07
+ * @generated 2022-06-12
  */
 class PagedArrayObject extends \ArrayObject
 {

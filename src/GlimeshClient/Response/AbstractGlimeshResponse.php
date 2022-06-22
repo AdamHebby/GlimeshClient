@@ -66,6 +66,9 @@ abstract class AbstractGlimeshResponse
         return json_decode($this->getRawResponseString(), true);
     }
 
+    /**
+     * @return AbstractObjectModel|\ArrayObject|PagedArrayObject
+     */
     public function getAsObject()
     {
         $arrayResponse = $this->getAsArray()['data'];

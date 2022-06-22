@@ -34,7 +34,7 @@
         "php": ">=8.1.0",
         "guzzlehttp/guzzle": "^7.3",
         "psr/log": "^1.1",
-        "gmostafa/php-graphql-client": "^1.13",
+        "adamhebby/php-graphql-client": "^2",
         "ratchet/pawl": "^0.4.1"
     },
     "require-dev": {

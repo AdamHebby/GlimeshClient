@@ -21,12 +21,17 @@ $logger->pushHandler(new \Monolog\Handler\ErrorLogHandler());
 
 $guzzle = new GuzzleHttpClient(['http_errors' => true, 'allow_redirects' => true]);
 
-$query = (new Query('chatMessage'))->setSelectionSet([
-    (new Query('user'))->setSelectionSet(['id','username','displayname']),
-    'message',
-    (new Query('channel'))->setSelectionSet([
-        'id', 'title'
-    ]),
+$query = (new Query('channel'))->setSelectionSet([
+    'id',
+    (new Query('stream'))->setSelectionSet([
+        (new Query('category'))->setSelectionSet(['id']),
+        'countChatters',
+        'countViewers',
+        'endedAt',
+        'startedAt',
+        'thumbnail',
+        'title',
+    ])
 ]);
 
 $reactLoop = new Loop;
