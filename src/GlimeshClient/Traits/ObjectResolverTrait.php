@@ -12,7 +12,7 @@ use GlimeshClient\Objects\PageInfo;
  * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
- * @generated 2022-06-12
+ * @generated 2022-06-23
  */
 trait ObjectResolverTrait
 {
@@ -37,8 +37,14 @@ trait ObjectResolverTrait
         if (self::isArrayOfObjects($key)) {
             $return = [];
 
-            foreach ($data['edges'] as $itemKey => $item) {
-                $return[$itemKey] = new $class($item['node']);
+            if (isset($data['edges'])) {
+                foreach ($data['edges'] as $itemKey => $item) {
+                    $return[$itemKey] = new $class($item['node']);
+                }
+            } else {
+                foreach ($data as $itemKey => $item) {
+                    $return[$itemKey] = new $class($item);
+                }
             }
 
             if (isset($data['pageInfo'])) {

@@ -12,7 +12,7 @@ use GlimeshClient\Interfaces\ChatMessageToken;
  * @copyright 2022 Adam Hebden
  * @license GPL-3.0-or-later
  * @package GlimeshClient
- * @generated 2022-06-12
+ * @generated 2022-06-23
  */
 class EmoteToken extends AbstractObjectModel implements ChatMessageToken
 {
